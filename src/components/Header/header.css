@@ -1,0 +1,92 @@
+.h-100{
+    margin-top: 254px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-container{
+  width:1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  gap: 40px;
+  margin: 0%;
+}
+.intro{
+    margin: 0%;
+    font-family: kalice;
+    font-weight: 700;
+    font-size: 20px;
+    color:#3A3A3A;
+    letter-spacing: 1px;
+
+}  
+.intro span{
+  color: #1937B2;
+} 
+
+.header-container2{
+  width: 676px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.h1-header{
+  font-size: 56px;
+  font-family: kalice;
+  font-weight: 500;  
+  margin: 0;
+}
+.design{
+  color:#7C7C7C;
+}
+.currently{
+  height: 40px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.currently-para{
+  font-family: Satoshi;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+.exotel{
+  height: 18.64px;
+}
+.greendot {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: #C4F588;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greendot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #A0E64A;
+  border-radius: 50%;
+  position: absolute;
+}
+button{
+  display: flex;
+  gap: 16px;
+  font-family: Satoshi;
+  font-size: 20px;
+  background-color: #343434;
+  color:#ffffff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+}

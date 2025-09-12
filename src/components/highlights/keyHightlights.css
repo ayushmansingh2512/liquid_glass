@@ -1,0 +1,218 @@
+.mainHighligt{
+    
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.highlight-156{
+ 
+    margin: 156px 0 100px 0 ;
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.keyHigh {
+    display: flex;
+    gap: 10px;
+    border-radius: 100px;
+    padding: 3px 7px; /* This is your border thickness */
+    position: relative;
+    background: white; /* or your content background */ 
+    font-size: 16px;
+    align-items: center;
+}
+ .keyHigh::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(99.46deg, #F2BDAA 0%, #F2E4C2 100%);
+    border-radius: 100px;
+    z-index: -1;
+}
+ 
+.p-key {
+    font-family: Satoshi;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+.p-dis{
+    font-size: 16px;
+    font-family: Satoshi;
+}
+.highlights{
+    height: 540px;
+    display: flex;
+    gap: 10px;
+    margin: 0%;
+    padding: 0%;
+}
+.high1{
+    display: flex;
+    gap: 10px;
+    margin: 0%;
+    padding: 0%;
+    flex-direction: column;
+}
+.figmaProfile{
+    width: 262px;
+    height: 265px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 13.53px;
+    background-color: #1937B2;
+}
+.sysdes{
+    width: 204px;
+    height: 192px;
+    border-radius: 10px;
+}
+.LFG{
+    width: 262px;
+    height: 265px;
+    border-radius: 13.53px;
+    background-color: #F25000;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    align-content: end;
+    flex-wrap: wrap;
+}
+.LetF{
+    margin: 28px;
+    font-family:Clash-Display-bold;
+    letter-spacing: 1px;
+    font-size: 40px;
+    flex-wrap: wrap;
+    color: white;
+}
+.Fing{
+    color: #1937B2;
+}
+.high2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0%;
+    padding: 0%;
+    
+    
+}
+.UX4G{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    height: 150px;
+    background-color: #1937B2;
+    border-radius: 13.53px;
+    
+}
+.UX-img{
+    width: 218px;
+    height: 109px;
+}
+.UXText{
+    position: relative;
+    width: 245px;
+    height: 385px;
+    background-color: #1937B2;
+    border-radius: 13.53px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    
+}
+.yepThatH{
+    position: ;
+    color: white;
+    font-family: Clash-Display;
+    padding: 0 24px;
+    font-size: 18px;
+}
+.arrow{
+    position: absolute;
+    width: 85px;
+    top: 37px;
+    right: 23px;
+}
+
+.high3{
+    width: 540px;
+    background-color: #F25000;
+    height: 540px;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 13.53px;
+}
+.glass{
+    
+  margin: 0;
+  width: 433.83px;
+  height: 511px;
+  
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border-radius: 13.53px 13.53px 0 0;
+  position: relative;
+   border: 1px solid rgba(255, 255, 255, 0.793);
+  overflow: hidden;
+  
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  -webkit-backdrop-filter: brightness(1.1) blur(2px);
+  filter: drop-shadow(-8px -10px 46px rgba(0, 0, 0, 0.37));
+  transition: opacity 0.26s ease-out;
+
+}
+
+.high4{
+    padding: 0;
+    margin: 0;
+    border-radius: 13.53px;     
+    background-color: #1937B2;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+.And{
+   font-family: Clash-display;
+   color: white;
+   font-size: 18px;
+   margin: 19.4px; 
+   font-size: 500;
+   font-style: normal;
+}
+.design-com{
+ color: #F25000;
+}
+.indiaInPixel{
+    height: 412px;
+    border-radius: 13.5px;
+    object-fit: contain;
+}

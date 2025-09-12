@@ -1,0 +1,254 @@
+.n-100 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.n-100 {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav { 
+
+  margin: 0;
+  width: 1172px;
+  height: 72px;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 80px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.794);
+  
+  /* New properties for the "liquid glass" effect */
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* FIXED: Subtle left-side inner shadow */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 3px 0 8px rgba(0, 0, 0, 0.05); /* Subtle left inner shadow */
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.para-1 {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0%;
+  cursor: pointer;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+}
+
+.nav-head {
+  font-family: Clash-Display;
+  margin: 0%;
+  font-size: 28px;
+}
+
+/* Container for all social media icons */
+.socialMedia {
+  display: flex;
+  gap: 10px; /* Use the gap value from Figma */
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMediaBtn {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  /* The liquid glass effect */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* FIXED: Subtle left-side inner shadow */
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1), /* External shadow */
+    inset 2px 0 4px rgba(0, 0, 0, 0.08); /* Subtle left inner shadow */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Style for the social media image/icon itself */
+.socialMediaIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+/* Hover effects for the button container */
+.socialMediaBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 3px 0 6px rgba(0, 0, 0, 0.12); /* Slightly stronger left inner shadow on hover */
+}
+/* 
+--- commented code ---
+.n-100 {
+  margin: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav {
+
+  margin: 0;
+  width: 1172px;
+  height: 72px;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 80px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  -webkit-backdrop-filter: brightness(1.1) blur(2px);
+  filter: drop-shadow(-8px -10px 46px rgba(0, 0, 0, 0.37));
+  transition: opacity 0.26s ease-out;
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 80px;
+  box-shadow: 
+    inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7), 
+    inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.para-1 {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-head {
+  font-family: Clash-Display;
+  position: relative;
+  z-index: 1;
+}
+
+.socialMediaBtn {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  -webkit-backdrop-filter: brightness(1.1) blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(-4px -5px 20px rgba(0, 0, 0, 0.25));
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: transform 0.2s ease-in-out, opacity 0.26s ease-out;
+}
+
+.socialMediaBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 
+    inset 3px 3px 0px -3px rgba(255, 255, 255, 0.7), 
+    inset 0 0 4px 0.5px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.socialMediaIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+
+.socialMediaBtn:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(-6px -7px 25px rgba(0, 0, 0, 0.3));
+}
+
+/* Add the SVG filter to your HTML *
+.displacement-filter {
+  display: none;
+}
+
+*/

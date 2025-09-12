@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive&family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi-Light.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Clash-Display';
+  src: url('./assets/fonts/ClashDisplay-Regular.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Clash-Display-bold';
+  src: url('./assets/fonts/ClashDisplay-Bold.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'kalice';
+  src: url('./assets/fonts/Kalice-Trial-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+html{
+}
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

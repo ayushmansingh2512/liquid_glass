@@ -1,0 +1,11 @@
+.main-container {
+  width: 100%;
+}
+
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}

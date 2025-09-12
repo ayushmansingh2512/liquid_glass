@@ -1,0 +1,218 @@
+.class-container{
+    margin: 0;
+   padding: 0;
+   width: 100%;
+    background-color:#212121;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 93px;
+}
+
+.selectedWork{
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    width: 1301px;
+}
+.selectedWork h1{
+    color: white;
+    font-family: kalice;
+    font-size: 40px;
+    font-family: 100;
+    letter-spacing: 3px;
+}
+.star{
+    width: 32px;
+}
+.card {
+  display: flex;
+  width: 1301px;
+  background-color: #4B4C45;
+  justify-content: space-between;
+  padding: 30px 32px 30px 40px;
+  border-radius: 24px;
+  height: 545px;
+}
+
+.text-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+.content-section {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  align-items: start;
+  
+}
+
+.logo-img {
+   height: 54px;
+}
+
+.text-write {
+  width: 572px;
+}
+
+.main-heading {
+  font-family: kalice;
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.description-text {
+   font-family: Satoshi;
+   font-size: 14px;
+   color:#D0D0D0;
+}
+
+.frame-img {
+ height: 40px; 
+ width: 234px;
+}
+
+.button-section {
+  display: flex;
+  gap:18px;
+}
+
+.read-case-btn {
+  background-color: #F25000;
+  color: white;
+  border-radius:8px ;
+  padding: 10px 18px;
+  font-family: Inter;
+  cursor: pointer;
+}
+
+.ux4g-btn {
+  background-color: white;
+  color: #414651;
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-span {
+  background-color: #12B76A;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+}
+
+.text-photo {
+   width: 478px;
+   height: 485px;
+   border-radius: 30px;
+   object-fit: cover;
+  background-color: white;
+  }
+
+.photo-img {
+  width: 478px;
+   height: 485px;
+   object-fit: cover;
+      border-radius: 30px;
+}
+.card-two {
+  display: flex;
+  width: 1301px;
+  background-color: #4B4C45;
+  justify-content: space-between;
+  padding: 30px 32px 30px 40px;
+  border-radius: 24px;
+  height: 545px;
+}
+
+.text-photo-two {
+  width: 478px;
+  height: 485px;
+  border-radius: 30px;
+  object-fit: cover;
+  background-color: white;
+}
+
+.photo-img-two {
+  width: 478px;
+  height: 485px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.text-card-two {
+  display: flex;
+  flex-direction: column;
+  
+}
+.content-section-two {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 620px;
+  height: 403px;
+  gap: 24px;
+}
+
+
+.text-write-two {
+  width: 606px;
+}
+
+.main-heading-two {
+  font-family: kalice;
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.description-text-two {
+  font-family: Satoshi;
+  font-size: 14px;
+  color: #D0D0D0;
+}
+
+.clips-container {
+  display: flex;
+  gap: 12px;
+}
+
+.clip {
+ 
+  margin: 0;
+   padding: 4px 16px;
+   border-radius: 10px;
+   text-align: center;
+   background-color: #E7E3C8;
+}
+.cliptext{
+  font-family: Satoshi;
+  font-size: 15px;
+  padding: 0;
+  margin: 0%;
+}
+
+.button-section-two {
+  display: flex;
+  gap: 18px;
+}
+
+.read-case-btn-two {
+  background-color: #F25000;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: Inter;
+  cursor: pointer;
+}
+ 
