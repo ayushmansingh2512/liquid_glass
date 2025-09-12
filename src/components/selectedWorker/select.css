@@ -42,8 +42,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
-
 }
 
 .content-section {
@@ -51,7 +49,6 @@
   gap: 24px;
   flex-direction: column;
   align-items: start;
-  
 }
 
 .logo-img {
@@ -85,13 +82,24 @@
   gap:18px;
 }
 
+/* Fixed button styles - removed outlines and borders */
 .read-case-btn {
   background-color: #F25000;
   color: white;
-  border-radius:8px ;
+  border-radius: 8px;
   padding: 10px 18px;
   font-family: Inter;
   cursor: pointer;
+  border: none; /* Remove default border */
+  outline: none; /* Remove default outline */
+}
+
+.read-case-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.read-case-btn:active {
+  outline: none; /* Remove active outline */
 }
 
 .ux4g-btn {
@@ -102,6 +110,18 @@
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
+  border: none; /* Remove default border */
+  outline: none; /* Remove default outline */
+  padding: 10px 18px; /* Add padding for consistency */
+  gap: 8px; /* Add gap between span and text */
+}
+
+.ux4g-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.ux4g-btn:active {
+  outline: none; /* Remove active outline */
 }
 
 .btn-span {
@@ -111,13 +131,17 @@
   border-radius: 50px;
 }
 
+.arrow-img {
+  margin-left: 4px; /* Add some spacing for the arrow */
+}
+
 .text-photo {
    width: 478px;
    height: 485px;
    border-radius: 30px;
    object-fit: cover;
   background-color: white;
-  }
+}
 
 .photo-img {
   width: 478px;
@@ -125,6 +149,7 @@
    object-fit: cover;
       border-radius: 30px;
 }
+
 .card-two {
   display: flex;
   width: 1301px;
@@ -153,8 +178,8 @@
 .text-card-two {
   display: flex;
   flex-direction: column;
-  
 }
+
 .content-section-two {
   display: flex;
   flex-direction: column;
@@ -163,7 +188,6 @@
   height: 403px;
   gap: 24px;
 }
-
 
 .text-write-two {
   width: 606px;
@@ -188,13 +212,13 @@
 }
 
 .clip {
- 
   margin: 0;
    padding: 4px 16px;
    border-radius: 10px;
    text-align: center;
    background-color: #E7E3C8;
 }
+
 .cliptext{
   font-family: Satoshi;
   font-size: 15px;
@@ -214,5 +238,14 @@
   padding: 10px 18px;
   font-family: Inter;
   cursor: pointer;
+  border: none; /* Remove default border */
+  outline: none; /* Remove default outline */
 }
- 
+
+.read-case-btn-two:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.read-case-btn-two:active {
+  outline: none; /* Remove active outline */
+}
