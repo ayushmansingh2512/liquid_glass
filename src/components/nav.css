@@ -8,50 +8,130 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
 }
 
-.nav { 
-
+.nav {
   margin: 0;
   width: 1172px;
   height: 72px;
-  padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 80px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.794);
-  
-  /* New properties for the "liquid glass" effect */
-  background-color: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  
-  /* FIXED: Subtle left-side inner shadow */
-  box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.1), 
-    0 1px 3px rgba(0, 0, 0, 0.08),
-    inset 3px 0 8px rgba(0, 0, 0, 0.05); /* Subtle left inner shadow */
+  padding: 0 40px;
 }
 
-.menu {
-  display: flex;
-  gap: 40px;
+/* --- CENTER NAV LINKS CONTAINER --- */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
 }
+
+.center-links-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 32px;
+  border-radius: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- RIGHT CONTAINER (Socials or Menu Button) --- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 180px;
+  position: fixed;
+  top: 37px;
+  right: calc((100vw - 1300px) / 2 + 20px);
+  z-index: 100;
+}
+
+/* --- MENU BUTTON --- */
+.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+  z-index: 100;
+  border-radius: 13px;
+}
+
+.menu-button:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.menu-text {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 32px;
+  position: relative;
+}
+
+.title-photo {
+  width: 54px;
+  height: 54px;
+}
+
+.title-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Menu styles moved to center-links-container */
 
 .para-1 {
   font-family: Satoshi;
   font-size: 16px;
   font-weight: 700;
-  margin: 0%;
+  margin: 0;
   cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.para-1:hover {
+  opacity: 0.7;
 }
 
 .socialMedia {
@@ -71,7 +151,8 @@
 /* Container for all social media icons */
 .socialMedia {
   display: flex;
-  gap: 10px; /* Use the gap value from Figma */
+  gap: 10px;
+  /* Use the gap value from Figma */
   justify-content: center;
   align-items: center;
 }
@@ -82,22 +163,24 @@
   padding: 8px;
   border-radius: 50%;
   cursor: pointer;
-  
+
   /* The liquid glass effect */
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  
+
   /* FIXED: Subtle left-side inner shadow */
-  box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.1), /* External shadow */
-    inset 2px 0 4px rgba(0, 0, 0, 0.08); /* Subtle left inner shadow */
-  
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    /* External shadow */
+    inset 2px 0 4px rgba(0, 0, 0, 0.08);
+  /* Subtle left inner shadow */
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -112,10 +195,53 @@
 /* Hover effects for the button container */
 .socialMediaBtn:hover {
   transform: scale(1.1);
-  box-shadow: 
+  box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.15),
-    inset 3px 0 6px rgba(0, 0, 0, 0.12); /* Slightly stronger left inner shadow on hover */
+    inset 3px 0 6px rgba(0, 0, 0, 0.12);
+  /* Slightly stronger left inner shadow on hover */
 }
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    max-width: calc(100vw - 48px);
+    padding: 0 24px;
+    height: 64px;
+  }
+
+  .title {
+    gap: 6px;
+  }
+
+  .title-photo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-head {
+    font-size: 24px;
+  }
+
+  .nav-right {
+    min-width: 100px;
+    position: fixed;
+    top: 31px;
+    right: 16px;
+  }
+
+  .menu-button {
+    padding: 8px 16px;
+    gap: 6px;
+    color: #1a1a1a;
+  }
+
+  .menu-text {
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
 /* 
 --- commented code ---
 .n-100 {

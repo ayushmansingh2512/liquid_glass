@@ -1,0 +1,129 @@
+/* Backdrop - Dark overlay behind menu */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 90;
+}
+
+/* Menu Container - Full screen dark background */
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 95;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 120px;
+    align-content: center;
+
+}
+
+/* Links Wrapper */
+.menu-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Overflow container for slide-up animation */
+.menu-link-overflow {
+    overflow: hidden;
+}
+
+/* Large menu links - Cuberto style */
+.menu-link-large {
+    display: block;
+    font-family: Clash-Display;
+    font-size: 80px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-link-large:hover {
+    color: #9ca3af !important;
+}
+
+/* Footer - Bottom section with email and socials */
+.menu-footer {
+    position: absolute;
+    bottom: 150px;
+    left: auto;
+    width: 90%;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Satoshi;
+    gap: 16px;
+    align-content: center;
+}
+
+.menu-footer-email {
+    font-size: 14px;
+}
+
+.menu-footer-socials {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+}
+
+.menu-footer-link {
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-footer-link:hover {
+    color: #fff !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-link-large {
+        font-size: 48px;
+    }
+
+    .menu-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        bottom: 24px;
+        padding: 0 24px;
+    }
+
+    .menu-footer-email {
+        font-size: 12px;
+    }
+
+    .menu-footer-socials {
+        gap: 16px;
+        font-size: 12px;
+    }
+}

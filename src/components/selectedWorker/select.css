@@ -1,33 +1,454 @@
-.class-container{
-    margin: 0;
-   padding: 0;
-   width: 100%;
-    background-color:#212121;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 93px;
+.class-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 93px;
 }
 
-.selectedWork{
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: start;
-    width: 1301px;
+/* CardZero Styles */
+.card-zero {
+  display: flex;
+  width: 1301px;
+  background-color: #3D3D3D;
+  border-radius: 24px;
+  height: 545px;
+  overflow: hidden;
 }
-.selectedWork h1{
-    color: white;
-    font-family: kalice;
-    font-size: 40px;
-    font-family: 100;
-    letter-spacing: 3px;
+
+.image-section-zero {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  flex-shrink: 0;
 }
-.star{
-    width: 32px;
+
+.photo-img-zero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.content-section-zero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 32px 56px;
+}
+
+.text-content-zero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo-container-zero {
+  display: flex;
+  align-items: center;
+}
+
+.exotel-logo {
+  height: 32px;
+}
+
+.text-write-zero {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 17.6px;
+}
+
+.text-write-zero2 {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 17.6px;
+}
+
+.description-text-zero {
+  width: 500px;
+}
+
+.main-heading-zero {
+  font-family: kalice;
+  color: white;
+  font-size: 36px;
+  font-weight: 100;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.description-text-zero {
+  font-family: Satoshi;
+  font-size: 16px;
+  color: #D0D0D0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.metrics-container-zero {
+  display: flex;
+  width: 500px;
+  gap: 22px;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metric-label {
+  font-family: Satoshi;
+  font-size: 12px;
+  color: #ffff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.metric-value-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.metric-arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.metric-value {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.badge-24x24 {
+  background: linear-gradient(135deg, #8B5CF6 0%, #3965BF 100%);
+  padding: 7px 14px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-24x24 p {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.button-section-zero {
+  display: flex;
+  gap: 14px;
+}
+
+.read-case-btn-zero {
+  background-color: #3965BF;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+  font-family: inter;
+}
+
+.read-case-btn-zero:hover {
+  background-color: #2E54A8;
+}
+
+.read-case-btn-zero:focus {
+  outline: none;
+}
+
+.read-case-btn-zero:active {
+  outline: none;
+}
+
+/* CardTwo Button Styles */
+.button-section-two {
+  display: flex;
+  gap: 14px;
+}
+
+.read-case-btn-two {
+  background-color: #F25000;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.read-case-btn-two:hover {
+  background-color: #c5551d;
+}
+
+.read-case-btn-two:focus {
+  outline: none;
+}
+
+.read-case-btn-two:active {
+  outline: none;
+}
+
+/* CardThree Button Styles */
+.button-section-three {
+  display: flex;
+  gap: 14px;
+}
+
+.read-case-btn-three {
+  background-color: #3965BF;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.read-case-btn-three:hover {
+  background-color: #2E54A8;
+}
+
+.read-case-btn-three:focus {
+  outline: none;
+}
+
+.read-case-btn-three:active {
+  outline: none;
+}
+
+/* Card One Styles (UX4G) */
+.card-one {
+  display: flex;
+  width: 1301px;
+  background-color: #3D3D3D;
+  border-radius: 24px;
+  height: 545px;
+  overflow: hidden;
+}
+
+.content-section-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 32px 56px;
+}
+
+.text-content-one {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo-container-one {
+  display: flex;
+  align-items: center;
+}
+
+.govt-logo {
+  height: 54px;
+}
+
+.text-write-one {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 17.6px;
+}
+
+.main-heading-one {
+  font-family: kalice;
+  color: white;
+  font-size: 36px;
+  font-weight: 100;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.description-text-one {
+  font-family: Satoshi;
+  font-size: 16px;
+  color: #D0D0D0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.metrics-container-one {
+  display: flex;
+  width: 500px;
+  gap: 22px;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.metric-item-one {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metric-label-one {
+  font-family: Satoshi;
+  font-size: 12px;
+  color: #ffff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.metric-value-container-one {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.metric-value-one {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.button-section-one {
+  display: flex;
+  gap: 14px;
+}
+
+.read-case-btn-one {
+  background-color: #3965BF;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.read-case-btn-one:hover {
+  background-color: #2E54A8;
+}
+
+.read-case-btn-one:focus {
+  outline: none;
+}
+
+.read-case-btn-one:active {
+  outline: none;
+}
+
+.logo-container-nic {
+  height: 27px;
+}
+
+.ux4g-btn-one {
+  background-color: white;
+  color: #414651;
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 18px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.ux4g-btn-one:hover {
+  background-color: #F0F0F0;
+}
+
+.ux4g-btn-one:focus {
+  outline: none;
+}
+
+.ux4g-btn-one:active {
+  outline: none;
+}
+
+.btn-span-one {
+  background-color: #12B76A;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+}
+
+.arrow-img-one {
+  margin-left: 4px;
+}
+
+.image-section-one {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1A1A1A;
+  flex-shrink: 0;
+}
+
+.photo-img-one {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selectedWork {
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: start;
+  width: 1301px;
+}
+
+.selectedWork h1 {
+  color: white;
+  font-family: kalice;
+  font-size: 40px;
+  font-family: 100;
+  letter-spacing: 3px;
+}
+
+.star {
+  width: 32px;
+}
+
 .card {
   display: flex;
   width: 1301px;
@@ -52,7 +473,7 @@
 }
 
 .logo-img {
-   height: 54px;
+  height: 54px;
 }
 
 .text-write {
@@ -67,19 +488,19 @@
 }
 
 .description-text {
-   font-family: Satoshi;
-   font-size: 14px;
-   color:#D0D0D0;
+  font-family: Satoshi;
+  font-size: 14px;
+  color: #D0D0D0;
 }
 
 .frame-img {
- height: 40px; 
- width: 234px;
+  height: 40px;
+  width: 234px;
 }
 
 .button-section {
   display: flex;
-  gap:18px;
+  gap: 18px;
 }
 
 /* Fixed button styles - removed outlines and borders */
@@ -90,16 +511,21 @@
   padding: 10px 18px;
   font-family: Inter;
   cursor: pointer;
-  border: none; /* Remove default border */
-  outline: none; /* Remove default outline */
+  border: none;
+  /* Remove default border */
+  outline: none;
+  /* Remove default outline */
 }
 
+
 .read-case-btn:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
+  /* Remove focus outline */
 }
 
 .read-case-btn:active {
-  outline: none; /* Remove active outline */
+  outline: none;
+  /* Remove active outline */
 }
 
 .ux4g-btn {
@@ -110,18 +536,24 @@
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  border: none; /* Remove default border */
-  outline: none; /* Remove default outline */
-  padding: 10px 18px; /* Add padding for consistency */
-  gap: 8px; /* Add gap between span and text */
+  border: none;
+  /* Remove default border */
+  outline: none;
+  /* Remove default outline */
+  padding: 10px 18px;
+  /* Add padding for consistency */
+  gap: 8px;
+  /* Add gap between span and text */
 }
 
 .ux4g-btn:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
+  /* Remove focus outline */
 }
 
 .ux4g-btn:active {
-  outline: none; /* Remove active outline */
+  outline: none;
+  /* Remove active outline */
 }
 
 .btn-span {
@@ -132,22 +564,23 @@
 }
 
 .arrow-img {
-  margin-left: 4px; /* Add some spacing for the arrow */
+  margin-left: 4px;
+  /* Add some spacing for the arrow */
 }
 
 .text-photo {
-   width: 478px;
-   height: 485px;
-   border-radius: 30px;
-   object-fit: cover;
+  width: 478px;
+  height: 485px;
+  border-radius: 30px;
+  object-fit: cover;
   background-color: white;
 }
 
 .photo-img {
   width: 478px;
-   height: 485px;
-   object-fit: cover;
-      border-radius: 30px;
+  height: 485px;
+  object-fit: cover;
+  border-radius: 30px;
 }
 
 .card-two {
@@ -213,13 +646,13 @@
 
 .clip {
   margin: 0;
-   padding: 4px 16px;
-   border-radius: 10px;
-   text-align: center;
-   background-color: #E7E3C8;
+  padding: 4px 16px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #E7E3C8;
 }
 
-.cliptext{
+.cliptext {
   font-family: Satoshi;
   font-size: 15px;
   padding: 0;
@@ -238,14 +671,18 @@
   padding: 10px 18px;
   font-family: Inter;
   cursor: pointer;
-  border: none; /* Remove default border */
-  outline: none; /* Remove default outline */
+  border: none;
+  /* Remove default border */
+  outline: none;
+  /* Remove default outline */
 }
 
 .read-case-btn-two:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
+  /* Remove focus outline */
 }
 
 .read-case-btn-two:active {
-  outline: none; /* Remove active outline */
+  outline: none;
+  /* Remove active outline */
 }

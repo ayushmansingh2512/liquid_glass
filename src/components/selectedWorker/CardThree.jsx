@@ -1,32 +1,51 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import logo from '../../assets/SelectedWork/nationalEnblem.svg'
-import Frame from '../../assets/SelectedWork/Frame.svg'
-import pixel from '../../assets/SelectedWork/placeholder.svg'
-import arrow2 from '../../assets/SelectedWork/arrow2.svg'
-const CardThree = () => {
+import logo from '../../assets/SelectedWork/nic.svg'
+import nic from '../../assets/SelectedWork/nicLeft.svg'
+
+
+const Card = () => {
   return (
-   <div className='card'>
-      <div className='text-card'>
-        <div className='content-section'>
-          <img className='logo-img' src={logo}/>
-          <div className='text-write'>
-            <h1 className='main-heading'>UX4G Design System: Transforming Government UX Standards </h1>
-            <p className='description-text'>Crafting a unified design language to empower consistency, accessibility, and innovation across India's digital governance landscape.</p>
+    <div className='card-one'>
+      <div className='content-section-one'>
+        <div className='text-content-one'>
+          <div className='logo-container-one'>
+            <img src={logo} className='logo-container-nic' alt="Government of India Logo" />
           </div>
-          <img className='frame-img' src={Frame}/>
+          <div className='text-write-one'>
+            <h1 className='main-heading-one'>Redesigning the eOffice experience</h1>
+            <p className='description-text-one'>Crafting a unified design language to empower consistency, accessibility, and innovation across India's digital governance landscape.</p>
+          </div>
+          <div className='metrics-container-one'>
+            <div className='metric-item-one'>
+              <p className='metric-label-one'>Downloads on Figma</p>
+              <div className='metric-value-container-one'>
+                <p className='metric-value-one'>7,000+</p>
+              </div>
+            </div>
+            <div className='metric-item-one'>
+              <p className='metric-label-one'>Ministries Adopted</p>
+              <div className='metric-value-container-one'>
+                <p className='metric-value-one'>30+</p>
+              </div>
+            </div>
+            <div className='metric-item-one'>
+              <p className='metric-label-one'>States</p>
+              <div className='metric-value-container-one'>
+                <p className='metric-value-one'>Codasjn</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='button-section'>
-          <motion.button whileTap={{ scale: 0.95 }} className='read-case-btn'>Read case Study</motion.button>
-          <motion.button whileTap={{ scale: 0.95 }} className='ux4g-btn'><span className='btn-span'></span>UX4G Design System 2.0 <img className='arrow-img' src={arrow2} alt='arrow'/> </motion.button>
-          
+        <div className='button-section-three'>
+          <motion.button whileTap={{ scale: 0.95 }} className='read-case-btn-three'>Read Case Study</motion.button>
         </div>
       </div>
-      <div className='text-photo'>
-        <img className='photo-img' src={pixel}/>
+      <div className='image-section-one'>
+        <img className='photo-img-one' src={nic} alt="UX4G Design System" />
       </div>
     </div>
   )
 }
 
-export default CardThree
+export default Card
