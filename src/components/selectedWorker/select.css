@@ -431,7 +431,7 @@
 .selectedWork {
   margin: 0;
   display: flex;
-  gap: 20px;
+  margin: 0 0 0 20px;
   align-items: center;
   justify-content: start;
   width: 1301px;
@@ -470,6 +470,7 @@
   gap: 24px;
   flex-direction: column;
   align-items: start;
+
 }
 
 .logo-img {
@@ -685,4 +686,348 @@
 .read-case-btn-two:active {
   outline: none;
   /* Remove active outline */
+}
+
+/* ========================================
+   RESPONSIVE STYLES - MOBILE
+   ======================================== */
+/* Mobile devices - Stack cards vertically (image on top, content below) */
+@media (max-width: 767px) {
+  .class-container {
+    gap: 48px;
+
+    margin: 0 px;
+    box-sizing: border-box;
+    padding: 0 6px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* SelectedWork Header */
+  .selectedWork {
+    padding-top: 48px;
+    width: 100%;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .selectedWork h1 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .star {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* CardZero - Mobile */
+  .card-zero {
+    flex-direction: column;
+    width: 96%;
+    max-width: 96%;
+    height: auto;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    margin: 0 16px;
+  }
+
+  .image-section-zero {
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+  }
+
+  .content-section-zero {
+    padding: 24px 20px 24px 20px;
+  }
+
+  .text-content-zero {
+    gap: 16px;
+  }
+
+  .exotel-logo {
+    height: 26px;
+    width: auto;
+    margin-bottom: 26px;
+  }
+
+  .text-write-zero,
+  .text-write-zero2 {
+    width: 100%;
+  }
+
+  .main-heading-zero {
+    font-size: 24px;
+  }
+
+  .description-text-zero {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .metrics-container-zero {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .metric-item {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .metric-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .badge-24x24 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .button-section-zero,
+  .button-section-two {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .read-case-btn-zero,
+  .read-case-btn-two {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Card One (UX4G) - Mobile */
+  .card-one {
+    flex-direction: column-reverse;
+    width: 96%;
+    max-width: 96%;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 16px;
+  }
+
+  .image-section-one {
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+  }
+
+  .content-section-one {
+    padding: 24px 20px 24px 20px;
+  }
+
+  .text-content-one {
+    gap: 16px;
+  }
+
+  .govt-logo {
+    height: 48px;
+    margin-bottom: 26px;
+  }
+
+  .logo-container-nic {
+    height: 26px;
+    width: auto;
+    margin-bottom: 26px;
+  }
+
+  .text-write-one {
+    width: 100%;
+  }
+
+  .main-heading-one {
+    font-size: 24px;
+  }
+
+  .description-text-one {
+    font-size: 14px;
+  }
+
+  .metrics-container-one {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .metric-item-one {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+  }
+
+  .metric-label-one {
+    font-size: 11px;
+  }
+
+  .metric-value-one {
+    font-size: 20px;
+  }
+
+  .button-section-one,
+  .button-section-three {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .read-case-btn-one,
+  .read-case-btn-three,
+  .ux4g-btn-one {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES - TABLET
+   ======================================== */
+/* Tablet devices - Keep horizontal layout but reduce sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .class-container {
+    gap: 70px;
+    padding: 0 24px;
+  }
+
+  /* SelectedWork Header */
+  .selectedWork {
+    width: 90%;
+    max-width: 900px;
+  }
+
+  .selectedWork h1 {
+    font-size: 34px;
+  }
+
+  .star {
+    width: 28px;
+  }
+
+  /* CardZero - Tablet */
+  .card-zero {
+    width: 90%;
+    max-width: 900px;
+    height: 480px;
+  }
+
+  .content-section-zero {
+    padding: 28px 40px;
+  }
+
+  .text-content-zero {
+    gap: 20px;
+  }
+
+  .exotel-logo {
+    height: 28px;
+  }
+
+  .text-write-zero,
+  .text-write-zero2 {
+    width: 420px;
+  }
+
+  .main-heading-zero {
+    font-size: 30px;
+  }
+
+  .description-text-zero {
+    font-size: 15px;
+    width: 420px;
+  }
+
+  .metrics-container-zero {
+    width: 420px;
+    gap: 18px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+  }
+
+  .metric-value {
+    font-size: 22px;
+  }
+
+  .metric-arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-24x24 p {
+    font-size: 15px;
+  }
+
+  .read-case-btn-zero,
+  .read-case-btn-two {
+    font-size: 15px;
+  }
+
+  /* Card One (UX4G) - Tablet */
+  .card-one {
+    width: 90%;
+    max-width: 900px;
+    height: 480px;
+  }
+
+  .content-section-one {
+    padding: 28px 40px;
+  }
+
+  .text-content-one {
+    gap: 20px;
+  }
+
+  .govt-logo,
+  .logo-container-nic {
+    height: 48px;
+  }
+
+  .text-write-one {
+    width: 420px;
+  }
+
+  .main-heading-one {
+    font-size: 30px;
+  }
+
+  .description-text-one {
+    font-size: 15px;
+  }
+
+  .metrics-container-one {
+    width: 420px;
+    gap: 18px;
+  }
+
+  .metric-label-one {
+    font-size: 11px;
+  }
+
+  .metric-value-one {
+    font-size: 22px;
+  }
+
+  .read-case-btn-one,
+  .read-case-btn-three,
+  .ux4g-btn-one {
+    font-size: 15px;
+  }
 }

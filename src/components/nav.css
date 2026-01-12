@@ -41,13 +41,9 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+
   padding: 12px 32px;
-  border-radius: 80px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
 }
 
 /* --- RIGHT CONTAINER (Socials or Menu Button) --- */
@@ -201,44 +197,143 @@
   /* Slightly stronger left inner shadow on hover */
 }
 
-/* --- RESPONSIVE STYLES --- */
-@media (max-width: 768px) {
+/* ========================================
+   RESPONSIVE STYLES - MOBILE
+   ======================================== */
+/* Mobile devices - Stack and simplify navigation */
+@media (max-width: 767px) {
+  .n-100 {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   .nav {
     width: 100%;
-    max-width: calc(100vw - 48px);
-    padding: 0 24px;
-    height: 64px;
+    max-width: calc(100vw - 32px);
+    padding: 0 20px;
+    height: 60px;
+    justify-content: flex-start !important;
+    margin: 0;
   }
 
   .title {
+    display: flex;
     gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    position: static;
+    flex: 0 0 auto;
+    margin-right: auto;
   }
 
   .title-photo {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 
   .nav-head {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  /* Hide center navigation links on mobile */
+  .nav-center {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .center-links-container {
+    display: none !important;
+    visibility: hidden !important;
   }
 
   .nav-right {
-    min-width: 100px;
+    min-width: auto;
     position: fixed;
-    top: 31px;
+    top: 28px;
     right: 16px;
   }
 
   .menu-button {
-    padding: 8px 16px;
+    padding: 8px 14px;
     gap: 6px;
-    color: #1a1a1a;
   }
 
   .menu-text {
     font-size: 14px;
-    color: #fff;
+  }
+
+  .menu-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Hide social media on mobile, show menu button */
+  .socialMedia {
+    display: none;
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES - TABLET
+   ======================================== */
+/* Tablet devices - Adjust spacing and sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    width: 90%;
+    max-width: 900px;
+    padding: 0 32px;
+    height: 68px;
+  }
+
+  .title {
+    gap: 7px;
+  }
+
+  .title-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-head {
+    font-size: 26px;
+  }
+
+  .center-links-container {
+    gap: 28px;
+    padding: 10px 24px;
+  }
+
+  .para-1 {
+    font-size: 15px;
+  }
+
+  .nav-right {
+    min-width: 150px;
+    right: calc((100vw - 900px) / 2 + 16px);
+  }
+
+  .menu-button {
+    padding: 9px 18px;
+  }
+
+  .menu-text {
+    font-size: 15px;
+  }
+
+  .socialMediaBtn {
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+  }
+
+  .socialMediaIcon {
+    width: 22px;
+    height: 22px;
   }
 }
 

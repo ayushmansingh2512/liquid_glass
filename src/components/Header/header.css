@@ -133,3 +133,108 @@ button {
   padding: 10px 16px;
   cursor: pointer;
 }
+
+/* ========================================
+   RESPONSIVE STYLES - MOBILE
+   ======================================== */
+/* Mobile devices - Smaller text and stacked layout */
+@media (max-width: 767px) {
+  .h-100 {
+    margin-top: 180px;
+  }
+
+  .header-container {
+    width: 90%;
+    max-width: calc(100vw - 32px);
+    gap: 48px;
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
+
+  .intro {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .header-container2 {
+    width: 100%;
+  }
+
+  .h1-header {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .currently {
+    height: auto;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .currently-para {
+    font-size: 16px;
+  }
+
+  .exotel {
+    height: 16px;
+  }
+
+  .greendot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .greendot::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 14px;
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES - TABLET
+   ======================================== */
+/* Tablet devices - Medium sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .h-100 {
+    margin-top: 220px;
+  }
+
+  .header-container {
+    width: 85%;
+    max-width: 800px;
+    gap: 32px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .header-container2 {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .h1-header {
+    font-size: 44px;
+  }
+
+  .currently-para {
+    font-size: 18px;
+  }
+
+  .exotel {
+    height: 17px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 9px 15px;
+    gap: 14px;
+  }
+}

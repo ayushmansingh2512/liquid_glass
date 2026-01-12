@@ -1,39 +1,45 @@
-.mainHighligt{
-    
-   margin: 0;
-   padding: 0;
-   width: 100%;
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+.mainHighligt {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.highlight-156{
- 
-    margin: 156px 0 100px 0 ;
+
+.highlight-156 {
+
+    margin: 156px 0 100px 0;
     width: 1300px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
-.heading{
+
+.heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
 }
+
 .keyHigh {
     display: flex;
     gap: 10px;
     border-radius: 100px;
-    padding: 3px 7px; /* This is your border thickness */
+    padding: 3px 7px;
+    /* This is your border thickness */
     position: relative;
-    background: white; /* or your content background */ 
+    background: white;
+    /* or your content background */
     font-size: 16px;
     align-items: center;
 }
- .keyHigh::before {
+
+.keyHigh::before {
     content: '';
     position: absolute;
     top: -3px;
@@ -44,32 +50,36 @@
     border-radius: 100px;
     z-index: -1;
 }
- 
+
 .p-key {
     font-family: Satoshi;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
 }
-.p-dis{
+
+.p-dis {
     font-size: 16px;
     font-family: Satoshi;
 }
-.highlights{
+
+.highlights {
     height: 540px;
     display: flex;
     gap: 10px;
     margin: 0%;
     padding: 0%;
 }
-.high1{
+
+.high1 {
     display: flex;
     gap: 10px;
     margin: 0%;
     padding: 0%;
     flex-direction: column;
 }
-.figmaProfile{
+
+.figmaProfile {
     width: 262px;
     height: 265px;
     display: flex;
@@ -79,12 +89,14 @@
     border-radius: 13.53px;
     background-color: #1937B2;
 }
-.sysdes{
+
+.sysdes {
     width: 204px;
     height: 192px;
     border-radius: 10px;
 }
-.LFG{
+
+.LFG {
     width: 262px;
     height: 265px;
     border-radius: 13.53px;
@@ -95,27 +107,31 @@
     align-content: end;
     flex-wrap: wrap;
 }
-.LetF{
+
+.LetF {
     margin: 28px;
-    font-family:Clash-Display-bold;
+    font-family: Clash-Display-bold;
     letter-spacing: 1px;
     font-size: 40px;
     flex-wrap: wrap;
     color: white;
 }
-.Fing{
+
+.Fing {
     color: #1937B2;
 }
-.high2{
+
+.high2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 0%;
     padding: 0%;
-    
-    
+
+
 }
-.UX4G{
+
+.UX4G {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,13 +139,15 @@
     height: 150px;
     background-color: #1937B2;
     border-radius: 13.53px;
-    
+
 }
-.UX-img{
+
+.UX-img {
     width: 218px;
     height: 109px;
 }
-.UXText{
+
+.UXText {
     position: relative;
     width: 245px;
     height: 385px;
@@ -139,23 +157,24 @@
     flex-direction: column;
     align-items: end;
     justify-content: center;
-    
+
 }
-.yepThatH{
-    position: ;
+
+.yepThatH {
     color: white;
     font-family: Clash-Display;
     padding: 0 24px;
     font-size: 18px;
 }
-.arrow{
+
+.arrow {
     position: absolute;
     width: 85px;
     top: 37px;
     right: 23px;
 }
 
-.high3{
+.high3 {
     width: 540px;
     background-color: #F25000;
     height: 540px;
@@ -166,33 +185,34 @@
     justify-content: center;
     border-radius: 13.53px;
 }
-.glass{
-    
-  margin: 0;
-  width: 433.83px;
-  height: 511px;
-  
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  border-radius: 13.53px 13.53px 0 0;
-  position: relative;
-   border: 1px solid rgba(255, 255, 255, 0.793);
-  overflow: hidden;
-  
 
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
-  -webkit-backdrop-filter: brightness(1.1) blur(2px);
-  filter: drop-shadow(-8px -10px 46px rgba(0, 0, 0, 0.37));
-  transition: opacity 0.26s ease-out;
+.glass {
+
+    margin: 0;
+    width: 433.83px;
+    height: 511px;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 13.53px 13.53px 0 0;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.793);
+    overflow: hidden;
+
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+    -webkit-backdrop-filter: brightness(1.1) blur(2px);
+    filter: drop-shadow(-8px -10px 46px rgba(0, 0, 0, 0.37));
+    transition: opacity 0.26s ease-out;
 
 }
 
-.high4{
+.high4 {
     padding: 0;
     margin: 0;
-    border-radius: 13.53px;     
+    border-radius: 13.53px;
     background-color: #1937B2;
     height: 540px;
     display: flex;
@@ -200,19 +220,240 @@
     justify-content: space-between;
     align-items: end;
 }
-.And{
-   font-family: Clash-display;
-   color: white;
-   font-size: 18px;
-   margin: 19.4px; 
-   font-size: 500;
-   font-style: normal;
+
+.And {
+    font-family: Clash-display;
+    color: white;
+    font-size: 18px;
+    margin: 19.4px;
+    font-size: 500;
+    font-style: normal;
 }
-.design-com{
- color: #F25000;
+
+.design-com {
+    color: #F25000;
 }
-.indiaInPixel{
+
+.indiaInPixel {
     height: 412px;
     border-radius: 13.5px;
     object-fit: contain;
+}
+
+/* ========================================
+   RESPONSIVE STYLES - MOBILE
+   ======================================== */
+/* Mobile devices - Hide KeyHighlights section completely */
+@media (max-width: 767px) {
+    .mainHighligt {
+        display: none;
+    }
+
+    .highlight-156 {
+        margin: 80px 0 60px 0;
+        width: 100%;
+        gap: 32px;
+    }
+
+    .heading {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .keyHigh {
+        font-size: 14px;
+        padding: 2px 6px;
+    }
+
+    .p-key {
+        font-size: 14px;
+    }
+
+    .p-dis {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Stack all highlights vertically */
+    .highlights {
+        height: auto;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .high1,
+    .high2 {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .figmaProfile,
+    .LFG {
+        width: 100%;
+        height: 220px;
+    }
+
+    .sysdes {
+        width: 160px;
+        height: 150px;
+    }
+
+    .LetF {
+        margin: 20px;
+        font-size: 32px;
+    }
+
+    .UX4G {
+        width: 100%;
+        height: 140px;
+    }
+
+    .UX-img {
+        width: 180px;
+        height: 90px;
+    }
+
+    .UXText {
+        width: 100%;
+        height: 280px;
+    }
+
+    .yepThatH {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .arrow {
+        width: 70px;
+        top: 30px;
+        right: 20px;
+    }
+
+    .high3 {
+        width: 100%;
+        height: 400px;
+    }
+
+    .glass {
+        width: 90%;
+        height: 380px;
+    }
+
+    .high4 {
+        width: 100%;
+        height: 400px;
+    }
+
+    .And {
+        font-size: 16px;
+        margin: 16px;
+    }
+
+    .indiaInPixel {
+        height: 320px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE STYLES - TABLET
+   ======================================== */
+/* Tablet devices - 2-column grid layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mainHighligt {
+        padding: 0 24px;
+    }
+
+    .highlight-156 {
+        margin: 120px 0 80px 0;
+        width: 100%;
+        max-width: 900px;
+        gap: 40px;
+    }
+
+    .heading {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .keyHigh {
+        font-size: 15px;
+    }
+
+    .p-key {
+        font-size: 15px;
+    }
+
+    .p-dis {
+        font-size: 15px;
+    }
+
+    /* 2-column grid for highlights */
+    .highlights {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .high1,
+    .high2 {
+        flex: 1 1 calc(50% - 6px);
+        min-width: 300px;
+    }
+
+    .figmaProfile,
+    .LFG {
+        width: 100%;
+        height: 240px;
+    }
+
+    .sysdes {
+        width: 180px;
+        height: 170px;
+    }
+
+    .LetF {
+        margin: 24px;
+        font-size: 36px;
+    }
+
+    .UX4G {
+        width: 100%;
+        height: 140px;
+    }
+
+    .UXText {
+        width: 100%;
+        height: 340px;
+    }
+
+    .yepThatH {
+        font-size: 17px;
+    }
+
+    .arrow {
+        width: 80px;
+    }
+
+    .high3 {
+        width: 100%;
+        height: 480px;
+    }
+
+    .glass {
+        width: 85%;
+        height: 460px;
+    }
+
+    .high4 {
+        width: 100%;
+        height: 480px;
+    }
+
+    .And {
+        font-size: 17px;
+    }
+
+    .indiaInPixel {
+        height: 380px;
+    }
 }
