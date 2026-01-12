@@ -140,7 +140,7 @@ button {
 /* Mobile devices - Smaller text and stacked layout */
 @media (max-width: 767px) {
   .h-100 {
-    margin-top: 180px;
+    margin-top: 160px;
   }
 
   .header-container {

@@ -110,7 +110,7 @@
 /* Mobile devices - Smaller text and stacked footer */
 @media (max-width: 767px) {
     .menu-container {
-        padding-bottom: 80px;
+        padding-bottom: 200px;
     }
 
     .menu-links-wrapper {
@@ -123,10 +123,13 @@
     }
 
     .menu-footer {
+        position: fixed;
         flex-direction: column;
         align-items: center;
         gap: 16px;
-        bottom: 60px;
+        bottom: 40px;
+        left: 0;
+        right: 0;
         padding: 0 20px;
         width: calc(100% - 40px);
         z-index: 1000;
@@ -135,20 +138,24 @@
     .menu-footer-email {
         font-size: 12px;
         text-align: center;
-        color: rgba(255, 255, 255, 0.8);
+        color: #ffffff;
     }
 
     .menu-footer-socials {
-        gap: 16px;
-        font-size: 12px;
-        display: flex;
-        flex-direction: row;
-        color: rgba(255, 255, 255, 0.8);
+        gap: 20px;
+        font-size: 14px;
+        display: flex !important;
+        flex-direction: row !important;
+        color: #ffffff;
+        width: 100%;
+        justify-content: center;
     }
 
     .menu-footer-link {
-        color: rgba(255, 255, 255, 0.8) !important;
-        display: inline-block;
+        color: #ffffff !important;
+        display: inline-block !important;
+        text-decoration: none;
+        font-size: 14px;
     }
 }
 
