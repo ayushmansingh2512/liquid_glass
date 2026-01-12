@@ -109,9 +109,7 @@
    ======================================== */
 /* Mobile devices - Smaller text and stacked footer */
 @media (max-width: 767px) {
-    .menu-container {
-        padding-bottom: 200px;
-    }
+
 
     .menu-links-wrapper {
         gap: 12px;
