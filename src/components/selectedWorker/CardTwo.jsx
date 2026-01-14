@@ -4,6 +4,7 @@ import umangLogo from '../../assets/SelectedWork/umang.svg'
 import UmangLeft from '../../assets/SelectedWork/umangLeft.svg'
 import arrowDown from '../../assets/SelectedWork/TrendDown.svg'
 import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
+import AnimatedCounter from './AnimatedCounter'
 
 
 const CardZero = () => {
@@ -28,21 +29,21 @@ const CardZero = () => {
               <p className='metric-label'>New Service Onboarding</p>
               <div className='metric-value-container'>
 
-                <p className='metric-value'>120+</p>
+                <p className='metric-value'><AnimatedCounter value={120} className='metric-value' />+</p>
               </div>
             </div>
             <div className='metric-item'>
               <p className='metric-label'>Service Discovery Time</p>
               <div className='metric-value-container'>
                 <img src={arrowDown} alt="Increase" className='metric-arrow' />
-                <p className='metric-value'>18%</p>
+                <p className='metric-value'><AnimatedCounter value={18} className='metric-value' />%</p>
               </div>
             </div>
             <div className='metric-item'>
               <p className='metric-label'>DigiLocker & MyScheme adoption</p>
               <div className='metric-value-container'>
                 <img src={arrowUp} alt="Increase" className='metric-arrow' />
-                <p className='metric-value'>38%</p>
+                <p className='metric-value'><AnimatedCounter value={38} className='metric-value' />%</p>
               </div>
             </div>
 

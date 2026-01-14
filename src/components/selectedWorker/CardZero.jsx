@@ -4,6 +4,7 @@ import ExotelLogo from '../../assets/SelectedWork/exotel.svg'
 import ExotelLeft from '../../assets/SelectedWork/exotelLeft.svg'
 import arrowDown from '../../assets/SelectedWork/TrendDown.svg'
 import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
+import AnimatedCounter from './AnimatedCounter'
 
 
 const CardZero = () => {
@@ -26,21 +27,21 @@ const CardZero = () => {
                             <p className='metric-label'>Average Handling Time</p>
                             <div className='metric-value-container'>
                                 <img src={arrowDown} alt="Decrease" className='metric-arrow' />
-                                <p className='metric-value'>30%</p>
+                                <p className='metric-value'><AnimatedCounter value={30} className='metric-value' />%</p>
                             </div>
                         </div>
                         <div className='metric-item'>
                             <p className='metric-label'>First Call Resolution</p>
                             <div className='metric-value-container'>
                                 <img src={arrowUp} alt="Increase" className='metric-arrow' />
-                                <p className='metric-value'>18%</p>
+                                <p className='metric-value'><AnimatedCounter value={18} className='metric-value' />%</p>
                             </div>
                         </div>
                         <div className='metric-item'>
                             <p className='metric-label'>CSAT</p>
                             <div className='metric-value-container'>
                                 <img src={arrowUp} alt="Increase" className='metric-arrow' />
-                                <p className='metric-value'>12%</p>
+                                <p className='metric-value'><AnimatedCounter value={12} className='metric-value' />%</p>
                             </div>
                         </div>
 
