@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import KeyHighligths from './components/highlights/KeyHighligths';
 import SelectedWork from './components/selectedWorker/SelectedWork';
 import SmoothScroll from './components/SmoothScroll';
+import Preety from './components/Preety/Preety';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
       <SmoothScroll>
         <div className='main-container'>
           <Hero />
-          <Header/>
-          <KeyHighligths/>
-          <SelectedWork/>
+          <Header />
+          <KeyHighligths />
+          <SelectedWork />
+          <Preety />
+          <Footer />
         </div>
       </SmoothScroll>
     </>

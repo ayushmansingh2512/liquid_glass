@@ -1,0 +1,262 @@
+.footer-container {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 60px 40px 0 40px;
+    box-sizing: border-box;
+}
+
+/* Footer Top Section */
+.footer-top {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Footer Header Section */
+.footer-header {
+    max-width: 416px;
+}
+
+.footer-title {
+
+    font-size: 40px;
+    font-weight: 100;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+}
+
+.footer-description {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+/* Social Links Section */
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Glassmorphism Social Media Buttons - Same as Nav */
+.socialMediaBtn {
+    width: 19.5px;
+    height: 19.5px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    fill: #ffffff;
+
+    /* Enhanced liquid glass effect */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Enhanced shadows for depth */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.footer-social-links .socialMediaIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+.socialMediaBtn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* View Resume Button */
+.view-resume-btn {
+    padding: 10px 18px;
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.view-resume-btn:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+/* Footer Content - Large Name */
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footer-name {
+    position: fixed;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    font-size: 270px;
+    line-height: 180%;
+    letter-spacing: 10px;
+    text-align: center;
+    color: #D0D0D099;
+    margin: 0;
+    opacity: 1;
+    bottom: -140px;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .footer-name {
+        font-size: 200px;
+        bottom: -100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        min-height: 500px;
+        padding: 50px 30px 0 30px;
+    }
+
+    .footer-name {
+        font-size: 150px;
+        letter-spacing: 8px;
+        bottom: -80px;
+    }
+
+    .footer-title {
+        font-size: 2rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .footer-header {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 40px 20px 0 20px;
+        min-height: 400px;
+    }
+
+    .footer-name {
+        font-size: 100px;
+        letter-spacing: 5px;
+        bottom: -60px;
+    }
+
+    .footer-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .footer-description {
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        margin-top: 20px;
+    }
+
+    .socialMediaBtn {
+        width: 16px;
+        height: 16px;
+        padding: 8px;
+    }
+
+    .footer-social-links .socialMediaIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .view-resume-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 30px 15px 0 15px;
+        min-height: 350px;
+    }
+
+    .footer-name {
+        font-size: 60px;
+        letter-spacing: 3px;
+        bottom: -40px;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .footer-social-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .socialMediaBtn {
+        width: 14px;
+        height: 14px;
+        padding: 7px;
+    }
+
+    .footer-social-links .socialMediaIcon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .view-resume-btn {
+        padding: 7px 14px;
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+    }
+}
