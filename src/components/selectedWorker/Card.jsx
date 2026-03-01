@@ -39,7 +39,14 @@ const Card = () => {
           </div>
         </div>
         <div className='button-section-one'>
-          <motion.button whileTap={{ scale: 0.95 }} className='read-case-btn-one'>Read Case Study</motion.button>
+          <motion.button whileTap={{ scale: 0.95 }} className='read-case-btn-one' 
+              <a
+              href="https://www.behance.net/gallery/212610759/UX4G-Design-System-Shaping-Indian-Gov?tracking_source=project_owner_other_projects"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+            
+            >Read Case Study</motion.button>
           <motion.button whileTap={{ scale: 0.95 }} className='ux4g-btn-one'>
             <span className='btn-span-one'></span>
             UX4G Design System 2.0
