@@ -47,7 +47,12 @@ const CardZero = () => {
 
                     </div>
                 </div>
-                <div className='button-section-zero'>
+                <div className='button-section-zero'
+                      <a
+                       href="https://www.behance.net/gallery/244967223/Enterprise-Agent-Workspace-Redesign"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                      >
                     <motion.button whileTap={{ scale: 0.95 }} className='read-case-btn-zero'>Read Case Study</motion.button>
                 </div>
             </div>
