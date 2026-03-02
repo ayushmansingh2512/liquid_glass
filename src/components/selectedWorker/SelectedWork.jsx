@@ -7,7 +7,7 @@ import CardThree from './CardThree'
 import './select.css'
 const SelectedWork = () => {
   return (
-    <div className='class-container'>
+    <div id="my-experiences" className='class-container'>
       <MainHeader />
       <CardZero />
       <Card />

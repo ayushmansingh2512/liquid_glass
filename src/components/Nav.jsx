@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import behence from '../assets/socialMedia/behence.svg';
-import gmail from '../assets/socialMedia/gmail.svg';
-import instagram from '../assets/socialMedia/instagram.svg';
+
 import linkin from '../assets/socialMedia/linkin.svg';
 import aditya from '../assets/title/aditya.svg';
 import MenuOverlay from './MenuOverlay';
@@ -89,16 +88,7 @@ const Nav = () => {
                   exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
                   className='socialMedia'
                 >
-                  <a href="https://www.instagram.com/aditya_ps219/?hl=en" target="_blank" rel="noreferrer">
-                    <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
-                      <img className='socialMediaIcon' src={instagram} alt="Instagram" />
-                    </motion.div>
-                  </a>
-                  <a href="mailto:contact@example.com" target="_blank" rel="noreferrer">
-                    <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
-                      <img className='socialMediaIcon' src={gmail} alt="Gmail" />
-                    </motion.div>
-                  </a>
+
                   <a href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" target="_blank" rel="noreferrer">
                     <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
                       <img className='socialMediaIcon' src={linkin} alt="LinkedIn" />

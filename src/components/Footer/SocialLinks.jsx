@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import behence from '../../assets/socialMedia/behence.svg';
-import gmail from '../../assets/socialMedia/gmail.svg';
-import instagram from '../../assets/socialMedia/instagram.svg';
+
 import linkin from '../../assets/socialMedia/linkin.svg';
 
 const SocialLinks = () => {
@@ -12,16 +11,7 @@ const SocialLinks = () => {
                     <img className='socialMediaIcon' src={linkin} alt="LinkedIn" />
                 </motion.div>
             </a>
-            <a href="mailto:contact@example.com" target="_blank" rel="noopener noreferrer">
-                <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
-                    <img className='socialMediaIcon' src={gmail} alt="Gmail" />
-                </motion.div>
-            </a>
-            <a href="https://www.instagram.com/aditya_ps219/?hl=en" target="_blank" rel="noopener noreferrer">
-                <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
-                    <img className='socialMediaIcon' src={instagram} alt="Instagram" />
-                </motion.div>
-            </a>
+
             <a href="https://www.behance.net/aditya219" target="_blank" rel="noopener noreferrer">
                 <motion.div whileTap={{ scale: 0.95 }} className='socialMediaBtn'>
                     <img className='socialMediaIcon' src={behence} alt="Behance" />

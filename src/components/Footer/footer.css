@@ -128,24 +128,29 @@
 }
 
 .footer-name {
-    position: relative;
+    position: absolute;
     font-family: 'Satoshi', sans-serif;
     font-weight: 700;
     font-size: 270px;
-    line-height: 180%;
+    line-height: normal;
     letter-spacing: 10px;
     text-align: center;
     color: #D0D0D099;
     margin: 0;
     opacity: 1;
-    bottom: -140px;
+    bottom: -80px;
+    left: 50%;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 1400px) {
     .footer-name {
         font-size: 200px;
-        bottom: -100px;
+        bottom: -60px;
+        left: 50%;
     }
 }
 
@@ -158,7 +163,8 @@
     .footer-name {
         font-size: 150px;
         letter-spacing: 8px;
-        bottom: -80px;
+        bottom: -40px;
+        left: 50%;
     }
 
     .footer-title {
@@ -185,7 +191,8 @@
     .footer-name {
         font-size: 100px;
         letter-spacing: 5px;
-        bottom: -60px;
+        bottom: -30px;
+        left: 50%;
     }
 
     .footer-title {
@@ -227,7 +234,8 @@
     .footer-name {
         font-size: 60px;
         letter-spacing: 3px;
-        bottom: -40px;
+        bottom: -15px;
+        left: 50%;
     }
 
     .footer-title {
