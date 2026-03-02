@@ -5,7 +5,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import KeyHighligths from './components/highlights/KeyHighligths';
 import SelectedWork from './components/selectedWorker/SelectedWork';
-import SmoothScroll from './components/SmoothScroll';
 import Preety from './components/Preety/Preety';
 import Footer from './components/Footer/Footer';
 
@@ -13,16 +12,14 @@ function App() {
   return (
     <>
       <Nav />
-      <SmoothScroll>
-        <div className='main-container'>
-          <Hero />
-          <Header />
-          <KeyHighligths />
-          <SelectedWork />
-          <Preety />
-          <Footer />
-        </div>
-      </SmoothScroll>
+      <div className='main-container'>
+        <Hero />
+        <Header />
+        <KeyHighligths />
+        <SelectedWork />
+        <Preety />
+        <Footer />
+      </div>
     </>
   );
 }
