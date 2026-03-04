@@ -17,7 +17,7 @@ const SocialLinks = () => {
                     <img className='socialMediaIcon' src={behence} alt="Behance" />
                 </motion.div>
             </a>
-            <a href="https://drive.google.com/file/d/1yNpPA3WGhI_-a3C6SXfZQoAXNy2P0qi5/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="view-resume-btn">
+            <a href="https://drive.google.com/file/d/1rxs_T187DeilHCrqFZsitrOdsrKVWGBA/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="view-resume-btn">
                 View Resume
             </a>
         </div>

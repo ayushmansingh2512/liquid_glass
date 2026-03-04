@@ -4,8 +4,8 @@ import './MenuOverlay.css';
 
 const menuLinks = [
     { title: "Home", href: "#" },
-    { title: "My Experiences", href: "#my-experiences" },
-    { title: "Resume", href: "https://drive.google.com/file/d/1yNpPA3WGhI_-a3C6SXfZQoAXNy2P0qi5/view?usp=drivesdk" },
+    { title: "My Home", href: "#my-experiences" },
+    { title: "Resume", href: "https://drive.google.com/file/d/1rxs_T187DeilHCrqFZsitrOdsrKVWGBA/view?usp=sharing" },
     { title: "Contact", href: "https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" },
 ];
 
@@ -60,7 +60,7 @@ const MenuOverlay = ({ isOpen, onClose }) => {
 
                         {/* Footer / Socials in Menu */}
                         <div className="menu-footer">
-                            <span className="menu-footer-email">adityaps@example.com</span>
+                            <span className="menu-footer-email">adityaps219@gmail.com</span>
                             <div className="menu-footer-socials">
 
                                 <a href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" target="_blank" rel="noreferrer" className="menu-footer-link">LinkedIn</a>

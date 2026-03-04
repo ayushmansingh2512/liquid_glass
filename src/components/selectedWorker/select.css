@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 93px;
+  gap: 72px;
 }
 
 /* CardZero Styles */
@@ -431,11 +431,12 @@
 .selectedWork {
   margin: 0;
   display: flex;
-  margin: 0 0 0 20px;
+  margin: 80px 0 0 20px;
   align-items: center;
   justify-content: start;
   width: 1301px;
   gap: 16px;
+  padding: 0%;
 }
 
 .selectedWork h1 {
@@ -444,6 +445,9 @@
   font-size: 40px;
   font-weight: 100;
   letter-spacing: 3px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .star {
@@ -696,19 +700,19 @@
 @media (max-width: 767px) {
   .class-container {
     gap: 48px;
-
-    margin: 0 px;
+    margin: 0;
     box-sizing: border-box;
     padding: 0 6px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-x: hidden;
   }
 
   /* SelectedWork Header */
   .selectedWork {
-    padding-top: 48px;
-    width: 100%;
+    width: calc(100% - 20px);
+    margin: 40px 0 0 20px;
     flex-direction: row;
     gap: 8px;
     align-items: center;
@@ -716,8 +720,10 @@
   }
 
   .selectedWork h1 {
-    font-size: 20px;
+    font-size: 28px;
     text-align: left;
+    line-height: 1;
+    margin: 0;
   }
 
   .star {
@@ -728,13 +734,12 @@
   /* CardZero - Mobile */
   .card-zero {
     flex-direction: column;
-    width: 96%;
-    max-width: 96%;
+    width: 94%;
+    max-width: 94%;
     height: auto;
     box-sizing: border-box;
-
     overflow: hidden;
-    margin: 0 16px;
+    margin: 0 auto;
   }
 
   .image-section-zero {
@@ -817,12 +822,12 @@
   /* Card One (UX4G) - Mobile */
   .card-one {
     flex-direction: column-reverse;
-    width: 96%;
-    max-width: 96%;
+    width: 94%;
+    max-width: 94%;
     height: auto;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 0 16px;
+    margin: 0 auto;
   }
 
   .image-section-one {

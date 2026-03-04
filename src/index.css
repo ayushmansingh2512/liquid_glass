@@ -8,6 +8,13 @@
 }
 
 @font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./assets/fonts/Satoshi-Bold.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Clash-Display';
   src: url('./assets/fonts/ClashDisplay-Regular.otf') format('truetype');
   font-weight: 500;

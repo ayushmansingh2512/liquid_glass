@@ -23,7 +23,7 @@
 
 /* Footer Header Section */
 .footer-header {
-    max-width: 416px;
+    max-width: 450px;
 }
 
 .footer-title {
@@ -129,8 +129,8 @@
 
 .footer-name {
     position: absolute;
-    font-family: 'Satoshi', sans-serif;
-    font-weight: 700;
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-weight: bold;
     font-size: 270px;
     line-height: normal;
     letter-spacing: 10px;
