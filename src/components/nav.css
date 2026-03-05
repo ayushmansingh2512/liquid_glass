@@ -259,6 +259,7 @@
   }
 
   .menu-button {
+    margin-top: 7px;
     padding: 8px 14px;
     gap: 6px;
   }
