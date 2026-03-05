@@ -4,7 +4,7 @@ import './MenuOverlay.css';
 
 const menuLinks = [
     { title: "Home", href: "#" },
-    { title: "My Home", href: "#my-experiences" },
+    { title: "My Work", href: "#my-experiences" },
     { title: "Resume", href: "https://drive.google.com/file/d/1rxs_T187DeilHCrqFZsitrOdsrKVWGBA/view?usp=sharing" },
     { title: "Contact", href: "https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" },
 ];

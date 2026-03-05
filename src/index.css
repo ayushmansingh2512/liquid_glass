@@ -49,3 +49,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}

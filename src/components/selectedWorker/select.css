@@ -909,13 +909,15 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .class-container {
     gap: 70px;
-    padding: 0 24px;
+    padding: 0 24px 80px 24px;
+    overflow-x: hidden;
   }
 
   /* SelectedWork Header */
   .selectedWork {
     width: 90%;
     max-width: 900px;
+    margin: 40px auto 0;
   }
 
   .selectedWork h1 {
@@ -931,6 +933,7 @@
     width: 90%;
     max-width: 900px;
     height: 480px;
+    margin: 0 auto;
   }
 
   .content-section-zero {
@@ -991,6 +994,7 @@
     width: 90%;
     max-width: 900px;
     height: 480px;
+    margin: 0 auto;
   }
 
   .content-section-one {

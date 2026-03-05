@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import KeyHighligths from './components/highlights/KeyHighligths';
 import SelectedWork from './components/selectedWorker/SelectedWork';
-import Preety from './components/Preety/Preety';
+// import Preety from './components/Preety/Preety';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Header />
         <KeyHighligths />
         <SelectedWork />
-        <Preety />
+        {/* <Preety /> */}
         <Footer />
       </div>
     </>
