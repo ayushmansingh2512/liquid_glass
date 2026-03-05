@@ -14,8 +14,10 @@ const Header = () => {
         </div>
         <div className='currently'>
           <div className='greendot'></div>
-          <p className='currently-para'>Currently designing CCaaS Enterprise Experiences for</p>
-          <img className='exotel' src={exotel} alt="Exotel" />
+          <p className='currently-para'>
+            Currently designing CCaaS Enterprise Experiences for&nbsp;
+            <img className='exotel exotel-inline' src={exotel} alt="Exotel" />
+          </p>
         </div>
 
         <a href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" target="_blank"><motion.button whileTap={{ scale: 0.95 }}><img className='plane' src={plane} alt="plane" /> Contact Me</motion.button></a>

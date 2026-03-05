@@ -61,15 +61,18 @@
 .currently-para {
   font-family: Satoshi;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 21px;
   margin: 0;
 }
 
 .exotel {
   height: 18.64px;
+  vertical-align: auto;
+
 }
 
 .greendot {
+  vertical-align: auto;
   position: relative;
   width: 16px;
   height: 16px;
@@ -173,8 +176,12 @@ button {
 
   .currently {
     height: auto;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 8px;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .currently-para {
@@ -182,7 +189,7 @@ button {
   }
 
   .exotel {
-    height: 16px;
+    height: 14px;
   }
 
   .greendot {
@@ -231,7 +238,7 @@ button {
   }
 
   .currently-para {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .exotel {
