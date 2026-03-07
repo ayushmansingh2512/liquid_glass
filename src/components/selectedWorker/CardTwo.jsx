@@ -26,24 +26,23 @@ const CardZero = () => {
           </div>
           <div className='metrics-container-zero'>
             <div className='metric-item'>
-              <p className='metric-label'>New Service Onboarding</p>
-              <div className='metric-value-container'>
-
-                <p className='metric-value'><AnimatedCounter value={120} className='metric-value' />+</p>
-              </div>
-            </div>
-            <div className='metric-item'>
-              <p className='metric-label'>Service Discovery Time</p>
-              <div className='metric-value-container'>
-                <img src={arrowDown} alt="Increase" className='metric-arrow' />
-                <p className='metric-value'><AnimatedCounter value={18} className='metric-value' />%</p>
-              </div>
-            </div>
-            <div className='metric-item'>
               <p className='metric-label'>DigiLocker & MyScheme adoption</p>
               <div className='metric-value-container'>
                 <img src={arrowUp} alt="Increase" className='metric-arrow' />
-                <p className='metric-value'><AnimatedCounter value={38} className='metric-value' />%</p>
+                <p className='metric-value'><AnimatedCounter value={8} className='metric-value' />%</p>
+              </div>
+            </div>
+            <div className='metric-item'>
+              <p className='metric-label'>First Service discovery time</p>
+              <div className='metric-value-container'>
+                <img src={arrowDown} alt="Decrease" className='metric-arrow' />
+                <p className='metric-value'><AnimatedCounter value={42} className='metric-value' />%</p>
+              </div>
+            </div>
+            <div className='metric-item'>
+              <p className='metric-label'>Recurring Service Discovery</p>
+              <div className='metric-value-container'>
+                <p className='metric-value'><AnimatedCounter value={120} className='metric-value' />+</p>
               </div>
             </div>
 

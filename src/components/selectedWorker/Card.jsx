@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import logo from '../../assets/SelectedWork/nationalEnblem.svg'
 import ux4g from '../../assets/SelectedWork/ux4gLeft.svg'
 import AnimatedCounter from './AnimatedCounter'
+import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
 
 
 const Card = () => {
@@ -21,19 +22,21 @@ const Card = () => {
             <div className='metric-item-one'>
               <p className='metric-label-one'>Downloads on Figma</p>
               <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={7000} className='metric-value-one' />+</p>
+                <p className='metric-value-one'><AnimatedCounter value={15000} className='metric-value-one' />+</p>
               </div>
             </div>
             <div className='metric-item-one'>
               <p className='metric-label-one'>Ministries Adopted</p>
               <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={30} className='metric-value-one' />+</p>
+                <p className='metric-value-one'><AnimatedCounter value={45} className='metric-value-one' />+</p>
               </div>
             </div>
             <div className='metric-item-one'>
-              <p className='metric-label-one'>States</p>
+              <p className='metric-label-one'>Development Productivity</p>
               <div className='metric-value-container-one'>
-                <p className='metric-value-one'>Codasjn</p>
+                <img src={arrowUp} alt="Increase" className='metric-arrow' />
+                <p className='metric-value-one'><AnimatedCounter value={12} className='metric-value-one' />%</p>
+                <span className='sampled-data'>Sampled Data</span>
               </div>
             </div>
           </div>

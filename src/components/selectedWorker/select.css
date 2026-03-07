@@ -42,6 +42,8 @@
   padding: 32px 56px;
 }
 
+
+
 .text-content-zero {
   display: flex;
   flex-direction: column;
@@ -62,6 +64,15 @@
   display: flex;
   flex-direction: column;
   gap: 17.6px;
+}
+
+.center-box {
+  margin-top: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .text-write-zero2 {
@@ -220,6 +231,14 @@
   gap: 14px;
 }
 
+.center-box2 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .read-case-btn-three {
   background-color: #3965BF;
   color: white;
@@ -337,6 +356,15 @@
   font-weight: 600;
   color: white;
   margin: 0;
+}
+
+.sampled-data {
+  font-family: Satoshi;
+  font-size: 10px;
+  color: #D0D0D0;
+  margin-left: 6px;
+  align-self: flex-end;
+  margin-bottom: 4px;
 }
 
 .button-section-one {

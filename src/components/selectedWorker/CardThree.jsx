@@ -5,6 +5,8 @@ import nic from '../../assets/SelectedWork/nicLeft.svg'
 import AnimatedCounter from './AnimatedCounter'
 
 
+import arrowDown from '../../assets/SelectedWork/TrendDown.svg'
+
 const Card = () => {
   return (
     <div className='card-one'>
@@ -13,29 +15,22 @@ const Card = () => {
           <div className='logo-container-one'>
             <img src={logo} className='logo-container-nic' alt="Government of India Logo" />
           </div>
-          <div className='text-write-one'>
-            <h1 className='main-heading-one'>Redesigning the eOffice experience</h1>
-            <p className='description-text-one'>Crafting a unified design language to empower consistency, accessibility, and innovation across India's digital governance landscape.</p>
-          </div>
-          <div className='metrics-container-one'>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>Downloads on Figma</p>
-              <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={7000} className='metric-value-one' />+</p>
+          <div className='center-box2'>
+            <div className='text-write-one'>
+              <h1 className='main-heading-one'>Redesigning the eOffice experience</h1>
+              <p className='description-text-one'>Crafting a unified design language to empower consistency, accessibility, and innovation across India's digital governance landscape.</p>
+            </div>
+            <div className='metrics-container-one'>
+              <div className='metric-item-one'>
+                <p className='metric-label-one'>Avg File Handling Time</p>
+                <div className='metric-value-container-one'>
+                  <img src={arrowDown} alt="Decrease" className='metric-arrow' />
+                  <p className='metric-value-one'>x%</p>
+                </div>
+                <p className='description-text-one' style={{ marginTop: '10px' }}>Can't reveal any impact metrics due to NDA</p>
               </div>
             </div>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>Ministries Adopted</p>
-              <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={30} className='metric-value-one' />+</p>
-              </div>
-            </div>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>States</p>
-              <div className='metric-value-container-one'>
-                <p className='metric-value-one'>Codasjn</p>
-              </div>
-            </div>
+
           </div>
         </div>
         <div className='button-section-three'>
