@@ -1,22 +1,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import umangLogo from '../../assets/SelectedWork/umang.svg'
-import UmangLeft from '../../assets/SelectedWork/umangLeft.svg'
+import UmangLeft from '../../assets/SelectedWork/2.svg'
 import arrowDown from '../../assets/SelectedWork/TrendDown.svg'
 import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
 import AnimatedCounter from './AnimatedCounter'
 
-
-const CardZero = () => {
+const CardTwo = () => {
   return (
     <div className='card-zero'>
       <div className='image-section-zero'>
-        <img className='photo-img-zero' src={UmangLeft} alt="Exotel Interface" />
+        <img className='photo-img-zero' src={UmangLeft} alt="UMANG Interface" />
       </div>
       <div className='content-section-zero'>
         <div className='text-content-zero'>
           <div className='logo-container-zero'>
-            <img src={umangLogo} alt="Exotel Logo" className='exotel-logo' />
+            <img src={umangLogo} alt="UMANG Logo" className='exotel-logo' />
           </div>
           <div className='text-write-zero2'>
             <h1 className='main-heading-zero'>Redesigning UMANG for India: Integrated Services, Higher Adoption, Smarter Discovery</h1>
@@ -45,7 +44,6 @@ const CardZero = () => {
                 <p className='metric-value'><AnimatedCounter value={120} className='metric-value' />+</p>
               </div>
             </div>
-
           </div>
         </div>
         <div className='button-section-two'>
@@ -56,4 +54,4 @@ const CardZero = () => {
   )
 }
 
-export default CardZero
+export default CardTwo

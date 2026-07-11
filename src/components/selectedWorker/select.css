@@ -268,6 +268,7 @@
 /* Card One Styles (UX4G) */
 .card-one {
   display: flex;
+  flex-direction: row-reverse;
   width: 1301px;
   background-color: #3D3D3D;
   border-radius: 24px;
@@ -849,7 +850,7 @@
 
   /* Card One (UX4G) - Mobile */
   .card-one {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 94%;
     max-width: 94%;
     height: auto;

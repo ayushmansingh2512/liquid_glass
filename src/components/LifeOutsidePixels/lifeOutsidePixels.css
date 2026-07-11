@@ -1,0 +1,92 @@
+/* Life Outside Pixels responsive display helper classes */
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.items-stretch {
+  align-items: stretch !important;
+}
+
+/* Large devices (lg): min-width 1025px */
+@media (min-width: 1025px) {
+  .lg\:block {
+    display: block !important;
+  }
+  .lg\:hidden {
+    display: none !important;
+  }
+}
+
+/* Medium devices (md): 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .md\:flex {
+    display: flex !important;
+  }
+  .md\:hidden {
+    display: none !important;
+  }
+}
+
+/* Mobile devices (sm/xs): max-width 767px */
+@media (max-width: 767px) {
+  .md\:flex {
+    display: none !important;
+  }
+}
+
+/* Keyframes and animations for mobile scroll */
+@keyframes mob-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes mob-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.si-v2-mob-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  padding: 4px 0;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.si-v2-mob-track-left {
+  animation: mob-scroll-left 32s linear infinite;
+}
+
+.si-v2-mob-track-right {
+  animation: mob-scroll-right 32s linear infinite;
+}
+
+.si-v2-mobile-card-wrap {
+  width: 310px;
+  height: 266px;
+  flex-shrink: 0;
+}
+
+.si-v2-mobile-card-wrap .si-v2-card {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.si-v2-card {
+  aspect-ratio: 7 / 6;
+  height: 100%;
+  width: auto;
+}

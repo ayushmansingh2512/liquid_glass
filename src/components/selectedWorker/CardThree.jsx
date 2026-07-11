@@ -1,15 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import logo from '../../assets/SelectedWork/nic.svg'
-import nic from '../../assets/SelectedWork/nicLeft.svg'
+import nic from '../../assets/SelectedWork/3.svg'
 import AnimatedCounter from './AnimatedCounter'
-
-
 import arrowDown from '../../assets/SelectedWork/TrendDown.svg'
 
-const Card = () => {
+const CardThree = () => {
   return (
     <div className='card-one'>
+      <div className='image-section-one'>
+        <img className='photo-img-one' src={nic} alt="eOffice experience" />
+      </div>
       <div className='content-section-one'>
         <div className='text-content-one'>
           <div className='logo-container-one'>
@@ -30,7 +31,6 @@ const Card = () => {
                 <p className='description-text-one' style={{ marginTop: '10px' }}>Can't reveal any impact metrics due to NDA</p>
               </div>
             </div>
-
           </div>
         </div>
         <div className='button-section-three'>
@@ -45,11 +45,8 @@ const Card = () => {
           </a>
         </div>
       </div>
-      <div className='image-section-one'>
-        <img className='photo-img-one' src={nic} alt="UX4G Design System" />
-      </div>
     </div>
   )
 }
 
-export default Card
+export default CardThree

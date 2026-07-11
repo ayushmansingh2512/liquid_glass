@@ -1,14 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import logo from '../../assets/SelectedWork/nationalEnblem.svg'
-import ux4g from '../../assets/SelectedWork/ux4gLeft.svg'
+import ux4g from '../../assets/SelectedWork/1.svg'
 import AnimatedCounter from './AnimatedCounter'
 import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
-
 
 const Card = () => {
   return (
     <div className='card-one'>
+      <div className='image-section-one'>
+        <img className='photo-img-one' src={ux4g} alt="UX4G Design System" />
+      </div>
       <div className='content-section-one'>
         <div className='text-content-one'>
           <div className='logo-container-one'>
@@ -69,9 +71,6 @@ const Card = () => {
             </motion.button>
           </a>
         </div>
-      </div>
-      <div className='image-section-one'>
-        <img className='photo-img-one' src={ux4g} alt="UX4G Design System" />
       </div>
     </div>
   )
