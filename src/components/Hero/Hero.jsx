@@ -3,12 +3,12 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-<div class="hero-container">
-  <div class="hero">
-    <div class="hero-blob"></div>
-    
-  </div>
-</div>
+    <div class="hero-container">
+      <div class="hero">
+        <div class="hero-blob"></div>
+
+      </div>
+    </div>
   );
 };
 

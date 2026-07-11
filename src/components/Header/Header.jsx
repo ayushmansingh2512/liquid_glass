@@ -1,29 +1,29 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import './header.css'
-import exotel from '../../assets/hero/Group.svg'
-import plane from '../../assets/hero/plane.svg'
-//  --- all of the images for this section are in hero/assests for both exotel logo and contact me ---  
+import React from 'react';
+import HeaderTopBar from './HeaderTopBar';
+import HeroTitle from './HeroTitle';
+import HeroStack from './HeroStack';
+import './header.css';
+
 const Header = () => {
   return (
     <div className='h-100'>
       <div className="header-container">
-        <p className='intro'>Hey, I'm <span>Aditya</span></p>
-        <div className='header-container2'>
-          <h1 className='h1-header'><span className='design'>Designing</span> products, systems & stories</h1>
-        </div>
-        <div className='currently'>
-          <div className='greendot'></div>
-          <p className='currently-para'>
-            Currently designing CCaaS Enterprise Experiences for&nbsp;
-            <img className='exotel exotel-inline' src={exotel} alt="Exotel" />
-          </p>
+        
+        {/* --- Top Row: Profile info & Contact buttons --- */}
+        <HeaderTopBar />
+
+        {/* --- 60px Spacer Gap --- */}
+        <div className="spacer-60" />
+
+        {/* --- Hero Body Section (Title & Stack Icons) --- */}
+        <div className="hero-body-container">
+          <HeroTitle />
+          <HeroStack />
         </div>
 
-        <a href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" target="_blank"><motion.button whileTap={{ scale: 0.95 }}><img className='plane' src={plane} alt="plane" /> Contact Me</motion.button></a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

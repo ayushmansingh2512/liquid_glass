@@ -34,7 +34,6 @@ const Nav = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   // Visibility logic
-  const showCenterLinks = !isScrolled && !isMenuOpen && !isMobile;
   const showSocials = !isScrolled && !isMenuOpen && !isMobile;
   const showMenuButton = isScrolled || isMenuOpen || isMobile;
 
@@ -50,31 +49,6 @@ const Nav = () => {
               <img className='title-png' src={aditya} alt="Aditya" />
             </div>
             <h1 className='nav-head'>Aditya PS.</h1>
-          </div>
-
-          {/* --- CENTER: Nav Links (Visible at top) --- */}
-          <div className='nav-center'>
-            <AnimatePresence>
-              {showCenterLinks && (
-                <motion.div
-                  key="center-links"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
-                  className='center-links-container'
-                >
-                  <a href="https://drive.google.com/file/d/1rxs_T187DeilHCrqFZsitrOdsrKVWGBA/view?usp=sharing" target="_blank" rel="noreferrer">
-                    <motion.p whileTap={{ scale: 0.95 }} className='para-1'>Resume</motion.p>
-                  </a>
-                  <a href="#my-experiences">
-                    <motion.p whileTap={{ scale: 0.95 }} className='para-1'>My Work</motion.p>
-                  </a>
-                  <a href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" target="_blank" rel="noreferrer">
-                    <motion.p whileTap={{ scale: 0.95 }} className='para-1'>Contact</motion.p>
-                  </a>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
 
           {/* --- RIGHT: Socials <-> Menu Button --- */}

@@ -21,29 +21,60 @@ const CustomCursor = () => {
 
     let clientX = 0;
     let clientY = 0;
-    let lerpX = 0;
-    let lerpY = 0;
+    
+    // Lerped coordinate states
+    let dotLerpX = 0;
+    let dotLerpY = 0;
+    let labelLerpX = 0;
+    let labelLerpY = 0;
+    
     let animationFrameId = null;
     let lastLabelText = '';
 
     const handleMouseMove = (e) => {
       clientX = e.clientX;
       clientY = e.clientY;
-      if (dot) {
-        dot.style.transform = `translate3d(${clientX}px, ${clientY}px, 0) translate(-50%, -50%)`;
-      }
     };
 
     const animate = () => {
-      lerpX += (clientX - lerpX) * 0.25;
-      lerpY += (clientY - lerpY) * 0.25;
+      // Find element under cursor
+      const element = document.elementFromPoint(clientX, clientY);
+      
+      // Bounding captures for magnetic snap effect (a tags, buttons, magnetic classes)
+      const hoveredBtn = element && element.closest('a, button, [role="button"], .clickable, .magnetic-btn');
+      
+      let targetDotX = clientX;
+      let targetDotY = clientY;
+      let isCaptured = false;
 
-      if (labelPos) {
-        labelPos.style.transform = `translate3d(${lerpX}px, ${lerpY}px, 0) translate(-50%, -50%)`;
+      if (hoveredBtn) {
+        const rect = hoveredBtn.getBoundingClientRect();
+        const btnCenterX = rect.left + rect.width / 2;
+        const btnCenterY = rect.top + rect.height / 2;
+        
+        // Snapping attraction algorithm: lock center with light mouse drag responsiveness
+        targetDotX = btnCenterX + (clientX - btnCenterX) * 0.2;
+        targetDotY = btnCenterY + (clientY - btnCenterY) * 0.2;
+        isCaptured = true;
       }
 
-      // Check element under cursor
-      const element = document.elementFromPoint(clientX, clientY);
+      // Smooth interpolation values
+      const dotSpeed = isCaptured ? 0.35 : 0.25;
+      dotLerpX += (targetDotX - dotLerpX) * dotSpeed;
+      dotLerpY += (targetDotY - dotLerpY) * dotSpeed;
+
+      labelLerpX += (clientX - labelLerpX) * 0.20;
+      labelLerpY += (clientY - labelLerpY) * 0.20;
+
+      // Translate coordinates using 3D hardware-acceleration
+      if (dot) {
+        dot.style.transform = `translate3d(${dotLerpX}px, ${dotLerpY}px, 0) translate(-50%, -50%)`;
+      }
+      if (labelPos) {
+        labelPos.style.transform = `translate3d(${labelLerpX}px, ${labelLerpY}px, 0) translate(-50%, -50%)`;
+      }
+
+      // Element text label captures (data-cursor attributes)
       const isSuppress = element && element.closest('[data-cursor-suppress]');
       const cursorTarget = !isSuppress && element && element.closest('[data-cursor]');
       const hasCursorText = !!cursorTarget;
@@ -61,13 +92,11 @@ const CustomCursor = () => {
         if (dot) dot.classList.remove('custom-cursor-dot-hidden');
       }
 
-      // Grow dot on hoverable selectors
-      const isHoverable = !hasCursorText && element && (
-        element.closest('a, button, [role="button"], input, textarea, select, .clickable') || isSuppress
-      );
-
+      // Apply classes to trigger CSS transitions for sizes and shapes
       if (dot) {
-        dot.classList.toggle('custom-cursor-dot-hover', !!isHoverable);
+        const isHoverable = !hasCursorText && (hoveredBtn || isSuppress);
+        dot.classList.toggle('custom-cursor-dot-hover', !!isHoverable && !isCaptured);
+        dot.classList.toggle('custom-cursor-dot-captured', !!isCaptured);
       }
 
       animationFrameId = requestAnimationFrame(animate);

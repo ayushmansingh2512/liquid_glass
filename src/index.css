@@ -111,6 +111,14 @@ html.custom-cursor-active .custom-cursor-label-pos {
   opacity: 0;
 }
 
+.custom-cursor-dot.custom-cursor-dot-captured {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 1.5px solid #fff;
+  mix-blend-mode: difference;
+}
+
 .custom-cursor-label {
   color: #fff;
   letter-spacing: -0.26px;
