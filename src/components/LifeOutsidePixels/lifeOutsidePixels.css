@@ -16,6 +16,7 @@
   .lg\:block {
     display: block !important;
   }
+
   .lg\:hidden {
     display: none !important;
   }
@@ -26,6 +27,7 @@
   .md\:flex {
     display: flex !important;
   }
+
   .md\:hidden {
     display: none !important;
   }
@@ -184,13 +186,23 @@
    KEYFRAMES (mobile scroll)
    ======================================== */
 @keyframes mob-scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes mob-scroll-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .si-v2-mob-track {
@@ -225,4 +237,44 @@
   aspect-ratio: 7 / 6;
   height: 100%;
   width: auto;
+}
+
+/* Responsive Desktop Container Sizing (proportional scaling) */
+.lop-desktop-container {
+  position: relative;
+  width: 1500px;
+  height: 860px;
+  flex-shrink: 0;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+@media (max-width: 1550px) {
+  .lop-desktop-container {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 1380px) {
+  .lop-desktop-container {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 1220px) {
+  .lop-desktop-container {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 1100px) {
+  .lop-desktop-container {
+    transform: scale(0.65);
+  }
+}
+
+/* Mobile Music Card Sizing to prevent overflow */
+@media (max-width: 767px) {
+  .lop-music-card {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 158 / 195;
+  }
 }

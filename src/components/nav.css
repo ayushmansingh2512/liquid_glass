@@ -16,16 +16,30 @@
   z-index: 100;
 }
 
+.grid-background {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav {
   margin: 0;
-  width: 1310px;
+  width: 100%;
+  max-width: 1300px;
   height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 80px;
   position: relative;
-  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1350px) {
+  .nav {
+    padding: 0 40px;
+  }
 }
 
 /* --- CENTER NAV LINKS CONTAINER --- */
@@ -54,13 +68,13 @@
   min-width: 180px;
   position: fixed;
   top: 37px;
-  right: calc((100vw - 1300px) / 2 + 20px);
+  right: max(40px, calc((100vw - 1300px) / 2));
   z-index: 100;
 }
 
 /* --- MENU BUTTON --- */
 .menu-button {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -74,6 +88,16 @@
   position: relative;
   z-index: 100;
   border-radius: 13px;
+}
+
+.scrolled .menu-button,
+.menu-open .menu-button {
+  display: flex;
+}
+
+.scrolled .socialMedia,
+.menu-open .socialMedia {
+  display: none;
 }
 
 .menu-button:hover {
@@ -203,17 +227,19 @@
 /* Mobile devices - Stack and simplify navigation */
 @media (max-width: 767px) {
   .n-100 {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .nav {
     width: 100%;
-    max-width: calc(100vw - 32px);
-    padding: 0 20px;
+    max-width: 100%;
+    padding: 0;
     height: 60px;
-    justify-content: flex-start !important;
-    margin: 0;
+    justify-content: space-between !important;
+    margin: 0 auto;
   }
 
   .title {
@@ -255,7 +281,7 @@
     min-width: auto;
     position: fixed;
     top: 28px;
-    right: 16px;
+    right: 20px;
   }
 
   .menu-button {
@@ -275,7 +301,10 @@
 
   /* Hide social media on mobile, show menu button */
   .socialMedia {
-    display: none;
+    display: none !important;
+  }
+  .menu-button {
+    display: flex !important;
   }
 }
 
@@ -283,19 +312,21 @@
    RESPONSIVE STYLES - TABLET
    ======================================== */
 /* Tablet devices - Same as mobile nav (hamburger menu) */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .n-100 {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
 
   .nav {
     width: 100%;
-    max-width: calc(100vw - 48px);
-    padding: 0 24px;
+    max-width: 900px;
+    padding: 0;
     height: 68px;
-    justify-content: flex-start !important;
-    margin: 0;
+    justify-content: space-between !important;
+    margin: 0 auto;
   }
 
   .title {
@@ -332,7 +363,7 @@
     min-width: auto;
     position: fixed;
     top: 36px;
-    right: 24px;
+    right: max(24px, calc((100vw - 900px) / 2));
   }
 
   .menu-button {
@@ -351,7 +382,10 @@
 
   /* Hide social icons, show hamburger only */
   .socialMedia {
-    display: none;
+    display: none !important;
+  }
+  .menu-button {
+    display: flex !important;
   }
 }
 

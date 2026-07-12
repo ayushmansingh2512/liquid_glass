@@ -312,7 +312,10 @@ const LifeOutsidePixels = () => {
       {/* Desktop view */}
       <div ref={containerRef} className="hidden lg:block" style={{ height: '300vh', background: 'transparent' }}>
         <div ref={triggerRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center' }}>
-          <motion.div style={{ position: 'relative', width: 1500, height: 860, flexShrink: 0, opacity: containerOpacity, willChange: 'transform, opacity' }}>
+          <motion.div
+            className="lop-desktop-container"
+            style={{ opacity: containerOpacity }}
+          >
             {cardsData.map((card) => (
               <InteractiveCard
                 key={card.id}

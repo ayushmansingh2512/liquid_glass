@@ -1,5 +1,5 @@
 .h-100 {
-  margin-top: 190px;
+  margin-top: 210px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,11 +7,19 @@
 }
 
 .header-container {
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   display: flex;
   flex-direction: column;
   z-index: 20;
-  margin: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1350px) {
+  .header-container {
+    padding: 0 40px;
+  }
 }
 
 /* Header Top Bar */
@@ -117,6 +125,14 @@
   text-align: left;
 }
 
+.hero-title-desktop {
+  display: block;
+}
+
+.hero-title-mobile {
+  display: none;
+}
+
 .hero-title .highlight-text {
 
   color: #D54902;
@@ -138,15 +154,18 @@
 /* ========================================
    RESPONSIVE STYLES - TABLET
    ======================================== */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .h-100 {
-    margin-top: 80px;
+    margin-top: 160px;
     padding: 0 24px;
+    box-sizing: border-box;
+
   }
 
   .header-container {
     width: 100%;
     max-width: 900px;
+    padding: 0;
   }
 
   .intro-text,
@@ -164,6 +183,15 @@
   .hero-title,
   .hero-title .highlight-text {
     font-size: 48px;
+    line-height: 1.25 !important;
+  }
+
+  .hero-title-desktop {
+    display: none !important;
+  }
+
+  .hero-title-mobile {
+    display: block !important;
   }
 }
 
@@ -171,11 +199,11 @@
   .h-100 {
     margin-top: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 110px 20px 40px 20px;
+    padding: 140px 20px 40px 20px;
     box-sizing: border-box;
   }
 
@@ -185,6 +213,7 @@
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+    padding: 0;
   }
 
   .header-top-bar {
@@ -212,6 +241,15 @@
   .hero-title,
   .hero-title .highlight-text {
     font-size: 32px;
+    line-height: 1.2 !important;
+  }
+
+  .hero-title-desktop {
+    display: none !important;
+  }
+
+  .hero-title-mobile {
+    display: block !important;
   }
 
   .hero-stack-container {
