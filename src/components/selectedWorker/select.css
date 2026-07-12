@@ -1,1072 +1,310 @@
 .class-container {
   margin: 0;
-  padding: 0 0 80px 0;
+  padding: 80px 0 120px 0;
   width: 100%;
-  background-color: #212121;
+  background-color: #161616;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 72px;
-}
-
-/* CardZero Styles */
-.card-zero {
-  display: flex;
-  width: 1301px;
-  background-color: #3D3D3D;
-  border-radius: 24px;
-  height: 545px;
-  overflow: hidden;
-}
-
-.image-section-zero {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  background-color: white;
-  flex-shrink: 0;
-}
-
-.photo-img-zero {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.content-section-zero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  padding: 32px 56px;
-}
-
-
-
-.text-content-zero {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.logo-container-zero {
-  display: flex;
-  align-items: center;
-}
-
-.exotel-logo {
-  height: 32px;
-}
-
-.text-write-zero {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 17.6px;
-}
-
-.center-box {
-  margin-top: 50px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.text-write-zero2 {
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 17.6px;
-}
-
-.description-text-zero {
-  width: 500px;
-}
-
-.main-heading-zero {
-  font-family: kalice;
-  color: white;
-  font-size: 36px;
-  font-weight: 100;
-  margin: 0 0 10px 0;
-  line-height: 1.2;
-}
-
-.description-text-zero {
-  font-family: Satoshi;
-  font-size: 16px;
-  color: #D0D0D0;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.metrics-container-zero {
-  display: flex;
-  width: 500px;
-  gap: 22px;
-  justify-content: space-between;
-  margin-top: 6px;
-}
-
-.metric-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.metric-label {
-  font-family: Satoshi;
-  font-size: 12px;
-  color: #ffff;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.metric-value-container {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.metric-arrow {
-  width: 24px;
-  height: 24px;
-}
-
-.metric-value {
-  font-family: Satoshi;
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
-  margin: 0;
-}
-
-.badge-24x24 {
-  background: linear-gradient(135deg, #8B5CF6 0%, #3965BF 100%);
-  padding: 7px 14px;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.badge-24x24 p {
-  font-family: Satoshi;
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-}
-
-.button-section-zero {
-  display: flex;
-  gap: 14px;
-}
-
-.read-case-btn-zero {
-  background-color: #3965BF;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Satoshi;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: background-color 0.2s ease;
-  font-family: inter;
-}
-
-.read-case-btn-zero:hover {
-  background-color: #2E54A8;
-}
-
-.read-case-btn-zero:focus {
-  outline: none;
-}
-
-.read-case-btn-zero:active {
-  outline: none;
-}
-
-/* CardTwo Button Styles */
-.button-section-two {
-  display: flex;
-  gap: 14px;
-}
-
-.read-case-btn-two {
-  background-color: #F25000;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.read-case-btn-two:hover {
-  background-color: #c5551d;
-}
-
-.read-case-btn-two:focus {
-  outline: none;
-}
-
-.read-case-btn-two:active {
-  outline: none;
-}
-
-/* CardThree Button Styles */
-.button-section-three {
-  display: flex;
-  gap: 14px;
-}
-
-.center-box2 {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.read-case-btn-three {
-  background-color: #3965BF;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.read-case-btn-three:hover {
-  background-color: #2E54A8;
-}
-
-.read-case-btn-three:focus {
-  outline: none;
-}
-
-.read-case-btn-three:active {
-  outline: none;
-}
-
-/* Card One Styles (UX4G) */
-.card-one {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 1301px;
-  background-color: #3D3D3D;
-  border-radius: 24px;
-  height: 545px;
-  overflow: hidden;
-}
-
-.content-section-one {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  padding: 32px 56px;
-}
-
-.text-content-one {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.logo-container-one {
-  display: flex;
-  align-items: center;
-}
-
-.govt-logo {
-  height: 54px;
-}
-
-.text-write-one {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 17.6px;
-}
-
-.main-heading-one {
-  font-family: kalice;
-  color: white;
-  font-size: 36px;
-  font-weight: 100;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.description-text-one {
-  font-family: Satoshi;
-  font-size: 16px;
-  color: #D0D0D0;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.metrics-container-one {
-  display: flex;
-  width: 500px;
-  gap: 22px;
-  justify-content: space-between;
-  margin-top: 6px;
-}
-
-.metric-item-one {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.metric-label-one {
-  font-family: Satoshi;
-  font-size: 12px;
-  color: #ffff;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.metric-value-container-one {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.metric-value-one {
-  font-family: Satoshi;
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
-  margin: 0;
-}
-
-.sampled-data {
-  font-family: Satoshi;
-  font-size: 10px;
-  color: #D0D0D0;
-  margin-left: 6px;
-  align-self: flex-end;
-  margin-bottom: 4px;
-}
-
-.button-section-one {
-  display: flex;
-  gap: 14px;
-}
-
-.read-case-btn-one {
-  background-color: #3965BF;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: background-color 0.2s ease;
-}
-
-.read-case-btn-one:hover {
-  background-color: #2E54A8;
-}
-
-.read-case-btn-one:focus {
-  outline: none;
-}
-
-.read-case-btn-one:active {
-  outline: none;
-}
-
-.logo-container-nic {
-  height: 27px;
-}
-
-.ux4g-btn-one {
-  background-color: white;
-  color: #414651;
-  font-family: Inter;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  padding: 10px 18px;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.ux4g-btn-one:hover {
-  background-color: #F0F0F0;
-}
-
-.ux4g-btn-one:focus {
-  outline: none;
-}
-
-.ux4g-btn-one:active {
-  outline: none;
-}
-
-.btn-span-one {
-  background-color: #12B76A;
-  width: 8px;
-  height: 8px;
-  border-radius: 50px;
-}
-
-.arrow-img-one {
-  margin-left: 4px;
-}
-
-.image-section-one {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #1A1A1A;
-  flex-shrink: 0;
-}
-
-.photo-img-one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  gap: 60px;
 }
 
 .selectedWork {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
-  margin: 80px 0 0 20px;
   align-items: center;
   justify-content: start;
-  width: 1301px;
+  width: 1324px;
+  max-width: 90%;
   gap: 16px;
-  padding: 0%;
+  padding: 0;
 }
 
 .selectedWork h1 {
   color: white;
-  font-family: kalice;
+  font-family: 'kalice', Georgia, serif;
   font-size: 40px;
-  font-weight: 100;
-  letter-spacing: 3px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
   line-height: 1;
   margin: 0;
   padding: 0;
 }
 
-.star {
+.selectedWork .star {
   width: 32px;
+  height: 32px;
 }
 
-.card {
-  display: flex;
-  width: 1301px;
-  background-color: #4B4C45;
-  justify-content: space-between;
-  padding: 30px 32px 30px 40px;
+/* ========================================
+   CARDS GRID LAYOUT (2-COLUMN)
+   ======================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 638px);
+  gap: 48px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1324px;
+}
+
+/* ========================================
+   PORTFOLIO CARD CONTAINER
+   ======================================== */
+.portfolio-card {
+  width: 638px;
+  height: 961px;
+  background-color: #2E2E2E;
   border-radius: 24px;
-  height: 545px;
-}
-
-.text-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.content-section {
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Image section */
+.portfolio-card-image-wrap {
+  width: 638px;
+  height: 609px;
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+  position: relative;
+}
+
+.portfolio-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .portfolio-card-image {
+  transform: scale(1.03);
+}
+
+/* Content Section below image */
+.portfolio-card-content {
+  width: 638px;
+  height: 352px;
+  padding: 32px;
+  box-sizing: border-box;
   display: flex;
-  gap: 24px;
   flex-direction: column;
-  align-items: start;
+  justify-content: flex-end;
 
 }
 
-.logo-img {
-  height: 54px;
-}
-
-.text-write {
+/* Description inner box */
+.portfolio-card-desc-box {
   width: 572px;
-}
-
-.main-heading {
-  font-family: kalice;
-  color: white;
-  font-size: 40px;
-  font-weight: 100;
-}
-
-.description-text {
-  font-family: Satoshi;
-  font-size: 14px;
-  color: #D0D0D0;
-}
-
-.frame-img {
-  height: 40px;
-  width: 234px;
-}
-
-.button-section {
+  height: 288px;
   display: flex;
-  gap: 18px;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  justify-content: space-between;
+
 }
 
-/* Fixed button styles - removed outlines and borders */
-.read-case-btn {
-  background-color: #F25000;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Inter;
-  cursor: pointer;
-  border: none;
-  /* Remove default border */
-  outline: none;
-  /* Remove default outline */
-}
-
-
-.read-case-btn:focus {
-  outline: none;
-  /* Remove focus outline */
-}
-
-.read-case-btn:active {
-  outline: none;
-  /* Remove active outline */
-}
-
-.ux4g-btn {
-  background-color: white;
-  color: #414651;
-  font-family: Inter;
+/* Tags / Badges */
+.portfolio-card-tag-wrap {
   display: flex;
   align-items: center;
+  height: 40px;
+}
+
+.portfolio-card-tag {
+  background-color: #3E3E3E;
+  color: #E0E0E0;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 49px;
+  letter-spacing: 0.2px;
+  display: inline-block;
+}
+
+/* Titles and description text */
+.portfolio-card-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.portfolio-card-title {
+  color: #FFFFFF;
+  font-family: 'Kalice', Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 148%;
+}
+
+.portfolio-card-desc {
+  color: #B0B0B0;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  line-height: 180%;
+}
+
+/* Actions Row */
+.portfolio-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 48px;
+}
+
+/* Reusable buttons styles */
+.portfolio-btn {
+  height: 48px;
+  padding: 0 24px;
   border-radius: 8px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  border: none;
-  /* Remove default border */
-  outline: none;
-  /* Remove default outline */
-  padding: 10px 18px;
-  /* Add padding for consistency */
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  /* Add gap between span and text */
-}
-
-.ux4g-btn:focus {
+  transition: all 0.25s ease;
+  border: none;
   outline: none;
-  /* Remove focus outline */
+  box-sizing: border-box;
 }
 
-.ux4g-btn:active {
-  outline: none;
-  /* Remove active outline */
+.btn-primary {
+  background-color: #FFFFFF;
+  color: #161616;
 }
 
-.btn-span {
-  background-color: #12B76A;
+.btn-primary:hover {
+  background-color: #E2E2E2;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #FFFFFF;
+}
+
+.btn-status-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50px;
+  background-color: #22C55E;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
 }
 
-.arrow-img {
-  margin-left: 4px;
-  /* Add some spacing for the arrow */
-}
-
-.text-photo {
-  width: 478px;
-  height: 485px;
-  border-radius: 30px;
-  object-fit: cover;
-  background-color: white;
-}
-
-.photo-img {
-  width: 478px;
-  height: 485px;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.card-two {
-  display: flex;
-  width: 1301px;
-  background-color: #4B4C45;
-  justify-content: space-between;
-  padding: 30px 32px 30px 40px;
-  border-radius: 24px;
-  height: 545px;
-}
-
-.text-photo-two {
-  width: 478px;
-  height: 485px;
-  border-radius: 30px;
-  object-fit: cover;
-  background-color: white;
-}
-
-.photo-img-two {
-  width: 478px;
-  height: 485px;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.text-card-two {
-  display: flex;
-  flex-direction: column;
-}
-
-.content-section-two {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 620px;
-  height: 403px;
-  gap: 24px;
-}
-
-.text-write-two {
-  width: 606px;
-}
-
-.main-heading-two {
-  font-family: kalice;
-  color: white;
-  font-size: 40px;
-  font-weight: 100;
-}
-
-.description-text-two {
-  font-family: Satoshi;
-  font-size: 14px;
-  color: #D0D0D0;
-}
-
-.clips-container {
-  display: flex;
-  gap: 12px;
-}
-
-.clip {
-  margin: 0;
-  padding: 4px 16px;
-  border-radius: 10px;
-  text-align: center;
-  background-color: #E7E3C8;
-}
-
-.cliptext {
-  font-family: Satoshi;
+/* Text actions styles (Muted / Coming Soon / NDA) */
+.portfolio-text-action {
+  font-family: 'Satoshi', sans-serif;
   font-size: 15px;
-  padding: 0;
-  margin: 0%;
+  font-weight: 600;
+  line-height: 1;
 }
 
-.button-section-two {
-  display: flex;
-  gap: 18px;
+.text-default {
+  color: #FFFFFF;
 }
 
-.read-case-btn-two {
-  background-color: #F25000;
-  color: white;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: Inter;
-  cursor: pointer;
-  border: none;
-  /* Remove default border */
-  outline: none;
-  /* Remove default outline */
-}
-
-.read-case-btn-two:focus {
-  outline: none;
-  /* Remove focus outline */
-}
-
-.read-case-btn-two:active {
-  outline: none;
-  /* Remove active outline */
+.text-muted {
+  color: #FFFFFF;
 }
 
 /* ========================================
-   RESPONSIVE STYLES - MOBILE
+   RESPONSIVE LAYOUT STYLES
    ======================================== */
-/* Mobile devices - Stack cards vertically (image on top, content below) */
-@media (max-width: 767px) {
-  .class-container {
-    gap: 48px;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0 6px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  /* SelectedWork Header */
+@media (max-width: 1350px) {
   .selectedWork {
-    width: calc(100% - 20px);
-    margin: 40px 0 0 20px;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .selectedWork h1 {
-    font-size: 28px;
-    text-align: left;
-    line-height: 1;
-    margin: 0;
-  }
-
-  .star {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* CardZero - Mobile */
-  .card-zero {
-    flex-direction: column;
-    width: 94%;
-    max-width: 94%;
-    height: auto;
+    width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
-    margin: 0 auto;
+    padding: 0 24px;
   }
 
-  .image-section-zero {
-    width: 100%;
-    height: 250px;
-    flex-shrink: 0;
-  }
-
-  .content-section-zero {
-    padding: 24px 20px 24px 20px;
-  }
-
-  .text-content-zero {
-    gap: 16px;
-  }
-
-  .exotel-logo {
-    height: 26px;
-    width: auto;
-    margin-bottom: 26px;
-  }
-
-  .text-write-zero,
-  .text-write-zero2 {
-    width: 100%;
-  }
-
-  .main-heading-zero {
-    font-size: 24px;
-  }
-
-  .description-text-zero {
-    font-size: 14px;
-    width: 100%;
-  }
-
-  .metrics-container-zero {
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .metric-item {
-    flex: 1 1 calc(50% - 8px);
-    min-width: 120px;
-  }
-
-  .metric-label {
-    font-size: 11px;
-  }
-
-  .metric-value {
-    font-size: 20px;
-  }
-
-  .metric-arrow {
-    width: 20px;
-    height: 20px;
-  }
-
-  .badge-24x24 {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .button-section-zero,
-  .button-section-two {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .read-case-btn-zero,
-  .read-case-btn-two {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
-  /* Card One (UX4G) - Mobile */
-  .card-one {
-    flex-direction: column;
-    width: 94%;
-    max-width: 94%;
-    height: auto;
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
     box-sizing: border-box;
-    overflow: hidden;
-    margin: 0 auto;
+    max-width: 686px;
   }
 
-  .image-section-one {
+  .portfolio-card {
     width: 100%;
-    height: 250px;
-    flex-shrink: 0;
+    height: auto;
   }
 
-  .content-section-one {
-    padding: 24px 20px 24px 20px;
-  }
-
-  .text-content-one {
-    gap: 16px;
-  }
-
-  .govt-logo {
-    height: 48px;
-    margin-bottom: 26px;
-  }
-
-  .logo-container-nic {
-    height: 26px;
-    width: auto;
-    margin-bottom: 26px;
-  }
-
-  .text-write-one {
+  .portfolio-card-image-wrap {
     width: 100%;
+    height: auto;
+    aspect-ratio: 638 / 609;
   }
 
-  .main-heading-one {
-    font-size: 24px;
-  }
-
-  .description-text-one {
-    font-size: 14px;
-  }
-
-  .metrics-container-one {
-    flex-wrap: wrap;
+  .portfolio-card-content {
     width: 100%;
-    gap: 10px;
-    margin-bottom: 16px;
+    height: auto;
+    padding: 24px;
   }
 
-  .metric-item-one {
-    flex: 1 1 calc(50% - 8px);
-    min-width: 120px;
-  }
-
-  .metric-label-one {
-    font-size: 11px;
-  }
-
-  .metric-value-one {
-    font-size: 20px;
-  }
-
-  .button-section-one,
-  .button-section-three {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .read-case-btn-one,
-  .read-case-btn-three,
-  .ux4g-btn-one {
+  .portfolio-card-desc-box {
     width: 100%;
-    text-align: center;
-    justify-content: center;
+    height: auto;
+    gap: 20px;
   }
 }
 
-/* ========================================
-   RESPONSIVE STYLES - TABLET
-   ======================================== */
-/* Tablet devices - Keep horizontal layout but reduce sizes */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 768px) {
   .class-container {
-    gap: 70px;
-    padding: 0 24px 80px 24px;
-    overflow-x: hidden;
-  }
-
-  /* SelectedWork Header */
-  .selectedWork {
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto 0;
+    padding: 40px 0 80px 0;
+    gap: 40px;
   }
 
   .selectedWork h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
-  .star {
-    width: 28px;
+  .selectedWork .star {
+    width: 24px;
+    height: 24px;
   }
 
-  /* CardZero - Tablet */
-  .card-zero {
-    width: 90%;
-    max-width: 900px;
-    height: 480px;
-    margin: 0 auto;
+  .portfolio-card-title {
+    font-size: 26px;
   }
 
-  .content-section-zero {
-    padding: 28px 40px;
+  .portfolio-card-desc {
+    font-size: 14px;
   }
 
-  .text-content-zero {
-    gap: 20px;
+  .portfolio-btn {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 14px;
   }
 
-  .exotel-logo {
-    height: 28px;
-  }
-
-  .text-write-zero,
-  .text-write-zero2 {
-    width: 420px;
-  }
-
-  .main-heading-zero {
-    font-size: 30px;
-  }
-
-  .description-text-zero {
-    font-size: 15px;
-    width: 420px;
-  }
-
-  .metrics-container-zero {
-    width: 420px;
-    gap: 18px;
-  }
-
-  .metric-label {
-    font-size: 11px;
-  }
-
-  .metric-value {
-    font-size: 22px;
-  }
-
-  .metric-arrow {
-    width: 22px;
-    height: 22px;
-  }
-
-  .badge-24x24 p {
-    font-size: 15px;
-  }
-
-  .read-case-btn-zero,
-  .read-case-btn-two {
-    font-size: 15px;
-  }
-
-  /* Card One (UX4G) - Tablet */
-  .card-one {
-    width: 90%;
-    max-width: 900px;
-    height: 480px;
-    margin: 0 auto;
-  }
-
-  .content-section-one {
-    padding: 28px 40px;
-  }
-
-  .text-content-one {
-    gap: 20px;
-  }
-
-  .govt-logo,
-  .logo-container-nic {
-    height: 48px;
-  }
-
-  .text-write-one {
-    width: 420px;
-  }
-
-  .main-heading-one {
-    font-size: 30px;
-  }
-
-  .description-text-one {
-    font-size: 15px;
-  }
-
-  .metrics-container-one {
-    width: 420px;
-    gap: 18px;
-  }
-
-  .metric-label-one {
-    font-size: 11px;
-  }
-
-  .metric-value-one {
-    font-size: 22px;
-  }
-
-  .read-case-btn-one,
-  .read-case-btn-three,
-  .ux4g-btn-one {
-    font-size: 15px;
+  .portfolio-card-actions {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
   }
 }

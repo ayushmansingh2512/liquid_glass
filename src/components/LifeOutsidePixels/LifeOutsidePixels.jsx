@@ -71,88 +71,54 @@ const ScrollReveal = ({ children, delay = 0, duration = 0.55, shift = true }) =>
   );
 };
 
-const MusicCard = ({ card }) => {
+const MusicCard = ({ card, hovered }) => {
   return (
-    <div style={{
-      width: card.w,
-      height: card.h,
-      borderRadius: 20,
-      background: 'linear-gradient(145deg, #1c1c1c 0%, #111 100%)',
-      display: 'flex',
-      flexDirection: 'column',
-      overflow: 'hidden'
-    }}>
-      <div style={{
-        width: '100%',
-        flex: 1,
-        backgroundImage: card.coverUrl ? `url(${card.coverUrl})` : undefined,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+    <div className="lop-music-card" style={{ width: card.w, height: card.h }}>
+      <div className="lop-music-cover" style={{
+        backgroundImage: card.coverUrl ? `url(${card.coverUrl})` : undefined
       }}>
-        {!card.coverUrl && (
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
-            <circle cx="12" cy="12" r="3" fill="rgba(255, 255, 255, 0.22)" />
+        {/* Play overlay on hover */}
+        <motion.div
+          className="lop-music-play-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: hovered ? 1 : 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+            <polygon points="6,3 20,12 6,21" />
           </svg>
-        )}
+        </motion.div>
       </div>
-      <div style={{ padding: '10px 12px 12px', flexShrink: 0 }}>
-        <p style={{
-          fontFamily: 'Satoshi, sans-serif',
-          color: '#fff',
-          fontSize: 12.5,
-          fontWeight: 600,
-          margin: '0 0 2px',
-          letterSpacing: '-0.2px',
-          lineHeight: 1.3
-        }}>
-          {card.track}
-        </p>
-        <p style={{
-          fontFamily: 'Satoshi, sans-serif',
-          color: 'rgba(255, 255, 255, 0.42)',
-          fontSize: 10.5,
-          fontWeight: 500,
-          margin: '0 0 8px'
-        }}>
-          {card.artist}
-        </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div className="lop-music-info">
+        <p className="lop-music-track">{card.track}</p>
+        <p className="lop-music-artist">{card.artist}</p>
+        <div className="lop-music-spotify">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="#1DB954">
             <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
           </svg>
-          <span style={{
-            fontFamily: 'Satoshi, sans-serif',
-            color: 'rgba(255, 255, 255, 0.38)',
-            fontSize: 9.5,
-            letterSpacing: '0.02em'
-          }}>
-            Spotify
-          </span>
+          <span>Spotify</span>
         </div>
       </div>
     </div>
   );
 };
 
-const ImageCard = ({ card }) => {
+const ImageCard = ({ card, hovered }) => {
   return (
-    <img
-      src={card.src}
-      width={card.w}
-      height={card.h}
-      loading="eager"
-      decoding="async"
-      draggable={false}
-      style={{
-        display: 'block',
-        borderRadius: 18
-      }}
-      alt=""
-    />
+    <div className="lop-image-card" style={{ width: card.w, height: card.h }}>
+      <motion.img
+        src={card.src}
+        width={card.w}
+        height={card.h}
+        loading="eager"
+        decoding="async"
+        draggable={false}
+        animate={{ scale: hovered ? 1.06 : 1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+        alt=""
+      />
+    </div>
   );
 };
 
@@ -164,6 +130,7 @@ const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLea
   const isGroupHovered = card.group != null && hoveredGroup === card.group;
   const fanOffset = card.fanOffset ?? { x: 0, y: 0, rot: 0 };
 
+  // Position: center → final position
   const xTransform = useTransform(stickyP, [start, end], [cx, card.x]);
   const rotTransform = useTransform(stickyP, [start, end], [card.rot * 0.1, card.rot]);
   const scaleTransform = useTransform(stickyP, [start, end], [card.startScale ?? 0.88, 1]);
@@ -173,7 +140,9 @@ const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLea
     return cy + progress * (card.y - cy) + val * card.drift;
   });
 
-  const lift = hovered ? -12 : 0;
+  // Scroll-linked opacity: cards fade in as they fan out
+  const cardOpacity = useTransform(stickyP, [start, Math.min(start + 0.08, end)], [0, 1]);
+
   const zIndex = card.depth * 3 + 1 + (hovered ? 20 : isGroupHovered ? 8 : 0);
 
   return (
@@ -185,8 +154,8 @@ const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLea
         y: yTransform,
         rotate: rotTransform,
         scale: scaleTransform,
+        opacity: cardOpacity,
         zIndex,
-        filter: 'none',
         cursor: 'pointer',
         willChange: 'transform, opacity'
       }}
@@ -203,9 +172,9 @@ const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLea
       <motion.div
         animate={{
           x: isGroupHovered ? fanOffset.x : 0,
-          y: isGroupHovered ? fanOffset.y + lift : lift,
+          y: isGroupHovered ? fanOffset.y + (hovered ? -14 : 0) : (hovered ? -14 : 0),
           rotate: isGroupHovered ? fanOffset.rot : 0,
-          scale: hovered ? 1.06 : 1
+          scale: hovered ? 1.04 : 1
         }}
         transition={{
           type: 'spring',
@@ -213,23 +182,35 @@ const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLea
           damping: 22
         }}
       >
-        {card.type === 'music' && <MusicCard card={card} />}
-        {card.type === 'image' && <ImageCard card={card} />}
+        {card.type === 'music' && <MusicCard card={card} hovered={hovered} />}
+        {card.type === 'image' && <ImageCard card={card} hovered={hovered} />}
       </motion.div>
     </motion.div>
   );
 };
 
 const MobileCard = ({ card, index, skipReveal = false }) => {
+  const [hovered, setHovered] = useState(false);
   const content = (
-    <>
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       {card.type === 'image' && (
-        <div style={{ width: '100%', aspectRatio: `${card.w} / ${card.h}`, borderRadius: 16, overflow: 'hidden' }}>
-          <img src={card.src} style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }} alt="" loading="lazy" decoding="async" />
+        <div className="lop-mobile-image-wrap" style={{ aspectRatio: `${card.w} / ${card.h}` }}>
+          <motion.img
+            src={card.src}
+            animate={{ scale: hovered ? 1.05 : 1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       )}
-      {card.type === 'music' && <MusicCard card={card} />}
-    </>
+      {card.type === 'music' && <MusicCard card={card} hovered={hovered} />}
+    </div>
   );
   return skipReveal ? content : <ScrollReveal delay={index * 0.03}>{content}</ScrollReveal>;
 };
@@ -256,6 +237,24 @@ const MobileGrid = ({ columns, className = '', padTop = 8, skipReveal = false })
     </div>
   );
   return skipReveal ? <ScrollReveal duration={0.45} shift={false}>{gridContent}</ScrollReveal> : gridContent;
+};
+
+// Scroll-driven center title that fades out as cards spread
+const CenterTitle = ({ stickyP }) => {
+  // Title visible at the start, fades out as cards fan
+  const titleOpacity = useTransform(stickyP, [0, 0.12], [1, 0]);
+  const titleScale = useTransform(stickyP, [0, 0.12], [1, 0.92]);
+  const titleY = useTransform(stickyP, [0, 0.12], [0, 20]);
+
+  return (
+    <div className="lop-center-title">
+      <motion.div style={{ opacity: titleOpacity, scale: titleScale, y: titleY }}>
+        <h2 className="lop-title">
+          Not Just a<br />Designer
+        </h2>
+      </motion.div>
+    </div>
+  );
 };
 
 const LifeOutsidePixels = () => {
@@ -324,11 +323,8 @@ const LifeOutsidePixels = () => {
                 onGroupLeave={handleGroupLeave}
               />
             ))}
-            <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -54%)', zIndex: 0, pointerEvents: 'none', textAlign: 'center' }}>
-              <h2 style={{ fontFamily: 'Kalice, Georgia, serif', fontSize: 30, fontWeight: 600, color: '#1e1e1e', lineHeight: 1.3, letterSpacing: '1.32px', margin: 0 }}>
-                Life Outside Pixels
-              </h2>
-            </div>
+            {/* Center title — fades out as cards spread */}
+            <CenterTitle stickyP={stickyProgress} />
           </motion.div>
         </div>
       </div>
@@ -342,12 +338,7 @@ const LifeOutsidePixels = () => {
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           style={{ padding: '0 24px', marginBottom: 27 }}
         >
-          <h2 style={{ fontFamily: 'Kalice, Georgia, serif', fontSize: 22, fontWeight: 600, color: '#1e1e1e', letterSpacing: '-0.66px', lineHeight: 1.3, margin: 0 }}>
-            Life Outside Pixels
-          </h2>
-          <p className="md:hidden" style={{ fontFamily: 'Satoshi, sans-serif', fontSize: 16, fontWeight: 500, color: '#8d8d8d', letterSpacing: '-0.32px', lineHeight: 1.5, margin: '6px 0 0' }}>
-            Few snippets from my photography.
-          </p>
+          <h2 className="lop-mobile-title">Not Just a Designer</h2>
         </motion.div>
 
         {/* Mobile (flex list) */}

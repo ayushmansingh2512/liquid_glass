@@ -53,8 +53,8 @@
   align-items: center;
 }
 
-.btn-outline,
-.btn-filled {
+.btn-header-outline,
+.btn-header-filled {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,31 +62,31 @@
   font-size: 14.5px;
   font-weight: 600;
   border-radius: 16px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   height: 42px;
   cursor: pointer;
   box-sizing: border-box;
   transition: all 0.2s ease;
 }
 
-.btn-outline {
+.btn-header-outline {
   border: 1px solid #343434;
   background-color: #ffffff;
   color: #1e1e1e;
 }
 
-.btn-outline:hover {
+.btn-header-outline:hover {
   background-color: #f4f4f5;
   border-color: #d4d4d8;
 }
 
-.btn-filled {
+.btn-header-filled {
   border: none;
   background-color: #1e1e1e;
   color: #ffffff;
 }
 
-.btn-filled:hover {
+.btn-header-filled:hover {
   background-color: #2d2d2d;
 }
 
@@ -101,7 +101,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 15px;
 }
 
 .hero-title {
@@ -109,7 +109,7 @@
   font-weight: 500;
   font-style: normal;
   font-size: 60px;
-  line-height: 100%;
+  line-height: 86px;
   letter-spacing: 0px;
   color: #212121;
   margin: 0;
@@ -154,8 +154,8 @@
     font-size: 16px;
   }
 
-  .btn-outline,
-  .btn-filled {
+  .btn-header-outline,
+  .btn-header-filled {
     font-size: 13px;
     padding: 8px 18px;
     height: 36px;
@@ -197,8 +197,8 @@
     width: 100%;
   }
 
-  .btn-outline,
-  .btn-filled {
+  .btn-header-outline,
+  .btn-header-filled {
     flex: 1;
     font-size: 13px;
     padding: 8px 16px;

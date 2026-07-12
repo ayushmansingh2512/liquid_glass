@@ -1,78 +1,62 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import logo from '../../assets/SelectedWork/nationalEnblem.svg'
-import ux4g from '../../assets/SelectedWork/1.svg'
-import AnimatedCounter from './AnimatedCounter'
-import arrowUp from '../../assets/SelectedWork/TrendUp.svg'
 
-const Card = () => {
+const Card = ({ tag, title, description, image, actions = [] }) => {
   return (
-    <div className='card-one'>
-      <div className='image-section-one'>
-        <img className='photo-img-one' src={ux4g} alt="UX4G Design System" />
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-120px" }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className='portfolio-card'
+      data-cursor="View"
+    >
+      <div className='portfolio-card-image-wrap'>
+        <img className='portfolio-card-image' src={image} alt={title} />
       </div>
-      <div className='content-section-one'>
-        <div className='text-content-one'>
-          <div className='logo-container-one'>
-            <img src={logo} alt="Government of India Logo" className='govt-logo' />
+      <div className='portfolio-card-content'>
+        <div className='portfolio-card-desc-box'>
+          <div className='portfolio-card-tag-wrap'>
+            <span className='portfolio-card-tag'>{tag}</span>
           </div>
-          <div className='text-write-one'>
-            <h1 className='main-heading-one'>UX4G Design System: Transforming Government UX Standards</h1>
-            <p className='description-text-one'>Crafting a unified design language to empower consistency, accessibility, and innovation across India's digital governance landscape.</p>
+          <div className='portfolio-card-text-wrap'>
+            <h2 className='portfolio-card-title'>{title}</h2>
+            <p className='portfolio-card-desc'>{description}</p>
           </div>
-          <div className='metrics-container-one'>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>Downloads on Figma</p>
-              <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={15000} className='metric-value-one' />+</p>
-              </div>
-            </div>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>Ministries Adopted</p>
-              <div className='metric-value-container-one'>
-                <p className='metric-value-one'><AnimatedCounter value={45} className='metric-value-one' />+</p>
-              </div>
-            </div>
-            <div className='metric-item-one'>
-              <p className='metric-label-one'>Development Productivity</p>
-              <div className='metric-value-container-one'>
-                <img src={arrowUp} alt="Increase" className='metric-arrow' />
-                <p className='metric-value-one'><AnimatedCounter value={12} className='metric-value-one' />%</p>
-                <span className='sampled-data'>Sampled Data</span>
-              </div>
-            </div>
+          <div className='portfolio-card-actions'>
+            {actions.map((action, i) => {
+              if (action.type === 'button') {
+                return (
+                  <a
+                    key={i}
+                    href={action.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      className={`portfolio-btn ${action.variant === 'outline' ? 'btn-outline' : 'btn-primary'}`}
+                    >
+                      {action.hasDot && <span className='btn-status-dot'></span>}
+                      {action.text}
+                    </motion.button>
+                  </a>
+                );
+              } else {
+                return (
+                  <span
+                    key={i}
+                    className={`portfolio-text-action ${action.variant === 'muted' ? 'text-muted' : 'text-default'}`}
+                  >
+                    {action.text}
+                  </span>
+                );
+              }
+            })}
           </div>
         </div>
-        <div className="button-section-one">
-          <a
-            href="https://www.behance.net/gallery/212610759/UX4G-Design-System-Shaping-Indian-Gov"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="read-case-btn-one"
-            >
-              Read Case Study
-            </motion.button>
-          </a>
-
-          <a
-            href="https://www.figma.com/community/file/1471833723727926454"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="ux4g-btn-one"
-            >
-              <span className="btn-span-one"></span>
-              UX4G Design System 2.0
-            </motion.button>
-          </a>
-        </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

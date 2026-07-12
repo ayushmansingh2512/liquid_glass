@@ -3,18 +3,18 @@ import { motion, useMotionValue, useSpring, useTransform, animate } from 'framer
 
 // Import local assets
 import figmaIcon from '../../assets/hero/stack-figma.svg';
-import framerIcon from '../../assets/hero/stack-framer.svg';
+import jiraIcon from '../../assets/hero/stack-jira.svg';
 import notionIcon from '../../assets/hero/stack-notion.svg';
 import claudeIcon from '../../assets/hero/claude-icon.png';
 import cursorIcon from '../../assets/hero/stack-cursor.png';
-import higgsfieldIcon from '../../assets/hero/stack-higgsfield.png';
+import adobeIcon from '../../assets/hero/AbdoeCreativeCLoud.svg';
 
 const stackData = [
   { name: 'Figma', logo: figmaIcon, iconSize: 20 },
   { name: 'Claude', logo: claudeIcon, rounded: true },
-  { name: 'Higgsfield', logo: higgsfieldIcon, rounded: true },
+  { name: 'Adobe Creative Cloud', logo: adobeIcon, rounded: true },
   { name: 'Cursor', logo: cursorIcon, rounded: true, iconSize: 24 },
-  { name: 'Framer', logo: framerIcon, iconSize: 20 },
+  { name: 'Jira', logo: jiraIcon, iconSize: 20 },
   { name: 'Notion', logo: notionIcon, iconSize: 20 }
 ];
 
@@ -83,6 +83,7 @@ const StackBubble = ({ tool, index, total }) => {
     <motion.div
       ref={ref}
       title={tool.name}
+      className="tech-stack-bubble"
       // Staggered blur entrance
       initial={{ opacity: 0, scale: 0, y: 20, filter: 'blur(10px)' }}
       animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
@@ -90,7 +91,7 @@ const StackBubble = ({ tool, index, total }) => {
         type: 'spring',
         stiffness: 260,
         damping: 20,
-        delay: 0.6 + index * 0.09
+        delay: 1.0 + index * 0.09
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseMove={handleMouseMove}

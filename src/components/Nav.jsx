@@ -38,7 +38,12 @@ const Nav = () => {
   const showMenuButton = isScrolled || isMenuOpen || isMobile;
 
   return (
-    <div className='n-100'>
+    <motion.div
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+      className='n-100'
+    >
       <div className='grid-background'>
         <div className='gradient-blob'></div>
         <div className='nav'>
@@ -117,7 +122,7 @@ const Nav = () => {
       </div>
 
       <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-    </div>
+    </motion.div>
   );
 };
 

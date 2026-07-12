@@ -63,82 +63,133 @@ a {
 ::-webkit-scrollbar {
   width: 5px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-/* Custom Cursor Styling */
-html.custom-cursor-active,
-html.custom-cursor-active * {
-  cursor: none !important;
-}
-
-.custom-cursor-dot,
-.custom-cursor-label-pos {
+.custom-cursor-dot {
   z-index: 9999;
   pointer-events: none;
-  will-change: transform;
-  display: none;
+  will-change: transform, width, height;
   position: fixed;
   top: 0;
   left: 0;
-}
-
-html.custom-cursor-active .custom-cursor-dot,
-html.custom-cursor-active .custom-cursor-label-pos {
-  display: block;
-}
-
-.custom-cursor-dot {
-  mix-blend-mode: difference;
-  background: #fff;
-  border-radius: 50%;
+  display: none;
   width: 14px;
   height: 14px;
-  transition: opacity 0.2s, width 0.2s cubic-bezier(0.22, 1, 0.36, 1), height 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s,
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+html.custom-cursor-active .custom-cursor-dot {
+  display: flex;
+}
+
+.custom-cursor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  will-change: transform;
+  transition: background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light Backgrounds (Cursor is Black) */
+.custom-cursor-light-bg .custom-cursor-circle {
+  background: #000000;
+}
+
+.custom-cursor-light-bg .custom-cursor-text {
+  color: #ffffff;
+}
+
+.custom-cursor-light-bg.custom-cursor-dot-hover .custom-cursor-circle {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.custom-cursor-light-bg.custom-cursor-dot-captured .custom-cursor-circle {
+  background: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Backgrounds (Cursor is White) */
+.custom-cursor-dark-bg .custom-cursor-circle {
+  background: #ffffff;
+}
+
+.custom-cursor-dark-bg .custom-cursor-text {
+  color: #000000;
+}
+
+.custom-cursor-dark-bg.custom-cursor-dot-hover .custom-cursor-circle {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.custom-cursor-dark-bg.custom-cursor-dot-captured .custom-cursor-circle {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Glassmorphism outline on black/dark buttons: white outline with opacity */
+.custom-cursor-on-dark-btn.custom-cursor-dot-captured .custom-cursor-circle {
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Glassmorphism outline on white/light buttons: black outline with opacity */
+.custom-cursor-on-light-btn.custom-cursor-dot-captured .custom-cursor-circle {
+  border: 1.5px solid rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Tech stack snap outline is transparent (not black) */
+.custom-cursor-dot-stack.custom-cursor-dot-captured .custom-cursor-circle {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Size Modifiers */
 .custom-cursor-dot.custom-cursor-dot-hover {
   width: 32px;
   height: 32px;
 }
 
-.custom-cursor-dot.custom-cursor-dot-hidden {
-  opacity: 0;
-}
-
 .custom-cursor-dot.custom-cursor-dot-captured {
   width: 48px;
   height: 48px;
-  background: transparent;
-  border: 1.5px solid #fff;
-  mix-blend-mode: difference;
 }
 
-.custom-cursor-label {
-  color: #fff;
+.custom-cursor-dot.custom-cursor-dot-has-text {
+  width: 115px;
+  height: 115px;
+}
+
+.custom-cursor-text {
   letter-spacing: -0.26px;
   white-space: nowrap;
   opacity: 0;
-  background: #1e1e1e;
-  border-radius: 100px;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  padding: 0 16px;
   font-family: 'Satoshi', sans-serif;
-  font-size: 12.5px;
-  font-weight: 600;
+  font-size: 20.5px;
+  font-weight: bolder;
   transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1), transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-  display: flex;
-  transform: translate(-50%, -50%) scale(0.6);
+  display: inline-block;
+  transform: scale(0.6);
+  z-index: 10;
+  letter-spacing: 2px;
+
 }
 
-.custom-cursor-label.custom-cursor-label-active {
+.custom-cursor-dot.custom-cursor-dot-has-text .custom-cursor-text {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
+  transform: scale(1);
+}
