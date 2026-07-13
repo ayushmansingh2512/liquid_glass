@@ -4,7 +4,7 @@ const CustomCursor = () => {
   const dotRef = useRef(null);
   const circleRef = useRef(null);
   const labelTextRef = useRef(null);
-  
+
   const lastAngle = useRef(0);
 
   useEffect(() => {
@@ -21,11 +21,11 @@ const CustomCursor = () => {
 
     let clientX = -100;
     let clientY = -100;
-    
+
     // Lerped coordinate states
     let dotLerpX = -100;
     let dotLerpY = -100;
-    
+
     let animationFrameId = null;
     let lastLabelText = '';
 
@@ -37,10 +37,10 @@ const CustomCursor = () => {
     const animate = () => {
       // Find element under cursor
       const element = document.elementFromPoint(clientX, clientY);
-      
+
       // Bounding captures for magnetic snap effect (a tags, buttons, magnetic classes)
       const hoveredBtn = element && element.closest('a, button, [role="button"], .clickable, .magnetic-btn, .tech-stack-bubble');
-      
+
       let targetDotX = clientX;
       let targetDotY = clientY;
       let isCaptured = false;
@@ -49,7 +49,7 @@ const CustomCursor = () => {
         const rect = hoveredBtn.getBoundingClientRect();
         const btnCenterX = rect.left + rect.width / 2;
         const btnCenterY = rect.top + rect.height / 2;
-        
+
         // Snapping attraction algorithm: lock center with light mouse drag responsiveness
         targetDotX = btnCenterX + (clientX - btnCenterX) * 0.25;
         targetDotY = btnCenterY + (clientY - btnCenterY) * 0.25;
@@ -78,11 +78,11 @@ const CustomCursor = () => {
       if (!isCaptured && distance > 2) {
         angle = Math.atan2(dy, dx) * (180 / Math.PI);
         lastAngle.current = angle;
-        
+
         // Normalize velocity
         const maxDistance = 150;
         const velocity = Math.min(distance, maxDistance) / maxDistance;
-        
+
         // Cuberto-style organic stretch and squish
         scaleX = 1 + velocity * 0.45;
         scaleY = 1 - velocity * 0.25;
@@ -100,12 +100,26 @@ const CustomCursor = () => {
       if (hasCursorText) {
         const text = cursorTarget.getAttribute('data-cursor');
         if (text !== lastLabelText) {
-          if (labelText) labelText.textContent = text;
+          if (labelText) {
+            // Automatically break two-word or multi-word labels inside the circular cursor
+            const formattedText = text.trim().replace(/\s+/g, '<br />');
+            labelText.innerHTML = formattedText;
+          }
           lastLabelText = text;
         }
-        if (dot) dot.classList.add('custom-cursor-dot-has-text');
+        if (dot) {
+          dot.classList.add('custom-cursor-dot-has-text');
+          if (text === 'Coming Soon') {
+            dot.classList.add('custom-cursor-dot-small-text');
+          } else {
+            dot.classList.remove('custom-cursor-dot-small-text');
+          }
+        }
       } else {
-        if (dot) dot.classList.remove('custom-cursor-dot-has-text');
+        if (dot) {
+          dot.classList.remove('custom-cursor-dot-has-text');
+          dot.classList.remove('custom-cursor-dot-small-text');
+        }
       }
 
       if (dot) {

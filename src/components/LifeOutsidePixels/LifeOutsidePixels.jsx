@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent, useMotionValue } from 'framer-motion';
 import './lifeOutsidePixels.css';
 
 // Import local assets
@@ -14,90 +14,29 @@ import img8 from '../../assets/LifeOutsidePixels/8.webp';
 import spotifyOpeth from '../../assets/LifeOutsidePixels/spotify-opeth.jpg';
 import spotifyPinkFloyd from '../../assets/LifeOutsidePixels/spotify-pinkfloyd.jpg';
 
-// Photography and music cards data
+// Photography and music cards data configured for the interactive board
 const cardsData = [
-  { id: 3, type: 'image', src: img1, w: 240, h: 169, x: 30, y: 55, rot: 9, depth: 1, wave: 3, drift: -80 },
-  { id: 2, type: 'image', src: img2, w: 300, h: 147, x: 20, y: 425, rot: 4, depth: 1, wave: 3, drift: -145 },
-  { id: 4, type: 'image', src: img3, w: 270, h: 148, x: 15, y: 690, rot: -2, depth: 1, wave: 4, drift: -120 },
-  { id: 5, type: 'image', src: img4, w: 200, h: 265, x: 370, y: 560, rot: 6, depth: 2, wave: 2, drift: -215 },
-  { id: 6, type: 'image', src: img5, w: 200, h: 267, x: 600, y: 140, rot: 2, depth: 2, wave: 1, drift: -280 },
-  { id: 13, type: 'image', src: img6, w: 255, h: 165, x: 800, y: 690, rot: 5, depth: 1, wave: 4, drift: -135 },
-  { id: 7, type: 'image', src: img7, w: 165, h: 242, x: 1040, y: 55, rot: -5, depth: 1, wave: 3, drift: -175 },
-  { id: 8, type: 'music', track: 'Persephone', artist: 'Opeth', coverUrl: spotifyOpeth, trackUrl: 'https://open.spotify.com/track/66ovOAlYsAUFnsl7ti8tvm', w: 158, h: 195, x: 1270, y: 120, rot: 4, depth: 0, wave: 4, drift: -65, group: 'right', fanOffset: { x: 20, y: -90, rot: 4 } },
-  { id: 10, type: 'image', src: img8, w: 220, h: 293, x: 1090, y: 540, rot: -3, depth: 2, wave: 3, drift: -310, startScale: 1.45, group: 'right', fanOffset: { x: 0, y: 0, rot: 0 } },
-  { id: 14, type: 'music', track: 'Terminal Frost', artist: 'Pink Floyd', coverUrl: spotifyPinkFloyd, trackUrl: 'https://open.spotify.com/track/4hO2y5DRbeMppklIroS1O8', w: 158, h: 195, x: 320, y: 190, rot: -4, depth: 0, wave: 1, drift: -110 }
+  { id: 1, type: 'image', src: img1, top: '2%', left: '6%', rotate: '-6deg', w: 220, side: 'left', label: 'Vintage Lens' },
+  { id: 2, type: 'image', src: img2, top: '4%', left: '30%', rotate: '4deg', w: 250, side: 'left', label: 'Mountain Retreat' },
+  { id: 3, type: 'image', src: img3, top: '5%', left: '55%', rotate: '-3deg', w: 270, side: 'right', label: 'Morning Brew' },
+  { id: 4, type: 'image', src: img4, top: '3%', left: '78%', rotate: '6deg', w: 200, side: 'right', label: 'Shadow Play' },
+  { id: 5, type: 'image', src: img5, top: '32%', left: '3%', rotate: '4deg', w: 200, side: 'left', label: 'Desk Inspiration' },
+  { id: 6, type: 'image', src: img6, top: '30%', left: '26%', rotate: '-4deg', w: 255, side: 'right', label: 'Misty Woods' },
+  { id: 7, type: 'image', src: img7, top: '34%', left: '54%', rotate: '2deg', w: 165, side: 'right', label: 'Minimal Portrait' },
+  { id: 8, type: 'music', track: 'Persephone', artist: 'Opeth', coverUrl: spotifyOpeth, top: '30%', left: '76%', rotate: '-5deg', w: 158, h: 195, side: 'right', label: 'Opeth Album' },
+  { id: 9, type: 'image', src: img8, top: '68%', left: '8%', rotate: '-4deg', w: 220, side: 'left', label: 'Abstract Concept' },
+  { id: 10, type: 'music', track: 'Terminal Frost', artist: 'Pink Floyd', coverUrl: spotifyPinkFloyd, top: '68%', left: '42%', rotate: '5deg', w: 158, h: 195, side: 'right', label: 'Floyd Album' }
 ];
 
-const WAVE_OFFSETS = {
-  1: [0, 0.18],
-  2: [0.06, 0.28],
-  3: [0.14, 0.38],
-  4: [0.24, 0.5]
-};
-
-const M_IDS = [3, 4, 6, 7];
-const N_IDS = [2, 5, 13, 10];
-const P_IDS = [3, 6, 4];
-const F_IDS = [7, 2, 13];
-const I_IDS = [10, 5];
-
-const getCardsByIDs = (ids) => {
-  const cardsMap = Object.fromEntries(cardsData.map(c => [c.id, c]));
-  return ids.map(id => cardsMap[id]).filter(Boolean);
-};
-
-const O_VAL = 750;
-const K_VAL = 400;
-
-const getCardPosition = (card) => {
-  const t = (card.id * 13 % 17 - 8) * 2.2;
-  const n = (card.id * 7 % 11 - 5) * 2.2;
-  return {
-    cx: O_VAL - card.w / 2 + t,
-    cy: K_VAL - card.h / 2 + n
-  };
-};
-
-const ScrollReveal = ({ children, delay = 0, duration = 0.55, shift = true }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: shift ? 20 : 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const MusicCard = ({ card, hovered }) => {
+const MusicCard = ({ card }) => {
   return (
     <div className="lop-music-card" style={{ width: card.w, height: card.h }}>
       <div className="lop-music-cover" style={{
         backgroundImage: card.coverUrl ? `url(${card.coverUrl})` : undefined
-      }}>
-        {/* Play overlay on hover */}
-        <motion.div
-          className="lop-music-play-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ duration: 0.25 }}
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
-            <polygon points="6,3 20,12 6,21" />
-          </svg>
-        </motion.div>
-      </div>
+      }} />
       <div className="lop-music-info">
         <p className="lop-music-track">{card.track}</p>
         <p className="lop-music-artist">{card.artist}</p>
-        <div className="lop-music-spotify">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="#1DB954">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-          </svg>
-          <span>Spotify</span>
-        </div>
       </div>
     </div>
   );
@@ -105,7 +44,7 @@ const MusicCard = ({ card, hovered }) => {
 
 const ImageCard = ({ card, hovered }) => {
   return (
-    <div className="lop-image-card" style={{ width: card.w, height: card.h }}>
+    <div className="lop-image-card" style={{ width: card.w, height: card.h || 'auto' }}>
       <motion.img
         src={card.src}
         width={card.w}
@@ -116,240 +55,280 @@ const ImageCard = ({ card, hovered }) => {
         animate={{ scale: hovered ? 1.06 : 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
-        alt=""
+        alt={card.label}
       />
     </div>
   );
 };
 
-const InteractiveCard = ({ card, stickyP, hoveredGroup, onGroupEnter, onGroupLeave }) => {
+const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZIndexes, zCounterRef }) => {
   const [hovered, setHovered] = useState(false);
-  const [start, end] = WAVE_OFFSETS[card.wave];
-  const { cx, cy } = getCardPosition(card);
+  const cardRef = useRef(null);
+  const rectRef = useRef(null);
+  const animationFrameId = useRef(null);
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
-  const isGroupHovered = card.group != null && hoveredGroup === card.group;
-  const fanOffset = card.fanOffset ?? { x: 0, y: 0, rot: 0 };
+  // Local drag values for framer motion
+  const dragX = useMotionValue(0);
+  const dragY = useMotionValue(0);
 
-  // Position: center → final position
-  const xTransform = useTransform(stickyP, [start, end], [cx, card.x]);
-  const rotTransform = useTransform(stickyP, [start, end], [card.rot * 0.1, card.rot]);
-  const scaleTransform = useTransform(stickyP, [start, end], [card.startScale ?? 0.88, 1]);
+  // Position math derived from Yanilu's scattered state
+  const sameSideCards = cardsData.slice(0, index).filter(c => c.side === card.side).length;
+  const startX = card.side === 'left' ? 0 : 826.2;
+  const targetX = (parseFloat(card.left) / 100) * 972;
+  const targetY = (parseFloat(card.top) / 100) * 578;
 
-  const yTransform = useTransform(stickyP, (val) => {
-    const progress = Math.max(0, Math.min(1, (val - start) / (end - start)));
-    return cy + progress * (card.y - cy) + val * card.drift;
-  });
+  // Scattered initial offsets
+  const staggerOffset = card.side === 'left'
+    ? (sameSideCards - 2) * 50 + ([0, 30, -20, 15, -10, 25, -15, 20, -25, 10][sameSideCards] ?? 0)
+    : -((sameSideCards - 2) * 50) + ([0, -30, 20, -15, 10, -25, 15, -20, 25, -10][sameSideCards] ?? 0);
 
-  // Scroll-linked opacity: cards fade in as they fan out
-  const cardOpacity = useTransform(stickyP, [start, Math.min(start + 0.08, end)], [0, 1]);
+  const initialXOffset = startX + staggerOffset - targetX;
+  const initialYOffset = -491.3 + 70 * sameSideCards - targetY;
 
-  const zIndex = card.depth * 3 + 1 + (hovered ? 20 : isGroupHovered ? 8 : 0);
+  // Transforms mapping scroll to visual target coordinates
+  const xTransform = useTransform(scrollYProgress, [0, 0.3, 0.85], [initialXOffset, initialXOffset, 0]);
+  const yTransform = useTransform(scrollYProgress, [0, 0.3, 0.85], [initialYOffset, initialYOffset, 0]);
+  const opacityTransform = useTransform(scrollYProgress, [0.25, 0.45, 0.85, 1], [0, 1, 1, 1]);
+
+  const handleMouseEnter = useCallback(() => {
+    setHovered(true);
+    zCounterRef.current += 1;
+    setImgZIndexes(prev => {
+      const next = [...prev];
+      next[index] = zCounterRef.current;
+      return next;
+    });
+    if (cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+  }, [index, setImgZIndexes, zCounterRef]);
+
+  const handleMouseMove = useCallback((e) => {
+    const rect = rectRef.current;
+    if (!rect) return;
+
+    if (animationFrameId.current === null) {
+      animationFrameId.current = requestAnimationFrame(() => {
+        animationFrameId.current = null;
+        const xPercent = (e.clientX - rect.left) / rect.width - 0.5;
+        const yPercent = (e.clientY - rect.top) / rect.height - 0.5;
+        setTilt({
+          rotateX: -20 * yPercent,
+          rotateY: 20 * xPercent
+        });
+      });
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (animationFrameId.current !== null) {
+      cancelAnimationFrame(animationFrameId.current);
+      animationFrameId.current = null;
+    }
+    setTilt({ rotateX: 0, rotateY: 0 });
+    setHovered(false);
+    rectRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+    };
+  }, []);
+
+  const handleDragStart = () => {
+    zCounterRef.current += 1;
+    setImgZIndexes(prev => {
+      const next = [...prev];
+      next[index] = zCounterRef.current;
+      return next;
+    });
+  };
 
   return (
     <motion.div
-      data-cursor={card.trackUrl ? 'Listen' : undefined}
+      ref={cardRef}
+      drag={landed}
+      dragMomentum={false}
+      whileDrag={{ scale: 1.08 }}
+      onDragStart={handleDragStart}
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      data-cursor={card.label}
+      className="cursor-grab active:cursor-grabbing"
       style={{
-        position: 'absolute',
-        x: xTransform,
-        y: yTransform,
-        rotate: rotTransform,
-        scale: scaleTransform,
-        opacity: cardOpacity,
-        zIndex,
-        cursor: 'pointer',
-        willChange: 'transform, opacity'
-      }}
-      onClick={() => card.trackUrl && window.open(card.trackUrl, '_blank', 'noopener,noreferrer')}
-      onMouseEnter={() => {
-        setHovered(true);
-        if (card.group) onGroupEnter(card.group);
-      }}
-      onMouseLeave={() => {
-        setHovered(false);
-        if (card.group) onGroupLeave();
+        position: 'absolute', // Hardcoded inline style to bypass missing Tailwind definitions
+        top: card.top,
+        left: card.left,
+        rotate: card.rotate,
+        zIndex: imgZIndexes[index],
+        x: landed ? dragX : xTransform,
+        y: landed ? dragY : yTransform,
+        opacity: landed ? 1 : opacityTransform,
+        perspective: 600
       }}
     >
       <motion.div
         animate={{
-          x: isGroupHovered ? fanOffset.x : 0,
-          y: isGroupHovered ? fanOffset.y + (hovered ? -14 : 0) : (hovered ? -14 : 0),
-          rotate: isGroupHovered ? fanOffset.rot : 0,
+          rotateX: tilt.rotateX,
+          rotateY: tilt.rotateY,
           scale: hovered ? 1.04 : 1
         }}
-        transition={{
-          type: 'spring',
-          stiffness: 280,
-          damping: 22
-        }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        {card.type === 'music' && <MusicCard card={card} hovered={hovered} />}
-        {card.type === 'image' && <ImageCard card={card} hovered={hovered} />}
+        {card.type === 'music' ? (
+          <MusicCard card={card} hovered={hovered} />
+        ) : (
+          <ImageCard card={card} hovered={hovered} />
+        )}
       </motion.div>
     </motion.div>
   );
 };
 
-const MobileCard = ({ card, index, skipReveal = false }) => {
-  const [hovered, setHovered] = useState(false);
-  const content = (
+const CenterTitle = () => {
+  return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 0,
+        pointerEvents: 'none',
+        textAlign: 'center',
+        width: '100%'
+      }}
     >
-      {card.type === 'image' && (
-        <div className="lop-mobile-image-wrap" style={{ aspectRatio: `${card.w} / ${card.h}` }}>
-          <motion.img
-            src={card.src}
-            animate={{ scale: hovered ? 1.05 : 1 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      )}
-      {card.type === 'music' && <MusicCard card={card} hovered={hovered} />}
-    </div>
-  );
-  return skipReveal ? content : <ScrollReveal delay={index * 0.03}>{content}</ScrollReveal>;
-};
-
-const MobileColumn = ({ images, startIndex = 0, skipReveal = false }) => {
-  return (
-    <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-      {images.map((card, idx) => (
-        <MobileCard key={card.id} card={card} index={startIndex + idx} skipReveal={skipReveal} />
-      ))}
-    </div>
-  );
-};
-
-const MobileGrid = ({ columns, className = '', padTop = 8, skipReveal = false }) => {
-  let startIndex = 0;
-  const gridContent = (
-    <div className={`items-stretch ${className}`} style={{ gap: 12, padding: `${padTop}px 24px 52px` }}>
-      {columns.map((col, idx) => {
-        const colEl = <MobileColumn key={idx} images={col} startIndex={startIndex} skipReveal={skipReveal} />;
-        startIndex += col.length;
-        return colEl;
-      })}
-    </div>
-  );
-  return skipReveal ? <ScrollReveal duration={0.45} shift={false}>{gridContent}</ScrollReveal> : gridContent;
-};
-
-// Scroll-driven center title that fades out as cards spread
-const CenterTitle = ({ stickyP }) => {
-  // Title visible at the start, fades out as cards fan
-  const titleOpacity = useTransform(stickyP, [0, 0.12], [1, 0]);
-  const titleScale = useTransform(stickyP, [0, 0.12], [1, 0.92]);
-  const titleY = useTransform(stickyP, [0, 0.12], [0, 20]);
-
-  return (
-    <div className="lop-center-title">
-      <motion.div style={{ opacity: titleOpacity, scale: titleScale, y: titleY }}>
-        <h2 className="lop-title">
-          Not Just a<br />Designer
-        </h2>
-      </motion.div>
+      <h2
+        style={{
+          fontFamily: "'kalice', Georgia, serif",
+          fontSize: '40px',
+          fontWeight: 500,
+          color: '#161616',
+          lineHeight: 1.15,
+          letterSpacing: '-1.5px',
+          margin: 0,
+          textTransform: 'uppercase',
+          opacity: 0.9
+        }}
+      >
+        Not Just a Designer
+      </h2>
     </div>
   );
 };
 
 const LifeOutsidePixels = () => {
-  const containerRef = useRef(null);
-  const triggerRef = useRef(null);
-  const [hoveredGroup, setHoveredGroup] = useState(null);
-  const hoverTimeoutRef = useRef(null);
+  const boardRef = useRef(null);
+  const [landed, setLanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Z-Index layer manager state
+  const [imgZIndexes, setImgZIndexes] = useState(() => cardsData.map((_, i) => i + 1));
+  const zCounterRef = useRef(cardsData.length);
 
-  const handleGroupEnter = useCallback((group) => {
-    clearTimeout(hoverTimeoutRef.current);
-    setHoveredGroup(group);
-  }, []);
-
-  const handleGroupLeave = useCallback(() => {
-    hoverTimeoutRef.current = setTimeout(() => setHoveredGroup(null), 80);
-  }, []);
-
-  const { scrollYProgress: enterProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start']
-  });
-
-  const { scrollYProgress: stickyProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end']
-  });
-
-  const containerOpacity = useTransform(enterProgress, [0.78, 0.96], [1, 0.84]);
-
-  const handleScrollProgress = useCallback((val) => {
-    const trigger = triggerRef.current;
-    if (trigger) {
-      if (val < 0.01) {
-        trigger.setAttribute('data-cursor', 'Scroll');
-      } else {
-        trigger.removeAttribute('data-cursor');
-      }
-    }
-  }, []);
-
+  // Monitor viewport width for mobile layout scaling
   useEffect(() => {
-    handleScrollProgress(stickyProgress.get());
-  }, [handleScrollProgress, stickyProgress]);
+    const checkViewport = () => setIsMobile(window.innerWidth < 768);
+    checkViewport();
+    window.addEventListener('resize', checkViewport);
+    return () => window.removeEventListener('resize', checkViewport);
+  }, []);
 
-  useMotionValueEvent(stickyProgress, 'change', handleScrollProgress);
+  const { scrollYProgress } = useScroll({
+    target: boardRef,
+    offset: ['start end', 'center center']
+  });
 
-  const leftCols = getCardsByIDs(M_IDS);
-  const rightCols = getCardsByIDs(N_IDS);
-  const col1 = getCardsByIDs(P_IDS);
-  const col2 = getCardsByIDs(F_IDS);
-  const col3 = getCardsByIDs(I_IDS);
+  // Enable dragging lock once user scrolls past 90%
+  useMotionValueEvent(scrollYProgress, 'change', (val) => {
+    if (val >= 0.9 && !landed) {
+      setLanded(true);
+    }
+    if (val < 0.85 && landed) {
+      setLanded(false);
+    }
+  });
 
   return (
-    <div>
-      {/* Desktop view */}
-      <div ref={containerRef} className="hidden lg:block" style={{ height: '300vh', background: 'transparent' }}>
-        <div ref={triggerRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center' }}>
-          <motion.div
-            className="lop-desktop-container"
-            style={{ opacity: containerOpacity }}
+    <div className="lop-section-wrapper">
+      <motion.div
+        className="lop-board-outer board-float"
+        initial={{ opacity: 0, y: 150, scale: 0.85 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        viewport={{ once: true, margin: '-150px' }}
+      >
+        {/* Board Wooden Frame "Mat" */}
+        <div className="lop-board-mat">
+          {/* Inner Bulletin Board */}
+          <div
+            ref={boardRef}
+            className={`lop-board-inner ${isMobile ? 'lop-board-mobile' : 'lop-board-desktop'}`}
           >
-            {cardsData.map((card) => (
-              <InteractiveCard
-                key={card.id}
-                card={card}
-                stickyP={stickyProgress}
-                hoveredGroup={hoveredGroup}
-                onGroupEnter={handleGroupEnter}
-                onGroupLeave={handleGroupLeave}
-              />
-            ))}
-            {/* Center title — fades out as cards spread */}
-            <CenterTitle stickyP={stickyProgress} />
-          </motion.div>
+            {/* Fine Paper Noise Overlay */}
+            <div className="lop-noise-overlay" />
+
+            {/* Dotted Grid Layout Overlay */}
+            <div className="lop-grid-overlay" />
+
+            {/* Geographical Coordinates Overlay */}
+            <div className="lop-coordinates-col">
+              {"47.6062°N 122.3321°W"
+                .split("")
+                .map((char, index) => (
+                  <span
+                    key={index}
+                    className="lop-coordinates-char"
+                  >
+                    {char}
+                  </span>
+                ))}
+            </div>
+
+            {/* Center Title (Not Just a Designer) */}
+            <CenterTitle />
+
+            {/* Board Cards Render Layer */}
+            <div
+              className="lop-cards-layer"
+              style={
+                isMobile
+                  ? {
+                      position: 'absolute',
+                      inset: 0,
+                      transform: 'scale(0.55)',
+                      transformOrigin: 'top left',
+                      width: `${100 / 0.55}%`,
+                      height: `${100 / 0.55}%`
+                    }
+                  : {
+                      position: 'absolute',
+                      inset: 0
+                    }
+              }
+            >
+              {cardsData.map((card, index) => (
+                <BoardCard
+                  key={card.id}
+                  card={card}
+                  index={index}
+                  scrollYProgress={scrollYProgress}
+                  landed={isMobile || landed}
+                  imgZIndexes={imgZIndexes}
+                  setImgZIndexes={setImgZIndexes}
+                  zCounterRef={zCounterRef}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Mobile/Tablet view */}
-      <div className="lg:hidden" style={{ background: 'transparent', padding: '72px 0 0' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          style={{ padding: '0 24px', marginBottom: 27 }}
-        >
-          <h2 className="lop-mobile-title">Not Just a Designer</h2>
-        </motion.div>
-
-        {/* Mobile (flex list) */}
-        <MobileGrid className="flex md:hidden" columns={[leftCols, rightCols]} skipReveal={true} />
-
-        {/* Tablet (flex list) */}
-        <MobileGrid className="hidden md:flex lg:hidden" columns={[col1, col2, col3]} />
-      </div>
+      </motion.div>
     </div>
   );
 };

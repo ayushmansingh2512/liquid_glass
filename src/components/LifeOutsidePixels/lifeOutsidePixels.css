@@ -1,4 +1,8 @@
-/* Life Outside Pixels responsive display helper classes */
+/* ==========================================================================
+   Life Outside Pixels - Draggable bulletin board styles
+   ========================================================================== */
+
+/* Responsive helper classes */
 .hidden {
   display: none !important;
 }
@@ -11,7 +15,6 @@
   align-items: stretch !important;
 }
 
-/* Large devices (lg): min-width 1025px */
 @media (min-width: 1025px) {
   .lg\:block {
     display: block !important;
@@ -22,7 +25,6 @@
   }
 }
 
-/* Medium devices (md): 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
   .md\:flex {
     display: flex !important;
@@ -33,52 +35,172 @@
   }
 }
 
-/* Mobile devices (sm/xs): max-width 767px */
 @media (max-width: 767px) {
   .md\:flex {
     display: none !important;
   }
 }
 
-/* ========================================
-   IMAGE CARDS
-   ======================================== */
-.lop-image-card {
-  border-radius: 18px;
-  overflow: hidden;
-  background: #e8e8e8;
+/* ==========================================================================
+   Mat Board Layout & Styling (Tailwind Bypassed)
+   ========================================================================== */
+.lop-section-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.lop-board-outer {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.lop-board-mat {
+  border-radius: 24px;
+  padding: 14px;
+  background: linear-gradient(160deg, #F2BDAA 0%, #F2E4C2 100%);
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    0 12px 40px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.4s ease;
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 24px 70px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+
+.lop-board-inner {
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background: #FAF8F5;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: default;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.lop-board-desktop {
+  min-height: 750px;
+}
+
+.lop-board-mobile {
+  min-height: 420px;
+}
+
+.lop-noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+.lop-grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(180, 160, 130, 0.3) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.lop-coordinates-col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lop-coordinates-char {
+  font-family: monospace;
+  font-size: 9px;
+  color: #a8a29e;
+  text-align: center;
+  height: 29px;
+  line-height: 29px;
+}
+
+.lop-cards-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ==========================================================================
+   Mat Board Container Floating Animation
+   ========================================================================== */
+@keyframes board-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.board-float {
+  animation: board-float 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+
+
+/* ==========================================================================
+   Visual Card Layout Styles (polaroid mat look)
+   ========================================================================== */
+.lop-image-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  border: 4px solid #fff;
+  border-bottom: 12px solid #fff;
+  /* Polaroid style border bottom */
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
 }
 
 .lop-image-card:hover {
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.10),
-    0 24px 64px rgba(0, 0, 0, 0.14);
+    0 8px 18px rgba(0, 0, 0, 0.12),
+    0 20px 48px rgba(0, 0, 0, 0.16);
 }
 
-/* ========================================
-   MUSIC CARDS
-   ======================================== */
 .lop-music-card {
-  border-radius: 20px;
-  background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 8px;
+  background: #fff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: 4px solid #fff;
+  border-bottom: 8px solid #fff;
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.12),
-    0 16px 48px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 0.4s ease;
+    0 3px 8px rgba(0, 0, 0, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
 }
 
 .lop-music-card:hover {
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.16),
-    0 24px 64px rgba(0, 0, 0, 0.22),
-    0 0 0 1px rgba(255, 255, 255, 0.06);
+    0 8px 18px rgba(0, 0, 0, 0.12),
+    0 20px 48px rgba(0, 0, 0, 0.16);
 }
 
 .lop-music-cover {
@@ -86,195 +208,70 @@
   flex: 1;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  border-radius: 4px;
 }
 
 .lop-music-play-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1.5px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .lop-music-info {
-  padding: 10px 12px 12px;
+  padding: 6px 4px 4px;
   flex-shrink: 0;
 }
 
 .lop-music-track {
-  font-family: 'Satoshi', sans-serif;
-  color: #fff;
-  font-size: 12.5px;
-  font-weight: 600;
-  margin: 0 0 2px;
-  letter-spacing: -0.2px;
-  line-height: 1.3;
+  font-family: inherit;
+  color: #1e1b18;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.15px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lop-music-artist {
-  font-family: 'Satoshi', sans-serif;
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 10.5px;
+  font-family: inherit;
+  color: #7c7267;
+  font-size: 9px;
   font-weight: 500;
-  margin: 0 0 8px;
+  margin: 1px 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lop-music-spotify {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .lop-music-spotify span {
-  font-family: 'Satoshi', sans-serif;
-  color: rgba(255, 255, 255, 0.38);
-  font-size: 9.5px;
+  font-family: inherit;
+  color: #1db954;
+  font-size: 8.5px;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-/* ========================================
-   CENTER TITLE (DESKTOP)
-   ======================================== */
-.lop-center-title {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -54%);
-  z-index: 0;
-  pointer-events: none;
-  text-align: center;
+/* ==========================================================================
+   Cursor Snapping and Interactive Styles
+   ========================================================================== */
+.cursor-grab {
+  cursor: grab !important;
 }
 
-.lop-title {
-  font-family: 'Kalice', Georgia, serif;
-  font-size: 30px;
-  font-weight: 600;
-  color: #1e1e1e;
-  line-height: 1.3;
-  letter-spacing: -1.32px;
-  margin: 0;
-}
-
-/* ========================================
-   MOBILE TITLE
-   ======================================== */
-.lop-mobile-title {
-  font-family: 'Kalice', Georgia, serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1e1e1e;
-  letter-spacing: -0.66px;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.lop-mobile-image-wrap {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #e8e8e8;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* ========================================
-   KEYFRAMES (mobile scroll)
-   ======================================== */
-@keyframes mob-scroll-left {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes mob-scroll-right {
-  from {
-    transform: translateX(-50%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-.si-v2-mob-track {
-  display: flex;
-  gap: 10px;
-  width: max-content;
-  padding: 4px 0;
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-.si-v2-mob-track-left {
-  animation: mob-scroll-left 32s linear infinite;
-}
-
-.si-v2-mob-track-right {
-  animation: mob-scroll-right 32s linear infinite;
-}
-
-.si-v2-mobile-card-wrap {
-  width: 310px;
-  height: 266px;
-  flex-shrink: 0;
-}
-
-.si-v2-mobile-card-wrap .si-v2-card {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.si-v2-card {
-  aspect-ratio: 7 / 6;
-  height: 100%;
-  width: auto;
-}
-
-/* Responsive Desktop Container Sizing (proportional scaling) */
-.lop-desktop-container {
-  position: relative;
-  width: 1500px;
-  height: 860px;
-  flex-shrink: 0;
-  will-change: transform, opacity;
-  transform-origin: center center;
-}
-
-@media (max-width: 1550px) {
-  .lop-desktop-container {
-    transform: scale(0.9);
-  }
-}
-@media (max-width: 1380px) {
-  .lop-desktop-container {
-    transform: scale(0.8);
-  }
-}
-@media (max-width: 1220px) {
-  .lop-desktop-container {
-    transform: scale(0.7);
-  }
-}
-@media (max-width: 1100px) {
-  .lop-desktop-container {
-    transform: scale(0.65);
-  }
-}
-
-/* Mobile Music Card Sizing to prevent overflow */
-@media (max-width: 767px) {
-  .lop-music-card {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 158 / 195;
-  }
+.cursor-grabbing {
+  cursor: grabbing !important;
 }

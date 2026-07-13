@@ -24,9 +24,7 @@ const cardsData = [
     description: "Designing an AI First Experience for an Enterprise Journey Orchestrator - from a simple prompt to live self optimising journey",
     image: twoImg,
     isComingSoon: true,
-    actions: [
-      { type: 'text', text: 'Case Study Coming Soon!' }
-    ]
+    actions: []
   },
   {
     tag: "Government of India, NeGD - 2024",

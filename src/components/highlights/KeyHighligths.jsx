@@ -31,7 +31,7 @@ const KeyHighligths = () => {
             </span>
             <span className="cb-btn_cta-title">
               <img className='star' src={star} alt='star' />
-              <span className='p-key'>KEY HIGHLIGHTS</span>
+              <span className='p-key'>Key Highlights</span>
             </span>
           </div>
           <p className='p-dis'>Discover what I have been up-to ✨</p>

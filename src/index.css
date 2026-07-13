@@ -186,10 +186,11 @@ html.custom-cursor-active .custom-cursor-dot {
 
 .custom-cursor-text {
   letter-spacing: -0.26px;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   opacity: 0;
   font-family: 'Satoshi', sans-serif;
-  font-size: 20.5px;
+  font-size: 15.5px;
   font-weight: bolder;
   transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1), transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-block;
@@ -202,4 +203,11 @@ html.custom-cursor-active .custom-cursor-dot {
 .custom-cursor-dot.custom-cursor-dot-has-text .custom-cursor-text {
   opacity: 1;
   transform: scale(1);
+}
+
+.custom-cursor-dot-small-text .custom-cursor-text {
+  font-size: 15.5px !important;
+  letter-spacing: 1px !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
 }

@@ -21,16 +21,11 @@ const Card = ({ tag, title, description, image, actions = [], isComingSoon }) =>
       viewport={{ once: true, margin: "-120px" }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className={`portfolio-card ${mainHref ? 'is-clickable' : ''} ${isComingSoon ? 'is-coming-soon' : ''}`}
-      data-cursor={isComingSoon ? "Soon" : (mainHref ? "View" : undefined)}
+      data-cursor={isComingSoon ? "Coming Soon" : (mainHref ? "VIEW" : undefined)}
       onClick={handleCardClick}
     >
       <div className='portfolio-card-image-wrap'>
         <img className='portfolio-card-image' src={image} alt={title} />
-        {isComingSoon && (
-          <div className='portfolio-coming-soon-overlay'>
-            <span className='coming-soon-text'>Coming Soon</span>
-          </div>
-        )}
       </div>
       <div className='portfolio-card-content'>
         <div className='portfolio-card-desc-box'>
