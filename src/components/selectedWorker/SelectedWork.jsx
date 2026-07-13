@@ -24,7 +24,9 @@ const cardsData = [
     description: "Designing an AI First Experience for an Enterprise Journey Orchestrator - from a simple prompt to live self optimising journey",
     image: twoImg,
     isComingSoon: true,
-    actions: []
+    actions: [
+      { type: 'text', text: 'Case Study Coming Soon', variant: 'muted' }
+    ]
   },
   {
     tag: "Government of India, NeGD - 2024",
@@ -43,7 +45,7 @@ const cardsData = [
     image: fourImg,
     actions: [
       { type: 'button', text: 'Explore', variant: 'primary', href: 'https://www.figma.com/proto/E3zX9maA7IeObyeczTx81R/eFile?page-id=2358%3A45299&node-id=2377-46747&viewport=63%2C281%2C0.05&t=7s7Tz5KLfQxbOT1I-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2358%3A45300' },
-      { type: 'text', text: 'Case Study under NDA', variant: 'muted' }
+      { type: 'text', text: 'case Study under NDA', variant: 'muted' }
     ]
   }
 ];
