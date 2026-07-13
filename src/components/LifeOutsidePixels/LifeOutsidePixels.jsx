@@ -20,7 +20,7 @@ const cardsData = [
   { id: 3, type: 'image', src: cs2Img, top: '5%', left: '58%', rotate: '-3deg', w: 150, side: 'right', label: 'CS2' },
   { id: 4, type: 'image', src: containerImg, top: '6%', left: '76%', rotate: '6deg', w: 170, side: 'right', label: 'Guitar' },
   { id: 5, type: 'music', src: songFreebirdImg, top: '52%', left: '9%', rotate: '-4deg', w: 200, side: 'left', label: 'Listen' },
-  { id: 6, type: 'image', src: mountainsCallingImg, top: '38%', left: '42%', rotate: '2deg', w: 180, side: 'left', label: 'Mountain' },
+  { id: 6, type: 'image', src: mountainsCallingImg, top: '60%', left: '26%', rotate: '-4deg', w: 180, side: 'left', label: 'Mountain' },
   { id: 7, type: 'image', src: stephImg, top: '36%', left: '65%', rotate: '-5deg', w: 165, side: 'right', label: 'Steph Curry' },
   { id: 8, type: 'image', src: f1Img, top: '64%', left: '53%', rotate: '3deg', w: 160, side: 'right', label: 'F1 Racing' },
   { id: 9, type: 'music', src: billyJoelImg, top: '58%', left: '76%', rotate: '5deg', w: 200, side: 'right', label: 'Listen' }
@@ -75,12 +75,21 @@ const BoardCard = ({ card, index, scrollYProgress, imgZIndexes, setImgZIndexes, 
   const x = useMotionValue(xTransform.get());
   const y = useMotionValue(yTransform.get());
 
-  // Link scroll transitions to the card's active position continuously
+  // Store the last scroll transform value to calculate delta scroll movements
+  const lastScrollX = useRef(xTransform.get());
+  const lastScrollY = useRef(yTransform.get());
+
+  // Update position values using deltas when scroll occurs
   useMotionValueEvent(xTransform, 'change', (val) => {
-    x.set(val);
+    const delta = val - lastScrollX.current;
+    x.set(x.get() + delta);
+    lastScrollX.current = val;
   });
+
   useMotionValueEvent(yTransform, 'change', (val) => {
-    y.set(val);
+    const delta = val - lastScrollY.current;
+    y.set(y.get() + delta);
+    lastScrollY.current = val;
   });
 
   const handleMouseEnter = useCallback(() => {
@@ -228,19 +237,6 @@ const LifeOutsidePixels = () => {
             {/* Dotted Grid Layout Overlay */}
             <div className="lop-grid-overlay" />
 
-            {/* Geographical Coordinates Overlay */}
-            <div className="lop-coordinates-col">
-              {"47.6062°N 122.3321°W"
-                .split("")
-                .map((char, index) => (
-                  <span
-                    key={index}
-                    className="lop-coordinates-char"
-                  >
-                    {char}
-                  </span>
-                ))}
-            </div>
 
             {/* Center Title (Not Just a Designer) */}
             <CenterTitle />
