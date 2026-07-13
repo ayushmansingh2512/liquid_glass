@@ -44,7 +44,7 @@ const cardsData = [
     description: "Transforming UMANG into a scalable super-app by integrating key government services and improving service discovery through personalization.",
     image: fourImg,
     actions: [
-      { type: 'button', text: 'See UI Showcase (NDA Compliant)', variant: 'primary', href: 'https://www.figma.com/proto/E3zX9maA7IeObyeczTx81R/eFile?page-id=2358%3A45299&node-id=2377-46747&viewport=63%2C281%2C0.05&t=7s7Tz5KLfQxbOT1I-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2358%3A45300' }
+      { type: 'button', text: 'See UI Showcase (NDA Compliant)', variant: 'primary', href: '/case-study/umang', isInternalLink: true }
     ]
   }
 ];

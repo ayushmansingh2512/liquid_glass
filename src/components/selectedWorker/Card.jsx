@@ -1,16 +1,23 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Card = ({ tag, title, description, image, actions = [], isComingSoon }) => {
+  const navigate = useNavigate();
   const primaryAction = actions.find(action => action.type === 'button' && action.href);
   const mainHref = primaryAction ? primaryAction.href : null;
+  const isInternal = primaryAction ? primaryAction.isInternalLink : false;
 
   const handleCardClick = (e) => {
     if (e.target.closest('.portfolio-card-actions') || e.target.closest('a') || e.target.closest('button')) {
       return;
     }
     if (mainHref) {
-      window.open(mainHref, '_blank', 'noopener,noreferrer');
+      if (isInternal) {
+        navigate(mainHref);
+      } else {
+        window.open(mainHref, '_blank', 'noopener,noreferrer');
+      }
     }
   };
 
@@ -39,6 +46,22 @@ const Card = ({ tag, title, description, image, actions = [], isComingSoon }) =>
           <div className='portfolio-card-actions'>
             {actions.map((action, i) => {
               if (action.type === 'button') {
+                if (action.isInternalLink) {
+                  return (
+                    <Link
+                      key={i}
+                      to={action.href}
+                    >
+                      <motion.button
+                        whileTap={{ scale: 0.95 }}
+                        className={`portfolio-btn ${action.variant === 'outline' ? 'btn-outline' : 'btn-primary'}`}
+                      >
+                        {action.hasDot && <span className='btn-status-dot'></span>}
+                        {action.text}
+                      </motion.button>
+                    </Link>
+                  );
+                }
                 return (
                   <a
                     key={i}
