@@ -45,7 +45,7 @@ const ImageCard = ({ card, hovered }) => {
   );
 };
 
-const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZIndexes, zCounterRef }) => {
+const BoardCard = ({ card, index, scrollYProgress, imgZIndexes, setImgZIndexes, zCounterRef }) => {
   const [hovered, setHovered] = useState(false);
   const cardRef = useRef(null);
   const rectRef = useRef(null);
@@ -71,22 +71,16 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   const yTransform = useTransform(scrollYProgress, [0, 0.3, 0.85], [initialYOffset, initialYOffset, 0]);
   const opacityTransform = useTransform(scrollYProgress, [0.25, 0.45, 0.85, 1], [0, 1, 1, 1]);
 
-  // Local motion values for drag position initialized with the transformed scroll value
-  const dragX = useMotionValue(xTransform.get());
-  const dragY = useMotionValue(yTransform.get());
-  const [isDragged, setIsDragged] = useState(false);
+  // Single motion value for the card's active position
+  const x = useMotionValue(xTransform.get());
+  const y = useMotionValue(yTransform.get());
 
-  // Sync scroll values to drag values until the user starts dragging manually
+  // Link scroll transitions to the card's active position continuously
   useMotionValueEvent(xTransform, 'change', (val) => {
-    if (!isDragged) {
-      dragX.set(val);
-    }
+    x.set(val);
   });
-
   useMotionValueEvent(yTransform, 'change', (val) => {
-    if (!isDragged) {
-      dragY.set(val);
-    }
+    y.set(val);
   });
 
   const handleMouseEnter = useCallback(() => {
@@ -138,7 +132,6 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   }, []);
 
   const handleDragStart = () => {
-    setIsDragged(true);
     zCounterRef.current += 1;
     setImgZIndexes(prev => {
       const next = [...prev];
@@ -164,8 +157,8 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
         left: card.left,
         rotate: card.rotate,
         zIndex: imgZIndexes[index],
-        x: dragX,
-        y: dragY,
+        x: x,
+        y: y,
         opacity: opacityTransform,
         perspective: 600
       }}
@@ -194,7 +187,6 @@ const CenterTitle = () => {
 
 const LifeOutsidePixels = () => {
   const boardRef = useRef(null);
-  const [landed, setLanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
   // Z-Index layer manager state
@@ -212,15 +204,6 @@ const LifeOutsidePixels = () => {
   const { scrollYProgress } = useScroll({
     target: boardRef,
     offset: ['start end', 'end end']
-  });
-
-  // Enable dragging lock once user scrolls past 95%
-  useMotionValueEvent(scrollYProgress, 'change', (val) => {
-    if (val >= 0.95) {
-      setLanded(true);
-    } else if (val < 0.9) {
-      setLanded(false);
-    }
   });
 
   return (
@@ -287,7 +270,6 @@ const LifeOutsidePixels = () => {
                   card={card}
                   index={index}
                   scrollYProgress={scrollYProgress}
-                  landed={isMobile || landed}
                   imgZIndexes={imgZIndexes}
                   setImgZIndexes={setImgZIndexes}
                   zCounterRef={zCounterRef}
