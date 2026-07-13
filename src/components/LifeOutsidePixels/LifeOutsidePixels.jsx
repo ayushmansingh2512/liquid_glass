@@ -3,44 +3,28 @@ import { motion, useScroll, useTransform, useMotionValueEvent, useMotionValue } 
 import './lifeOutsidePixels.css';
 
 // Import local assets
-import img1 from '../../assets/LifeOutsidePixels/1.webp';
-import img2 from '../../assets/LifeOutsidePixels/2.webp';
-import img3 from '../../assets/LifeOutsidePixels/3.webp';
-import img4 from '../../assets/LifeOutsidePixels/4.webp';
-import img5 from '../../assets/LifeOutsidePixels/5.webp';
-import img6 from '../../assets/LifeOutsidePixels/6.webp';
-import img7 from '../../assets/LifeOutsidePixels/7.webp';
-import img8 from '../../assets/LifeOutsidePixels/8.webp';
-import spotifyOpeth from '../../assets/LifeOutsidePixels/spotify-opeth.jpg';
-import spotifyPinkFloyd from '../../assets/LifeOutsidePixels/spotify-pinkfloyd.jpg';
+import assassinsCreedImg from '../../assets/LifeOutsidePixels/assassins_creed.svg';
+import songKhushnaseebiImg from '../../assets/LifeOutsidePixels/song.svg';
+import cs2Img from '../../assets/LifeOutsidePixels/cs2.svg';
+import containerImg from '../../assets/LifeOutsidePixels/Container.svg';
+import songFreebirdImg from '../../assets/LifeOutsidePixels/song_1.svg';
+import mountainsCallingImg from '../../assets/LifeOutsidePixels/mountains_calling.svg';
+import stephImg from '../../assets/LifeOutsidePixels/steph.svg';
+import f1Img from '../../assets/LifeOutsidePixels/f1.svg';
+import billyJoelImg from '../../assets/LifeOutsidePixels/billy_joel.svg';
 
 // Photography and music cards data configured for the interactive board
 const cardsData = [
-  { id: 1, type: 'image', src: img1, top: '2%', left: '6%', rotate: '-6deg', w: 220, side: 'left', label: 'Vintage Lens' },
-  { id: 2, type: 'image', src: img2, top: '4%', left: '30%', rotate: '4deg', w: 250, side: 'left', label: 'Mountain Retreat' },
-  { id: 3, type: 'image', src: img3, top: '5%', left: '55%', rotate: '-3deg', w: 270, side: 'right', label: 'Morning Brew' },
-  { id: 4, type: 'image', src: img4, top: '3%', left: '78%', rotate: '6deg', w: 200, side: 'right', label: 'Shadow Play' },
-  { id: 5, type: 'image', src: img5, top: '32%', left: '3%', rotate: '4deg', w: 200, side: 'left', label: 'Desk Inspiration' },
-  { id: 6, type: 'image', src: img6, top: '30%', left: '26%', rotate: '-4deg', w: 255, side: 'right', label: 'Misty Woods' },
-  { id: 7, type: 'image', src: img7, top: '34%', left: '54%', rotate: '2deg', w: 165, side: 'right', label: 'Minimal Portrait' },
-  { id: 8, type: 'music', track: 'Persephone', artist: 'Opeth', coverUrl: spotifyOpeth, top: '30%', left: '76%', rotate: '-5deg', w: 158, h: 195, side: 'right', label: 'Opeth Album' },
-  { id: 9, type: 'image', src: img8, top: '68%', left: '8%', rotate: '-4deg', w: 220, side: 'left', label: 'Abstract Concept' },
-  { id: 10, type: 'music', track: 'Terminal Frost', artist: 'Pink Floyd', coverUrl: spotifyPinkFloyd, top: '68%', left: '42%', rotate: '5deg', w: 158, h: 195, side: 'right', label: 'Floyd Album' }
+  { id: 1, type: 'image', src: assassinsCreedImg, top: '5%', left: '9%', rotate: '-6deg', w: 240, side: 'left', label: "Assassin's Creed" },
+  { id: 2, type: 'music', src: songKhushnaseebiImg, top: '4%', left: '37%', rotate: '4deg', w: 190, side: 'left', label: 'Listen' },
+  { id: 3, type: 'image', src: cs2Img, top: '5%', left: '58%', rotate: '-3deg', w: 150, side: 'right', label: 'CS2' },
+  { id: 4, type: 'image', src: containerImg, top: '6%', left: '76%', rotate: '6deg', w: 170, side: 'right', label: 'Guitar' },
+  { id: 5, type: 'music', src: songFreebirdImg, top: '52%', left: '9%', rotate: '-4deg', w: 200, side: 'left', label: 'Listen' },
+  { id: 6, type: 'image', src: mountainsCallingImg, top: '38%', left: '42%', rotate: '2deg', w: 180, side: 'left', label: 'Mountain' },
+  { id: 7, type: 'image', src: stephImg, top: '36%', left: '65%', rotate: '-5deg', w: 165, side: 'right', label: 'Steph Curry' },
+  { id: 8, type: 'image', src: f1Img, top: '64%', left: '53%', rotate: '3deg', w: 160, side: 'right', label: 'F1 Racing' },
+  { id: 9, type: 'music', src: billyJoelImg, top: '58%', left: '76%', rotate: '5deg', w: 200, side: 'right', label: 'Listen' }
 ];
-
-const MusicCard = ({ card }) => {
-  return (
-    <div className="lop-music-card" style={{ width: card.w, height: card.h }}>
-      <div className="lop-music-cover" style={{
-        backgroundImage: card.coverUrl ? `url(${card.coverUrl})` : undefined
-      }} />
-      <div className="lop-music-info">
-        <p className="lop-music-track">{card.track}</p>
-        <p className="lop-music-artist">{card.artist}</p>
-      </div>
-    </div>
-  );
-};
 
 const ImageCard = ({ card, hovered }) => {
   return (
@@ -68,10 +52,6 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   const animationFrameId = useRef(null);
   const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
-  // Local drag values for framer motion
-  const dragX = useMotionValue(0);
-  const dragY = useMotionValue(0);
-
   // Position math derived from Yanilu's scattered state
   const sameSideCards = cardsData.slice(0, index).filter(c => c.side === card.side).length;
   const startX = card.side === 'left' ? 0 : 826.2;
@@ -90,6 +70,24 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   const xTransform = useTransform(scrollYProgress, [0, 0.3, 0.85], [initialXOffset, initialXOffset, 0]);
   const yTransform = useTransform(scrollYProgress, [0, 0.3, 0.85], [initialYOffset, initialYOffset, 0]);
   const opacityTransform = useTransform(scrollYProgress, [0.25, 0.45, 0.85, 1], [0, 1, 1, 1]);
+
+  // Local motion values for drag position initialized with the transformed scroll value
+  const dragX = useMotionValue(xTransform.get());
+  const dragY = useMotionValue(yTransform.get());
+  const [isDragged, setIsDragged] = useState(false);
+
+  // Sync scroll values to drag values until the user starts dragging manually
+  useMotionValueEvent(xTransform, 'change', (val) => {
+    if (!isDragged) {
+      dragX.set(val);
+    }
+  });
+
+  useMotionValueEvent(yTransform, 'change', (val) => {
+    if (!isDragged) {
+      dragY.set(val);
+    }
+  });
 
   const handleMouseEnter = useCallback(() => {
     setHovered(true);
@@ -140,6 +138,7 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   }, []);
 
   const handleDragStart = () => {
+    setIsDragged(true);
     zCounterRef.current += 1;
     setImgZIndexes(prev => {
       const next = [...prev];
@@ -151,14 +150,13 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
   return (
     <motion.div
       ref={cardRef}
-      drag={landed}
+      drag={true}
       dragMomentum={false}
       whileDrag={{ scale: 1.08 }}
       onDragStart={handleDragStart}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      data-cursor={card.label}
       className="cursor-grab active:cursor-grabbing"
       style={{
         position: 'absolute', // Hardcoded inline style to bypass missing Tailwind definitions
@@ -166,9 +164,9 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
         left: card.left,
         rotate: card.rotate,
         zIndex: imgZIndexes[index],
-        x: landed ? dragX : xTransform,
-        y: landed ? dragY : yTransform,
-        opacity: landed ? 1 : opacityTransform,
+        x: dragX,
+        y: dragY,
+        opacity: opacityTransform,
         perspective: 600
       }}
     >
@@ -180,11 +178,7 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        {card.type === 'music' ? (
-          <MusicCard card={card} hovered={hovered} />
-        ) : (
-          <ImageCard card={card} hovered={hovered} />
-        )}
+        <ImageCard card={card} hovered={hovered} />
       </motion.div>
     </motion.div>
   );
@@ -192,33 +186,8 @@ const BoardCard = ({ card, index, scrollYProgress, landed, imgZIndexes, setImgZI
 
 const CenterTitle = () => {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 0,
-        pointerEvents: 'none',
-        textAlign: 'center',
-        width: '100%'
-      }}
-    >
-      <h2
-        style={{
-          fontFamily: "'kalice', Georgia, serif",
-          fontSize: '40px',
-          fontWeight: 500,
-          color: '#161616',
-          lineHeight: 1.15,
-          letterSpacing: '-1.5px',
-          margin: 0,
-          textTransform: 'uppercase',
-          opacity: 0.9
-        }}
-      >
-        Not Just a Designer
-      </h2>
+    <div className="lop-center-title">
+      Life outside work...
     </div>
   );
 };
@@ -242,15 +211,14 @@ const LifeOutsidePixels = () => {
 
   const { scrollYProgress } = useScroll({
     target: boardRef,
-    offset: ['start end', 'center center']
+    offset: ['start end', 'end end']
   });
 
-  // Enable dragging lock once user scrolls past 90%
+  // Enable dragging lock once user scrolls past 95%
   useMotionValueEvent(scrollYProgress, 'change', (val) => {
-    if (val >= 0.9 && !landed) {
+    if (val >= 0.95) {
       setLanded(true);
-    }
-    if (val < 0.85 && landed) {
+    } else if (val < 0.9) {
       setLanded(false);
     }
   });
