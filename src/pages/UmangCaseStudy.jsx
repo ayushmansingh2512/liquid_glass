@@ -30,6 +30,8 @@ import weatherImg2 from '../assets/umang/weather/3.svg';
 import weatherImg3 from '../assets/umang/weather/4.svg';
 import digiImg1 from '../assets/umang/digilocker/1.svg';
 import digiImg2 from '../assets/umang/digilocker/2.svg';
+import downloadUmang from '../assets/umang/downloadUmang.svg';
+import Footer from '../components/Footer/Footer';
 
 const pills = [
   'Government of India (via UX4G / Digital India)',
@@ -309,6 +311,23 @@ const UmangCaseStudy = () => {
           <img src={digiImg2} alt="UMANG DigiLocker Screen 2" />
         </div>
       </motion.section>
+
+      {/* Download Section */}
+      <motion.section 
+        className="umang-cs-download-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="umang-cs-download-container">
+          <img src={downloadUmang} alt="Download the Live App" className="umang-cs-download-img" />
+          <h2 className="umang-cs-download-text">Download the Live App</h2>
+        </div>
+      </motion.section>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 };

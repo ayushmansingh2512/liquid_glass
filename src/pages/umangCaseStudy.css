@@ -187,7 +187,8 @@
   position: absolute;
   top: 58px;
   left: 50%;
-  transform: translateX(-50%) translateX(8px); /* shifted slightly right to match background mockup */
+  transform: translateX(-50%) translateX(8px);
+  /* shifted slightly right to match background mockup */
   /* exact Figma dimensions */
   width: 284.83px;
   height: 650px;
@@ -204,7 +205,8 @@
 .umang-cs-header-video {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* stretch to fill viewport exactly so everything is visible */
+  object-fit: fill;
+  /* stretch to fill viewport exactly so everything is visible */
 }
 
 /* ========================================
@@ -499,7 +501,8 @@
   width: 100%;
   max-width: 1100px;
   /* same width as work and impact sections to align headings */
-  margin: 0 auto 110px; /* 110px gap below Home section */
+  margin: 0 auto 110px;
+  /* 110px gap below Home section */
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -520,7 +523,8 @@
 
 .umang-cs-home-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns taking the whole width */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns taking the whole width */
   gap: 16px;
   width: 100%;
 }
@@ -555,8 +559,10 @@
 /* Voice Search Section */
 .umang-cs-voice-section {
   width: 100%;
-  max-width: 1100px; /* same layout width as Home section */
-  margin: 0 auto 105px; /* 105px gap below Voice Search */
+  max-width: 1100px;
+  /* same layout width as Home section */
+  margin: 0 auto 105px;
+  /* 105px gap below Voice Search */
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -565,7 +571,8 @@
 
 .umang-cs-voice-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to keep image widths exactly same as Home section */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns grid to keep image widths exactly same as Home section */
   gap: 16px;
   width: 100%;
 }
@@ -601,7 +608,8 @@
 .umang-cs-profile-section {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 105px; /* 105px gap below Multi Profile Creation to Weather */
+  margin: 0 auto 105px;
+  /* 105px gap below Multi Profile Creation to Weather */
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -620,7 +628,8 @@
 
 .umang-cs-profile-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns grid */
   gap: 16px;
   width: 100%;
 }
@@ -656,7 +665,8 @@
 .umang-cs-suggest-section {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 88px; /* 88px gap below Search Suggestions to Multi Profile Creation */
+  margin: 0 auto 88px;
+  /* 88px gap below Search Suggestions to Multi Profile Creation */
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -675,7 +685,8 @@
 
 .umang-cs-suggest-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns grid */
   gap: 16px;
   width: 100%;
 }
@@ -711,7 +722,8 @@
 .umang-cs-weather-section {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 167px; /* 167px gap below Weather to DigiLocker */
+  margin: 0 auto 167px;
+  /* 167px gap below Weather to DigiLocker */
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -730,7 +742,8 @@
 
 .umang-cs-weather-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to match Voice Search image widths */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns grid to match Voice Search image widths */
   gap: 16px;
   width: 100%;
 }
@@ -766,11 +779,55 @@
 .umang-cs-digi-section {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 80px;
+  margin: 0 auto 166px;
   display: flex;
   flex-direction: column;
   gap: 43px;
   box-sizing: border-box;
+}
+
+/* Download Section */
+.umang-cs-download-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 166px;
+  box-sizing: border-box;
+}
+
+.umang-cs-download-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.umang-cs-download-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.umang-cs-download-text {
+  position: absolute;
+  left: 8.16%;
+  top: 20%;
+  width: 50%;
+  color: #ffffff;
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: light;
+  font-size: clamp(14px, 3.8vw, 42.53px);
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: left;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .umang-cs-download-text {
+    line-height: 1.8;
+  }
 }
 
 .umang-cs-digi-title {
@@ -785,7 +842,8 @@
 
 .umang-cs-digi-mockups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to match Voice Search image widths */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns grid to match Voice Search image widths */
   gap: 16px;
   width: 100%;
 }
@@ -814,5 +872,10 @@
   .umang-cs-digi-mockups img {
     width: 100%;
     height: auto;
+  }
+
+  .umang-cs-download-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
   }
 }
