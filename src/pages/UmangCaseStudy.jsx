@@ -146,6 +146,23 @@ const UmangCaseStudy = () => {
           </div>
         </div>
       </motion.div>
+
+      {/* What I Worked On Section */}
+      <motion.section 
+        className="umang-cs-work-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-work-title">What I worked on</h3>
+        <ul className="umang-cs-work-list">
+          <li>Redesigned the Home experience with personalized recommendations based on frequently used services, user personas, and state/location-specific offerings.</li>
+          <li>Improved search and discovery by helping citizens understand what they can accomplish within UMANG.</li>
+          <li>Introduced contextual utilities such as AQI, weather insights for farmers, and emergency information to make the platform more proactive and relevant.</li>
+          <li>Designed the DigiLocker integration, enabling users to securely access their DigiLocker documents directly within UMANG. This reduced the need to switch between multiple apps and improved accessibility for users with low-storage devices.</li>
+        </ul>
+      </motion.section>
     </div>
   );
 };
