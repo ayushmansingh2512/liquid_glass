@@ -92,7 +92,7 @@ const UmangCaseStudy = () => {
         </motion.div>
       </section>
 
-      {/* Header Photo */}
+      {/* Header Photo with Video Overlay */}
       <motion.div
         className="umang-cs-header-photo-wrap"
         initial={{ opacity: 0, y: 30 }}
@@ -100,30 +100,17 @@ const UmangCaseStudy = () => {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
       >
         <img src={headerPhoto} alt="UMANG Redesign Mockup" className="umang-cs-header-photo" />
-      </motion.div>
-
-      {/* Mobile Demo Video */}
-      <motion.section 
-        className="umang-cs-video-section"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <div className="umang-cs-phone-mockup">
-          <div className="umang-cs-phone-notch"></div>
-          <div className="umang-cs-phone-screen">
-            <video 
-              src={umangVideo} 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="umang-cs-phone-video"
-            />
-          </div>
+        <div className="umang-cs-header-video-overlay">
+          <video 
+            src={umangVideo} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="umang-cs-header-video"
+          />
         </div>
-      </motion.section>
+      </motion.div>
     </div>
   );
 };
