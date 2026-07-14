@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './MenuOverlay.css';
 
 const menuLinks = [
-    { title: "Home", href: "#" },
-    { title: "My Work", href: "#my-experiences" },
+    { title: "Home", href: "/" },
+    { title: "My Work", href: "/#my-experiences" },
     { title: "Resume", href: "https://drive.google.com/file/d/1rxs_T187DeilHCrqFZsitrOdsrKVWGBA/view?usp=sharing" },
     { title: "Contact", href: "https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" },
 ];
+
+const MotionLink = motion(Link);
 
 const MenuOverlay = ({ isOpen, onClose }) => {
     return (
@@ -76,17 +79,10 @@ const MenuOverlay = ({ isOpen, onClose }) => {
 
 // Sub-component for the Hover Effect (Rolling Text)
 const RollingLink = ({ href, title, onClick }) => {
-    return (
-        <motion.a
-            href={href}
-            onClick={onClick}
-            target={href.startsWith('http') ? "_blank" : "_self"}
-            rel="noreferrer"
-            initial="initial"
-            whileHover="hovered"
-            className="menu-link-large"
-            style={{ position: 'relative', display: 'block', overflow: 'hidden' }}
-        >
+    const isExternal = href.startsWith('http');
+
+    const innerContent = (
+        <>
             {/* Original Text - Moves Up on Hover */}
             <motion.div
                 variants={{
@@ -109,7 +105,37 @@ const RollingLink = ({ href, title, onClick }) => {
             >
                 {title}
             </motion.div>
-        </motion.a>
+        </>
+    );
+
+    if (isExternal) {
+        return (
+            <motion.a
+                href={href}
+                onClick={onClick}
+                target="_blank"
+                rel="noreferrer"
+                initial="initial"
+                whileHover="hovered"
+                className="menu-link-large"
+                style={{ position: 'relative', display: 'block', overflow: 'hidden' }}
+            >
+                {innerContent}
+            </motion.a>
+        );
+    }
+
+    return (
+        <MotionLink
+            to={href}
+            onClick={onClick}
+            initial="initial"
+            whileHover="hovered"
+            className="menu-link-large"
+            style={{ position: 'relative', display: 'block', overflow: 'hidden' }}
+        >
+            {innerContent}
+        </MotionLink>
     );
 };
 
