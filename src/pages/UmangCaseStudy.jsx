@@ -9,6 +9,7 @@ import fourImg from '../assets/SelectedWork/four.svg';
 import arrowIcon from '../assets/arrow/Icon.svg';
 import headerPhoto from '../assets/umang/headerphto.jpg';
 import umangVideo from '../assets/video/umang/Screen_Recording_20260713_213550_Figma.mp4';
+import myUmangPoster from '../assets/beforeLoader/myUmang.jpg';
 
 const pills = [
   'Government of India (via UX4G / Digital India)',
@@ -103,6 +104,7 @@ const UmangCaseStudy = () => {
         <div className="umang-cs-header-video-overlay">
           <video 
             src={umangVideo} 
+            poster={myUmangPoster}
             autoPlay 
             loop 
             muted 
