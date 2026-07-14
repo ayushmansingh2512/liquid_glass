@@ -10,6 +10,26 @@ import arrowIcon from '../assets/arrow/Icon.svg';
 import headerPhoto from '../assets/umang/headerphto.jpg';
 import umangVideo from '../assets/video/umang/Screen_Recording_20260713_213550_Figma.mp4';
 import myUmangPoster from '../assets/beforeLoader/myUmang.jpg';
+import homeImg1 from '../assets/umang/home/1.jpg';
+import homeImg2 from '../assets/umang/home/2.jpg';
+import homeImg3 from '../assets/umang/home/3.jpg';
+import homeImg4 from '../assets/umang/home/4.jpg';
+import voiceImg1 from '../assets/umang/videoSearch/1.jpg';
+import voiceImg2 from '../assets/umang/videoSearch/2.jpg';
+import voiceImg3 from '../assets/umang/videoSearch/3.jpg';
+import profileImg1 from '../assets/umang/multiProfile/1.svg';
+import profileImg2 from '../assets/umang/multiProfile/2.svg';
+import profileImg3 from '../assets/umang/multiProfile/3.svg';
+import profileImg4 from '../assets/umang/multiProfile/4.svg';
+import suggestImg1 from '../assets/umang/searchSuggestion/1.svg';
+import suggestImg2 from '../assets/umang/searchSuggestion/2.svg';
+import suggestImg3 from '../assets/umang/searchSuggestion/3.svg';
+import suggestImg4 from '../assets/umang/searchSuggestion/4.svg';
+import weatherImg1 from '../assets/umang/weather/1.svg';
+import weatherImg2 from '../assets/umang/weather/3.svg';
+import weatherImg3 from '../assets/umang/weather/4.svg';
+import digiImg1 from '../assets/umang/digilocker/1.svg';
+import digiImg2 from '../assets/umang/digilocker/2.svg';
 
 const pills = [
   'Government of India (via UX4G / Digital India)',
@@ -179,6 +199,115 @@ const UmangCaseStudy = () => {
           <li>Increased engagement with frequently used government services.</li>
           <li>Contributed to higher DigiLocker adoption by making document access available within the UMANG ecosystem.</li>
         </ul>
+      </motion.section>
+
+      {/* NDA Disclaimer Box */}
+      <motion.div 
+        className="umang-cs-nda-box"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        Due to my NDA with the Government of India, I cannot share detailed product strategy, research, or complete design flows. The following screens are shared solely to demonstrate my UI and interaction design capabilities while respecting confidentiality.
+      </motion.div>
+
+      {/* Home Mockups Section */}
+      <motion.section 
+        className="umang-cs-home-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-home-title">Home</h3>
+        <div className="umang-cs-home-mockups">
+          <img src={homeImg1} alt="UMANG Home Screen 1" />
+          <img src={homeImg2} alt="UMANG Home Screen 2" />
+          <img src={homeImg3} alt="UMANG Home Screen 3" />
+          <img src={homeImg4} alt="UMANG Home Screen 4" />
+        </div>
+      </motion.section>
+
+      {/* Voice Search Mockups Section */}
+      <motion.section 
+        className="umang-cs-voice-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-voice-title">Voice Search</h3>
+        <div className="umang-cs-voice-mockups">
+          <img src={voiceImg1} alt="UMANG Voice Search Screen 1" />
+          <img src={voiceImg2} alt="UMANG Voice Search Screen 2" />
+          <img src={voiceImg3} alt="UMANG Voice Search Screen 3" />
+        </div>
+      </motion.section>
+
+      {/* Search Suggestions Mockups Section */}
+      <motion.section 
+        className="umang-cs-suggest-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-suggest-title">Search Suggestions</h3>
+        <div className="umang-cs-suggest-mockups">
+          <img src={suggestImg1} alt="UMANG Search Suggestion Screen 1" />
+          <img src={suggestImg2} alt="UMANG Search Suggestion Screen 2" />
+          <img src={suggestImg3} alt="UMANG Search Suggestion Screen 3" />
+          <img src={suggestImg4} alt="UMANG Search Suggestion Screen 4" />
+        </div>
+      </motion.section>
+
+      {/* Multi Profile Creation Mockups Section */}
+      <motion.section 
+        className="umang-cs-profile-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-profile-title">Multi Profile Creation</h3>
+        <div className="umang-cs-profile-mockups">
+          <img src={profileImg1} alt="UMANG Multi Profile Screen 1" />
+          <img src={profileImg2} alt="UMANG Multi Profile Screen 2" />
+          <img src={profileImg3} alt="UMANG Multi Profile Screen 3" />
+          <img src={profileImg4} alt="UMANG Multi Profile Screen 4" />
+        </div>
+      </motion.section>
+
+      {/* Weather Mockups Section */}
+      <motion.section 
+        className="umang-cs-weather-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-weather-title">Weather</h3>
+        <div className="umang-cs-weather-mockups">
+          <img src={weatherImg1} alt="UMANG Weather Screen 1" />
+          <img src={weatherImg2} alt="UMANG Weather Screen 2" />
+          <img src={weatherImg3} alt="UMANG Weather Screen 3" />
+        </div>
+      </motion.section>
+
+      {/* DigiLocker Mockups Section */}
+      <motion.section 
+        className="umang-cs-digi-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-digi-title">DigiLocker</h3>
+        <div className="umang-cs-digi-mockups">
+          <img src={digiImg1} alt="UMANG DigiLocker Screen 1" />
+          <img src={digiImg2} alt="UMANG DigiLocker Screen 2" />
+        </div>
       </motion.section>
     </div>
   );

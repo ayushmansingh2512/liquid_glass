@@ -187,7 +187,7 @@
   position: absolute;
   top: 58px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateX(8px); /* shifted slightly right to match background mockup */
   /* exact Figma dimensions */
   width: 284.83px;
   height: 650px;
@@ -204,7 +204,7 @@
 .umang-cs-header-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill; /* stretch to fill viewport exactly so everything is visible */
 }
 
 /* ========================================
@@ -380,11 +380,13 @@
 }
 
 .umang-cs-work-section {
-  margin: 0 auto 83px; /* 83px gap between what i worked on and impact */
+  margin: 0 auto 83px;
+  /* 83px gap between what i worked on and impact */
 }
 
 .umang-cs-impact-section {
-  margin: 0 auto 80px;
+  margin: 0 auto 94px;
+  /* 94px gap to NDA box */
 }
 
 .umang-cs-work-title,
@@ -435,6 +437,7 @@
 
 /* Responsive Overrides */
 @media (max-width: 767px) {
+
   .umang-cs-work-section,
   .umang-cs-impact-section {
     padding: 0 24px;
@@ -451,5 +454,365 @@
   .umang-cs-impact-list li {
     font-size: 16px;
     padding-left: 20px;
+  }
+}
+
+/* NDA Disclaimer Box */
+.umang-cs-nda-box {
+  width: 100%;
+  max-width: 876px;
+  min-height: 136px;
+  margin: 0 auto 83px;
+  /* 83px gap below NDA */
+  background-color: #EEEED6;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Typography */
+  font-family: 'Satoshi', sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive NDA Overrides */
+@media (max-width: 767px) {
+  .umang-cs-nda-box {
+    min-height: auto;
+    font-size: 16px;
+    padding: 16px;
+    margin-bottom: 48px;
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+/* Home Section */
+.umang-cs-home-section {
+  width: 100%;
+  max-width: 1100px;
+  /* same width as work and impact sections to align headings */
+  margin: 0 auto 110px; /* 110px gap below Home section */
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  /* 43px gap between Home title and mockups */
+  box-sizing: border-box;
+}
+
+.umang-cs-home-title,
+.umang-cs-voice-title {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+  margin: 0;
+}
+
+.umang-cs-home-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns taking the whole width */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-home-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Home Overrides */
+@media (max-width: 767px) {
+  .umang-cs-home-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-home-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-home-mockups img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Voice Search Section */
+.umang-cs-voice-section {
+  width: 100%;
+  max-width: 1100px; /* same layout width as Home section */
+  margin: 0 auto 105px; /* 105px gap below Voice Search */
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  box-sizing: border-box;
+}
+
+.umang-cs-voice-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to keep image widths exactly same as Home section */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-voice-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Voice Search Overrides */
+@media (max-width: 767px) {
+  .umang-cs-voice-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-voice-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-voice-mockups img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Multi Profile Creation Section */
+.umang-cs-profile-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 105px; /* 105px gap below Multi Profile Creation to Weather */
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  box-sizing: border-box;
+}
+
+.umang-cs-profile-title {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+  margin: 0;
+}
+
+.umang-cs-profile-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-profile-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Multi Profile Creation Overrides */
+@media (max-width: 767px) {
+  .umang-cs-profile-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-profile-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-profile-mockups img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Search Suggestions Section */
+.umang-cs-suggest-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 88px; /* 88px gap below Search Suggestions to Multi Profile Creation */
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  box-sizing: border-box;
+}
+
+.umang-cs-suggest-title {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+  margin: 0;
+}
+
+.umang-cs-suggest-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-suggest-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Search Suggestions Overrides */
+@media (max-width: 767px) {
+  .umang-cs-suggest-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-suggest-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-suggest-mockups img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Weather Section */
+.umang-cs-weather-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 167px; /* 167px gap below Weather to DigiLocker */
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  box-sizing: border-box;
+}
+
+.umang-cs-weather-title {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+  margin: 0;
+}
+
+.umang-cs-weather-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to match Voice Search image widths */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-weather-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Weather Overrides */
+@media (max-width: 767px) {
+  .umang-cs-weather-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-weather-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-weather-mockups img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* DigiLocker Section */
+.umang-cs-digi-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  box-sizing: border-box;
+}
+
+.umang-cs-digi-title {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #676767;
+  margin: 0;
+}
+
+.umang-cs-digi-mockups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid to match Voice Search image widths */
+  gap: 16px;
+  width: 100%;
+}
+
+.umang-cs-digi-mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive DigiLocker Overrides */
+@media (max-width: 767px) {
+  .umang-cs-digi-section {
+    padding: 0 24px;
+    margin-bottom: 48px;
+    gap: 24px;
+  }
+
+  .umang-cs-digi-mockups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .umang-cs-digi-mockups img {
+    width: 100%;
+    height: auto;
   }
 }
