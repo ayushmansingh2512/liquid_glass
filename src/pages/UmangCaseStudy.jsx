@@ -8,6 +8,7 @@ import './umangCaseStudy.css';
 import fourImg from '../assets/SelectedWork/four.svg';
 import arrowIcon from '../assets/arrow/Icon.svg';
 import headerPhoto from '../assets/umang/headerphto.jpg';
+import umangVideo from '../assets/video/umang/Screen_Recording_20260713_213550_Figma.mp4';
 
 const pills = [
   'Government of India (via UX4G / Digital India)',
@@ -100,6 +101,29 @@ const UmangCaseStudy = () => {
       >
         <img src={headerPhoto} alt="UMANG Redesign Mockup" className="umang-cs-header-photo" />
       </motion.div>
+
+      {/* Mobile Demo Video */}
+      <motion.section 
+        className="umang-cs-video-section"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="umang-cs-phone-mockup">
+          <div className="umang-cs-phone-notch"></div>
+          <div className="umang-cs-phone-screen">
+            <video 
+              src={umangVideo} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="umang-cs-phone-video"
+            />
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 };
