@@ -367,11 +367,11 @@
   }
 }
 
-/* What I Worked On Section */
-.umang-cs-work-section {
+/* What I Worked On & Impact Sections */
+.umang-cs-work-section,
+.umang-cs-impact-section {
   width: 100%;
   max-width: 876px;
-  margin: 0 auto 80px;
   display: flex;
   flex-direction: column;
   gap: 21px;
@@ -379,7 +379,16 @@
   box-sizing: border-box;
 }
 
-.umang-cs-work-title {
+.umang-cs-work-section {
+  margin: 0 auto 83px; /* 83px gap between what i worked on and impact */
+}
+
+.umang-cs-impact-section {
+  margin: 0 auto 80px;
+}
+
+.umang-cs-work-title,
+.umang-cs-impact-title {
   font-family: 'Satoshi-Bold', sans-serif;
   font-weight: 700;
   font-size: 24px;
@@ -389,7 +398,8 @@
   margin: 0;
 }
 
-.umang-cs-work-list {
+.umang-cs-work-list,
+.umang-cs-impact-list {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -399,7 +409,8 @@
   /* gap between items */
 }
 
-.umang-cs-work-list li {
+.umang-cs-work-list li,
+.umang-cs-impact-list li {
   font-family: 'Satoshi', sans-serif;
   font-weight: bolder;
   font-size: 18px;
@@ -410,7 +421,8 @@
   padding-left: 24px;
 }
 
-.umang-cs-work-list li::before {
+.umang-cs-work-list li::before,
+.umang-cs-impact-list li::before {
   content: "•";
   position: absolute;
   left: 0;
@@ -423,17 +435,20 @@
 
 /* Responsive Overrides */
 @media (max-width: 767px) {
-  .umang-cs-work-section {
+  .umang-cs-work-section,
+  .umang-cs-impact-section {
     padding: 0 24px;
     margin-bottom: 48px;
     gap: 16px;
   }
 
-  .umang-cs-work-title {
+  .umang-cs-work-title,
+  .umang-cs-impact-title {
     font-size: 20px;
   }
 
-  .umang-cs-work-list li {
+  .umang-cs-work-list li,
+  .umang-cs-impact-list li {
     font-size: 16px;
     padding-left: 20px;
   }

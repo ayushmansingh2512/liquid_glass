@@ -163,6 +163,23 @@ const UmangCaseStudy = () => {
           <li>Designed the DigiLocker integration, enabling users to securely access their DigiLocker documents directly within UMANG. This reduced the need to switch between multiple apps and improved accessibility for users with low-storage devices.</li>
         </ul>
       </motion.section>
+
+      {/* Impact Section */}
+      <motion.section 
+        className="umang-cs-impact-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h3 className="umang-cs-impact-title">Impact</h3>
+        <ul className="umang-cs-impact-list">
+          <li>⭐ Google Play rating improved from 2.8 → 4.0.</li>
+          <li>Reduced service discovery time through better information architecture and personalization.</li>
+          <li>Increased engagement with frequently used government services.</li>
+          <li>Contributed to higher DigiLocker adoption by making document access available within the UMANG ecosystem.</li>
+        </ul>
+      </motion.section>
     </div>
   );
 };
