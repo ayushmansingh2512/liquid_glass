@@ -183,7 +183,7 @@
 /* Video Overlay inside Header Photo */
 .umang-cs-header-video-overlay {
   position: absolute;
-  top: 50%;
+  top: 52.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* exact dimensions to cover the background phone screen mockup in headerphto.jpg */
@@ -238,6 +238,7 @@
     width: 152px;
     height: 333px;
     border-radius: 15px;
+    top: 52.5%;
   }
 }
 
@@ -262,5 +263,6 @@
     width: 208px;
     height: 457px;
     border-radius: 20px;
+    top: 52.5%;
   }
 }
