@@ -113,6 +113,39 @@ const UmangCaseStudy = () => {
           />
         </div>
       </motion.div>
+
+      {/* Info Card */}
+      <motion.div 
+        className="umang-cs-info-card"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="umang-cs-info-col">
+          <h4 className="umang-cs-info-title">Team</h4>
+          <ul className="umang-cs-info-list">
+            <li>1 Designer</li>
+            <li>1 PM</li>
+            <li>4 Engineers</li>
+          </ul>
+        </div>
+        <div className="umang-cs-info-col">
+          <h4 className="umang-cs-info-title">My Role & Scope</h4>
+          <ul className="umang-cs-info-list">
+            <li>Research & Benchmarking</li>
+            <li>Conceptualisation</li>
+            <li>Design</li>
+            <li>Handoff</li>
+          </ul>
+        </div>
+        <div className="umang-cs-info-col">
+          <h4 className="umang-cs-info-title">Time</h4>
+          <ul className="umang-cs-info-list">
+            <li>3 Months</li>
+          </ul>
+        </div>
+      </motion.div>
     </div>
   );
 };
