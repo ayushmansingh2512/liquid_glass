@@ -122,28 +122,28 @@ const UmangCaseStudy = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="umang-cs-info-col">
-          <h4 className="umang-cs-info-title">Team</h4>
-          <ul className="umang-cs-info-list">
-            <li>1 Designer</li>
-            <li>1 PM</li>
-            <li>4 Engineers</li>
-          </ul>
+        <div className="umang-cs-info-col team-col">
+          <div className="umang-cs-info-title">Team</div>
+          <div className="umang-cs-info-list">
+            <div className="umang-cs-info-item">1 Designer</div>
+            <div className="umang-cs-info-item">1 PM</div>
+            <div className="umang-cs-info-item">4 Engineers</div>
+          </div>
         </div>
-        <div className="umang-cs-info-col">
-          <h4 className="umang-cs-info-title">My Role & Scope</h4>
-          <ul className="umang-cs-info-list">
-            <li>Research & Benchmarking</li>
-            <li>Conceptualisation</li>
-            <li>Design</li>
-            <li>Handoff</li>
-          </ul>
+        <div className="umang-cs-info-col role-col">
+          <div className="umang-cs-info-title">My Role & Scope</div>
+          <div className="umang-cs-info-list">
+            <div className="umang-cs-info-item">Research & Benchmarking</div>
+            <div className="umang-cs-info-item">Conceptualisation</div>
+            <div className="umang-cs-info-item">Design</div>
+            <div className="umang-cs-info-item">Handoff</div>
+          </div>
         </div>
-        <div className="umang-cs-info-col">
-          <h4 className="umang-cs-info-title">Time</h4>
-          <ul className="umang-cs-info-list">
-            <li>3 Months</li>
-          </ul>
+        <div className="umang-cs-info-col time-col">
+          <div className="umang-cs-info-title">Time</div>
+          <div className="umang-cs-info-list">
+            <div className="umang-cs-info-item">3 Months</div>
+          </div>
         </div>
       </motion.div>
     </div>
