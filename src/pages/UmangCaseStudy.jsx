@@ -7,6 +7,7 @@ import './umangCaseStudy.css';
 // Import image assets
 import fourImg from '../assets/SelectedWork/four.svg';
 import arrowIcon from '../assets/arrow/Icon.svg';
+import headerPhoto from '../assets/umang/headerphto.jpg';
 
 const pills = [
   'Government of India (via UX4G / Digital India)',
@@ -89,6 +90,16 @@ const UmangCaseStudy = () => {
           ))}
         </motion.div>
       </section>
+
+      {/* Header Photo */}
+      <motion.div
+        className="umang-cs-header-photo-wrap"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
+      >
+        <img src={headerPhoto} alt="UMANG Redesign Mockup" className="umang-cs-header-photo" />
+      </motion.div>
     </div>
   );
 };
