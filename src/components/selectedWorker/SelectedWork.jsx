@@ -14,6 +14,8 @@ const cardsData = [
     title: "Helping Contact Center Agents Resolve and Support Faster",
     description: "Transforming a legacy contact center interface into an AI powered efficient and future ready workspace for millions of customers",
     image: oneImg,
+    password: "25012109",
+    isProtected: true,
     actions: [
       { type: 'button', text: 'Read Case Study', variant: 'primary', href: 'https://www.behance.net/gallery/244967223/Enterprise-Agent-Workspace-Redesign' }
     ]
