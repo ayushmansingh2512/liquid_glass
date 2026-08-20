@@ -217,6 +217,23 @@ const PasswordModal = ({ isOpen, onClose, onSuccess, projectTitle = "Case Study"
                     )}
                   </motion.button>
                 </div>
+
+                {/* Reach out footer inside modal */}
+                <div className="pwd-reach-out-container">
+                  <span className="pwd-reach-out-text">Don't have the passcode?</span>
+                  <a 
+                    href="https://www.linkedin.com/in/aditya-pratap-singh-8672581aa/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="pwd-reach-out-link"
+                  >
+                    Reach out for password
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
               </form>
             </motion.div>
           </div>
