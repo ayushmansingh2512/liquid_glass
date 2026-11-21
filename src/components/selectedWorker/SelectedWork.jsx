@@ -3,29 +3,28 @@ import MainHeader from './MainHeader'
 import Card from './Card'
 import './select.css'
 
+import dexThumbnail from '../../assets/dex/thumbnail.webp'
 import oneImg from '../../assets/SelectedWork/one.svg'
-import twoImg from '../../assets/SelectedWork/two.svg'
 import threeImg from '../../assets/SelectedWork/three.svg'
 import fourImg from '../../assets/SelectedWork/four.svg'
 
 const cardsData = [
+  {
+    tag: "Exotel - 2026",
+    title: "Dex copilot: 62% fewer tickets. New IVRs live in 1 day",
+    description: "An AI copilot in Synthesizer that reads a statement of work and builds a tested IVR flow while the admin watches.",
+    image: dexThumbnail,
+    actions: [
+      { type: 'button', text: 'Read Case Study', variant: 'primary', href: '/case-study/dex', isInternalLink: true }
+    ]
+  },
   {
     tag: "Exotel - 2025",
     title: "Helping Contact Center Agents Resolve and Support Faster",
     description: "Transforming a legacy contact center interface into an AI powered efficient and future ready workspace for millions of customers",
     image: oneImg,
     actions: [
-      { type: 'button', text: 'Read Case Study', variant: 'primary', href: 'https://www.behance.net/gallery/244967223/Enterprise-Agent-Workspace-Redesign' }
-    ]
-  },
-  {
-    tag: "Exotel - 2026",
-    title: "Turning Business Goals to Journeys: Designing an AI first Orchestrator",
-    description: "Designing an AI First Experience for an Enterprise Journey Orchestrator - from a simple prompt to live self optimising journey",
-    image: twoImg,
-    isComingSoon: true,
-    actions: [
-      { type: 'text', text: 'Case Study Coming Soon', variant: 'muted' }
+      { type: 'button', text: 'Read Case Study', variant: 'primary', href: '/case-study/agent-workspace', isInternalLink: true }
     ]
   },
   {

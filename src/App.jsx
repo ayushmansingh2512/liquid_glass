@@ -11,7 +11,10 @@ import Footer from './components/Footer/Footer';
 import CustomCursor from './components/CustomCursor';
 import LifeOutsidePixels from './components/LifeOutsidePixels/LifeOutsidePixels';
 import UmangCaseStudy from './pages/UmangCaseStudy';
+import { DexCaseStudy } from './pages/dex/DexCaseStudy';
+import { AgentWorkspaceCaseStudy } from './pages/agent-workspace/AgentWorkspaceCaseStudy';
 import PageTransition from './components/PageTransition/PageTransition';
+import { Preloader } from './components/Preloader';
 
 const Home = () => {
   return (
@@ -42,6 +45,8 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/case-study/umang" element={<PageTransition><UmangCaseStudy /></PageTransition>} />
+        <Route path="/case-study/dex" element={<PageTransition><DexCaseStudy /></PageTransition>} />
+        <Route path="/case-study/agent-workspace" element={<PageTransition><AgentWorkspaceCaseStudy /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
@@ -50,6 +55,7 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <Router>
+      <Preloader />
       <CustomCursor />
       <Nav />
       <AnimatedRoutes />

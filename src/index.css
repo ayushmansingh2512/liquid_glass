@@ -211,3 +211,41 @@ html.custom-cursor-active .custom-cursor-dot {
   line-height: 1.25 !important;
   text-align: center !important;
 }
+
+/* first-visit asset preloader (components/Preloader.jsx) */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  background: #f8f7f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.preloader-name {
+  font-family: 'Clash-Display', sans-serif;
+  font-size: 28px;
+  color: #191817;
+}
+.preloader-track {
+  width: 180px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(25, 24, 23, 0.1);
+  overflow: hidden;
+}
+.preloader-fill {
+  display: block;
+  height: 100%;
+  background: #d54902;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.preloader-pct {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  color: rgba(25, 24, 23, 0.55);
+  font-variant-numeric: tabular-nums;
+}
